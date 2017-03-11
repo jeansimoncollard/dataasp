@@ -8,10 +8,6 @@ namespace Dataasp.Backend.Entities
 {
     public class UserTravelRecord
     {
-        private DateTime now;
-        private int v1;
-        private int v2;
-
         public string Username { get; set; }
         public DateTime DateOfTrip { get; set; }
         public int MetersTravelled { get; set; }
@@ -51,6 +47,11 @@ namespace Dataasp.Backend.Entities
         public UserTravelRecord(UserTravelRecord v)
         {
             this.TravelMode = v.TravelMode;
+            this.DateOfTrip = v.DateOfTrip;
+            this.MetersTravelled = v.MetersTravelled;
+            this.Username = v.Username;
+            this.VolumeCO2 = v.VolumeCO2;
+
         }
     }
 }
