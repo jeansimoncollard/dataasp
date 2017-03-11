@@ -11,24 +11,26 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
     {
         public string GenerateMarkers(List<MarkerEntity> markers)
         {
+            //have to use list<char> for efficiency purposes
             var futureString = new List<char>();
             foreach (var marker in markers)
             {
-                futureString.AddRange(generateMaker(marker.Latitude, marker.Longitude, marker.MarkerTitle));
+                futureString.AddRange(generateMaker(marker.Latitude, marker.Longitude, marker.MarkerTitle, marker.color));
             }
-            return "";
+            return new string(futureString.ToArray());
         }
-        private List<char> generateMaker(double latitude, double longitude, string markerTitle)
+        private string generateMaker(double latitude, double longitude, string markerTitle, string color)
         {
-            return new List<char>($@"
-            <script>
+            return $@"
+
                 var marker = new google.maps.Marker({{
                 position: {{lat: {latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}},
                 map: map,
                 title: '{markerTitle}'
+                icon: 'http://maps.google.com/mapfiles/ms/icons/{color}-dot.png'
               }});
-            </script>
-        ");
+
+        ";
         }
     }
 }

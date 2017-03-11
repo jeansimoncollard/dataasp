@@ -55,6 +55,7 @@ namespace Dataasp
             MapPoint waypoint = new MapPoint();
             mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, false);
 
+
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
 
             //Save travel in database

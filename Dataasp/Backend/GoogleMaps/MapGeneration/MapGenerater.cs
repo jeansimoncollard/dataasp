@@ -9,8 +9,13 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
 {
     public class MapGenerater
     {
+        private MarkerGenerater _markerGenerater;
+        public MapGenerater()
+        {
+            _markerGenerater = new MarkerGenerater();
+        }
 
-        public string GenerateMap(string start, string end, string waypoint, string transportationMode, bool isUseWayPoint)
+        public string GenerateMap(string start, string end, string waypoint, string transportationMode, bool isUseWayPoint, List<MarkerEntity> markers)
         {
             var commentLine = "";//This string is used to comment out waypoint in javascript function if needed
 
@@ -19,7 +24,7 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
                 commentLine = "//";
             }
 
-            return
+            var mapdiv =
                 @"<div class=""row"">
                 <div class=""col-md-12"">
                     <div id=""map""></div>
@@ -224,7 +229,7 @@ map.mapTypes.set('map_style', styledMap);
                       window.alert('Directions request failed due to ' + status);
                     }
                 });
-
+" + _markerGenerater.GenerateMarkers(markers) + @"
 
                 }
 
@@ -234,6 +239,9 @@ map.mapTypes.set('map_style', styledMap);
             <script src = ""https://maps.googleapis.com/maps/api/js?key=AIzaSyCyeTwU64siTHFVrI_h9bJX7VlMdReWvbc&callback=initMap""
                     async defer></script>
     </div>";
+
+
+            return mapdiv;
         }
 
 
