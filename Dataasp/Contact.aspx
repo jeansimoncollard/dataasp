@@ -5,7 +5,7 @@
     <h2><%: Title %>.</h2>
     <h3>We appreciate your feedback.</h3>
     <address>
-        One Microsoft Way<br />
+        One Microsft Way<br />
         Redmond, WA 98052-6399<br />
         <abbr title="Phone">P:</abbr>
         425.555.0100
