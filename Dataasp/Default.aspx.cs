@@ -56,7 +56,7 @@ namespace Dataasp
             _quickstats.SetDistance(distance);
             _quickstats.SetName("Alex");
             _quickstats.SetMeansOfTransportation(travelModeComboBox.SelectedValue);
-
+            _quickstats.SetFootPrint();
 
 
             _quickstats.ShowStats(div);
