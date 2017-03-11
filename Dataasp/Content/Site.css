@@ -170,6 +170,13 @@ a:hover, a:focus {
     min-height: 50vh;
 }
 
+.full-height{
+    height: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
 .navbar-inverse {
     background-color: #228317;
     border-color: #228317;
