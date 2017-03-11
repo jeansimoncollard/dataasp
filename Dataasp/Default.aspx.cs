@@ -51,7 +51,7 @@ namespace Dataasp
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
             var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
             _jstemporarybuttonclicker.clicked();
-            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue));
+            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue),false);
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
 
@@ -65,6 +65,10 @@ namespace Dataasp
             _quickstats.SetFootPrint();
             VolumeOfCO2 = _quickstats.GetFootprint();
             _quickstats.ShowStats(div);
+
+            var sliderDistanceValue = distanceSlider.Text;
+            int midDistance = Int32.Parse(distanceSlider.Text) / 2;
+            div.InnerHtml += midDistance;
             saveTravel(distance, travelModeComboBox.SelectedValue);
         }
 
