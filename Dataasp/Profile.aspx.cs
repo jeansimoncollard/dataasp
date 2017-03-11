@@ -90,21 +90,15 @@ namespace Dataasp
             ArrayList individualCO2 = new ArrayList();
             for (int i = 0; i < currentUser.UserHistory.Count; i++)
             {
-                UserTravelRecord Temp = new UserTravelRecord((UserTravelRecord)currentUser.UserHistory[i]);
-                if (individualCO2.Count < 6)
-                {
-                    dates.Add(" " + Temp.DateOfTrip.Date.Month + "/" + Temp.DateOfTrip.Date.Day + " ");
-                }
-                if (individualCO2.Count < 6)
-                {
-                    individualCO2.Add(Temp.VolumeCO2);
-                }
+                UserTravelRecord Temp = new UserTravelRecord(currentUser.UserHistory[i]);
+                dates.Add(Temp.DateOfTrip.ToString());
+                individualCO2.Add(Temp.VolumeCO2);
                 y = y + Temp.VolumeCO2;
 
             }
             
             _jsArraySerializer = new JavascriptSerializer();
-
+            totalCO2[0] = y;
             totalCO2Str = _jsArraySerializer.Serialize(totalCO2);
             Chart2Data = _jsArraySerializer.Serialize(individualCO2);
             Chart2Dates = _jsArraySerializer.Serialize(dates);
