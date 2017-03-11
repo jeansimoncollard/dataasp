@@ -391,7 +391,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Backend\DataAccess\UserHistoryLoader.cs" />
     <Compile Include="Backend\DataAccess\UserTravelStorer.cs" />
+    <Compile Include="Backend\DatasetParsing\ConstructionSitesParser.cs" />
     <Compile Include="Backend\DatasetParsing\DatasetParser.cs" />
+    <Compile Include="Backend\DatasetParsing\ParsingTools\ProgramLineDivider.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntityArraylist.cs" />
     <Compile Include="Backend\Enums\StringToTravelEnumConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\AddressLatLongConverter.cs" />

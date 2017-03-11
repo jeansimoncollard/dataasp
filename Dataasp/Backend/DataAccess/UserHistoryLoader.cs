@@ -33,6 +33,7 @@ namespace Dataasp.Backend.DataAccess
                             userTravelRecord.TravelMode = (TravelModeEnum)reader.GetInt32(2);
                             userTravelRecord.Username = reader.GetString(3).Trim();
                             userTravelRecord.VolumeCO2 = (double)reader[4];
+                            userTravelRecord.Cost = (double)reader[5];
 
                             userHistory.UserHistory.Add(userTravelRecord);
                         }
