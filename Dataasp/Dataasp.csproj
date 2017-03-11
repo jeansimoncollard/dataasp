@@ -380,6 +380,8 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Backend\Quickstats\Quickstats.cs" />
+    <Compile Include="Backend\GoogleMaps\DistanceCalculter\AddressLatLongConverter.cs" />
+    <Compile Include="Backend\GoogleMaps\DistanceCalculter\DistanceCalculater.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntity.cs" />
     <Compile Include="Backend\Entities\UserTravelRecord.cs" />
     <Compile Include="Backend\Enums\TravelModeEnum.cs" />
