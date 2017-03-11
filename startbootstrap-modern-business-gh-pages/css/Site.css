@@ -7,8 +7,14 @@ body {
 
 body {
     padding-top: 50px;
-    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #373a3c;
+    background-color: #fff;
+      /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
+
 
 .img-portfolio {
     margin-bottom: 30px;
@@ -65,10 +71,20 @@ header.carousel .fill {
 
 
 /* Footer Styles */
-
-footer {
-    color: #228317;
+.heading7 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 22px;
 }
+
+.footer {
+    background-color: #46903E;
+    min-height: 350px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
 /* Set some basic padding to keep content from hitting the edges */
 
 .body-content {
@@ -105,9 +121,11 @@ footer {
 .navbar-brand {
     padding: 0 15px;
 }
+
 #logo {
-    max-height: 50px;
+   max-height: 50px;
 }
+
 
 bootstrap.min.css:5
 .page-header {
