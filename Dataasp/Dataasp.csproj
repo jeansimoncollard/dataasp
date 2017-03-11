@@ -267,6 +267,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="UpdateDatabase.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -390,6 +391,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Backend\DataAccess\UserHistoryLoader.cs" />
     <Compile Include="Backend\DataAccess\UserTravelStorer.cs" />
+    <Compile Include="Backend\DatasetParsing\DatasetParser.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntityArraylist.cs" />
     <Compile Include="Backend\Enums\StringToTravelEnumConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\AddressLatLongConverter.cs" />
@@ -452,6 +454,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UpdateDatabase.aspx.cs">
+      <DependentUpon>UpdateDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateDatabase.aspx.designer.cs">
+      <DependentUpon>UpdateDatabase.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -462,7 +471,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
