@@ -1,4 +1,5 @@
-﻿using Dataasp.Backend.Entities;
+﻿using Dataasp.Backend.DataAccess;
+using Dataasp.Backend.Entities;
 using Dataasp.Backend.Enums;
 using Dataasp.Backend.Serialization;
 using System;
@@ -14,24 +15,29 @@ namespace Dataasp
     public partial class About : Page
     {
         public string Chart1Data { get; set; }
+        public string Chart2Data { get; set; }
+        public string Chart2Dates { get; set; }
+        public string totalCO2Str { get; set; }
         private JavascriptSerializer _jsArraySerializer;
+        private UserHistoryLoader _userHistoryLoader;
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            _userHistoryLoader = new UserHistoryLoader();
 
-            UserTravelRecord testRecord = new UserTravelRecord(DateTime.Now, 50, 0);
-            UserHistoryEntityArrayList currentUser = new UserHistoryEntityArrayList();
+            travelbyTypeDisplay();
+            volumeCO2Display();
 
-            currentUser.UserHistory = new ArrayList(){
-                new UserTravelRecord(DateTime.Now, 5, 0),
-                new UserTravelRecord(DateTime.Now, 5, 0),
-                new UserTravelRecord(DateTime.Now, 5, 2),
-                new UserTravelRecord(DateTime.Now, 5, 1),
-                 };
 
-            currentUser.UserHistory.Add(testRecord);
+
+        }
+        public void travelbyTypeDisplay()
+        {
+            var currentUser = _userHistoryLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
             ArrayList travelByType = new ArrayList() { 0, 0, 0, 0 };
             int x = 0;
-            for(int i = 0; i < currentUser.UserHistory.Count; i++)
+            for (int i = 0; i < currentUser.UserHistory.Count; i++)
             {
                 UserTravelRecord Temp = new UserTravelRecord((UserTravelRecord)currentUser.UserHistory[i]);
                 switch (Temp.TravelMode)
@@ -59,7 +65,14 @@ namespace Dataasp
 
 
                 }
-                //travelByType.Add(travelByType);
+
+            }
+            float y = 0;
+            for (int i = 0; i < travelByType.Count; i++)
+            {
+                y = (int)travelByType[i];
+                y = ((y / currentUser.UserHistory.Count) * 100);
+                travelByType[i] = y;
             }
             _jsArraySerializer = new JavascriptSerializer();
 
@@ -67,9 +80,29 @@ namespace Dataasp
 
             //Chart1Data = _jsArraySerializer.Serialize(new ArrayList() { 1, 2, 3, 4 });
 
+        }
+        public void volumeCO2Display()
+        {
+            var currentUser = _userHistoryLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
+            ArrayList totalCO2 = new ArrayList() { 0 };
+            double y = 0;
+            ArrayList dates = new ArrayList();
+            ArrayList individualCO2 = new ArrayList();
+            for (int i = 0; i < currentUser.UserHistory.Count; i++)
+            {
+                UserTravelRecord Temp = new UserTravelRecord((UserTravelRecord)currentUser.UserHistory[i]);
+                dates.Add(Temp.DateOfTrip);
+                individualCO2.Add(Temp.VolumeCO2);
+                y = y + Temp.VolumeCO2;
+
+            }
+            
+            _jsArraySerializer = new JavascriptSerializer();
+
+            totalCO2Str = _jsArraySerializer.Serialize(totalCO2);
+            Chart2Data = _jsArraySerializer.Serialize(individualCO2);
+            Chart2Dates = _jsArraySerializer.Serialize(dates);
 
         }
-
-
     }
 }
