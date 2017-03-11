@@ -75,9 +75,6 @@ namespace Dataasp
 
            // if (_intSliderValue != 0)
             //    mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), testMap, true);
-
-
-            div.InnerHtml += _intSliderValue;
         }
 
         private void saveTravel(int distance, string travelModeValue)
