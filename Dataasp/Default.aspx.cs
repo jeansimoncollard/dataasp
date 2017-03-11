@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dataasp.Backend.Quickstats;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,13 +10,17 @@ namespace Dataasp
 {
     public partial class _Default : Page
     {
-        //namespace Dataasp.Backend.Quickstats {
-       // Quickstats _quickstats;
-   // }
+        Quickstats _quickstats;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            
+        }
 
+        protected void addTripButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -23,7 +23,7 @@
         </p>
         <p> &nbsp;</p>
         <p> 
-            <asp:Button ID="addTripButton" runat="server" Text="Button" />
+            <asp:Button ID="addTripButton" runat="server" Text="Button" OnClick="addTripButton_Click" />
         </p>
         <div id="mapDiv">
         </div>
