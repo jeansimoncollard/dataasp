@@ -91,8 +91,14 @@ namespace Dataasp
             for (int i = 0; i < currentUser.UserHistory.Count; i++)
             {
                 UserTravelRecord Temp = new UserTravelRecord((UserTravelRecord)currentUser.UserHistory[i]);
-                dates.Add(Temp.DateOfTrip);
-                individualCO2.Add(Temp.VolumeCO2);
+                if (individualCO2.Count < 6)
+                {
+                    dates.Add(" " + Temp.DateOfTrip.Date.Month + "/" + Temp.DateOfTrip.Date.Day + " ");
+                }
+                if (individualCO2.Count < 6)
+                {
+                    individualCO2.Add(Temp.VolumeCO2);
+                }
                 y = y + Temp.VolumeCO2;
 
             }
