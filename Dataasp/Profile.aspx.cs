@@ -59,7 +59,14 @@ namespace Dataasp
 
 
                 }
-                //travelByType.Add(travelByType);
+
+            }
+            float y = 0;
+            for (int i = 0; i < travelByType.Count; i++)
+            {
+                y = (int)travelByType[i];
+                y = ((y/currentUser.UserHistory.Count) * 100);
+                travelByType[i] = y;
             }
             _jsArraySerializer = new JavascriptSerializer();
 
