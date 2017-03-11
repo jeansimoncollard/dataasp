@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="~/images/rsz_1alex.jpg" runat="Server" alt="Alexandre Charbonneau">
+                    <img class="img-responsive" src="~/images/rsz_duncan.jpg" runat="Server" alt="Duncan Mackay">
                     <div class="caption">
                         <h3>John Smith<br>
                             <small>Job Title</small>
