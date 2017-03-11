@@ -10,7 +10,7 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #000000;
-    background-color: #fff;
+    background-imager: url();
     /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
