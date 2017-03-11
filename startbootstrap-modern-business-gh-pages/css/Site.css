@@ -53,7 +53,13 @@ bootstrap.min.css:5
 .btn-default {
     color: #fff;
     background-color: #228317;
-    border-color: #40B334;
+    border-color: #46903E;
+}
+
+.btn-default:hover {
+    color: #46903E;
+    background-color: #ffffff;
+    border-color: #46903E;
 }
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
