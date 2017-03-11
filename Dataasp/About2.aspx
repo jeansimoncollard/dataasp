@@ -27,9 +27,9 @@
                     <img class="img-responsive" src="~/images/rsz_1alex.jpg" runat="Server" alt="Alexandre Charbonneau">
                     <div class="caption">
                         <h3>Alexandre Charbonneau<br>
-                            <small>Backend Programmer</small>
+                            <small>Backend programmer</small>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+                        <p>First year student at Bishop's University in computer science. Wants to code video games for a living.</p>
                         <ul class="list-inline">
                             <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
@@ -46,9 +46,9 @@
                     <img class="img-responsive" src="~/images/rsz_duncan.jpg" runat="Server" alt="Duncan Mackay">
                     <div class="caption">
                         <h3>Duncan Mackay<br>
-                            <small>User Profile</small>
+                            <small>User profile & backend programmer</small>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+                        <p>4th year student at Bishop's University in computer science. Highly skilled programmer and best of friends. Wants a carreer with CSIS.</p>
                         <ul class="list-inline">
                             <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
@@ -60,25 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="~/images/rsz_djs.jpg" runat="Server" alt="Jean-Simon Collard">
-                    <div class="caption">
-                        <h3>Jean-Simon Collard<br>
-                            <small>Database Management</small>
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+           
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
                     <img class="img-responsive" src="~/images/rsz_mitch.jpg" runat="Server" alt="Mitchell Burr Bedard">
@@ -86,7 +68,7 @@
                         <h3>Mitchell Burr Bedard<br>
                             <small>Frontend Programmer</small>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+                        <p>5th year student at Bishop's University in double major computer science and business. Aspires to continue as a freelance web developer.</p>
                         <ul class="list-inline">
                             <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
@@ -105,7 +87,7 @@
                         <h3>Natacha Levesque<br>
                             <small>Frontend & Design</small>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+                        <p>1st year student at Bishop's University in computer science. Wishes to do web design for a living.</p>
                         <ul class="list-inline">
                             <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
@@ -124,7 +106,26 @@
                         <h3>Jean Simon Collard<br>
                             <small>Database Management</small>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+                        <p>3rd year student at Bishops's University in computer science. Would enjoy a carreer as a computer consultant.</p>
+                        <ul class="list-inline">
+                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4 text-center">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="http://placehold.it/500x340" runat="Server" alt="Hiring!">
+                    <div class="caption">
+                        <h3>There is a place for you!<br>
+                            <small>How can you help you?</small>
+                        </h3>
+                        <p>We are always looking for motivated and skilled people work with us.</p>
                         <ul class="list-inline">
                             <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
