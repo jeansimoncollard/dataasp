@@ -198,6 +198,7 @@
     <Content Include="GoogleMaps.LocationServices.readme.txt" />
     <Content Include="images\bikepathfall.jpg" />
     <Content Include="images\bikers.jpg" />
+    <Content Include="images\ecobecois_logo_couleur.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\panda-eating.jpg" />
     <Content Include="images\rsz_1alex.jpg" />
