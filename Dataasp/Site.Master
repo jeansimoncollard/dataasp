@@ -6,14 +6,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
-
+    <title><%: Page.Title %> - Ecobecois</title>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="/Content/googlemap.css">
+    <link rel="stylesheet" href="~/Content/googlemap.css" runat="server">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -49,16 +48,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="~/Default" runat="server">
                         <img alt="Logo" src="~/images/ecobecois_logo_couleur.png" runat="server">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/"></i>Travel</a></li>
+                        <li><a runat="server" href="~/Default">Travel</a></li>
                         <li><a runat="server" href="~/Profile">Profile</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <!--<li><a runat="server" href="~/About2.aspx">About</a></li>-->
+                        <li><a runat="server" href="~/About2">About</a></li>
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
@@ -77,66 +76,60 @@
             </div>
             <!-- /.container -->
         </nav>
-            <div class="container body-content">
-                <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
-            <!-- Footer -->
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 footerleft ">
-                            <div class="logofooter">
-                                <img src="images\logo.png" alt="Logo">
-                                About Us
-                            </div>
-                            <p>Ecobecois creates awareness of your impact on the enviroment based on analytics of your personal transportation habits. Find out how sustainable your travel choices are and compare to those around you. Use Ecobecois to help make ecological choices in your daily commute.</p>
-                            <button class="btn">
-                                Learn More
-                            </button>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 footerleft ">
+                        <div class="logofooter">
+                            <img alt="Logo" src="~/images/ecobecois_logo_couleur.png" runat="server">
+                            About Us
                         </div>
-                        <div class="col-md-4 element-top-50 element-bottom-30">
-                            <h6 class="heading7">GENERAL LINKS</h6>
-                            <div>
-                                <b>Address:</b>
-                                <p><i class="fa fa-map-pin"></i>1600 Boulevard du Plateau-Saint-Joseph, Sherbrooke, QC J1L 0C8</p>
-                                <p><i class="fa fa-phone"></i>Phone (Canada) : <a href="tel:18272222193">(827) 222-2193</a></p>
-                                <p><i class="fa fa-envelope"></i> E-mail : info@hackqc.azurewebsites.net</p>
-                            </div>
+                        <p>Ecobecois creates awareness of your impact on the enviroment based on analytics of your personal transportation habits. Find out how sustainable your travel choices are and compare to those around you. Use Ecobecois to help make ecological choices in your daily commute.</p>
+                        <a href="~/About2" class="btn  btn-lg btn-primary" role="button" runat="server">Learn more</a>
+                    </div>
+                    <div class="col-md-4 element-top-50 element-bottom-30">
+                        <h6 class="heading7">GENERAL LINKS</h6>
+                        <div>
+                            <b>Address:</b>
+                            <p><i class="fa fa-map-pin"></i>1600 Boulevard du Plateau-Saint-Joseph, Sherbrooke, QC J1L 0C8</p>
+                            <p><i class="fa fa-phone"></i>Phone (Canada) : <a href="tel:18272222193">(827) 222-2193</a></p>
+                            <p><i class="fa fa-envelope"></i>E-mail : <a href="mailto:info@hackqc.azurewebsites.net">info@hackqc.azurewebsites.net</a></p>
                         </div>
-                        <div class="col-md-4 element-top-50 element-bottom-30">
-                            <div class="well">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="btn btn-default btn-block" href="#">Call to Action</a>
-                                    </div>
+                    </div>
+                    <div class="col-md-4 element-top-50 element-bottom-30">
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>Have you ever wondered how your day to day travels impact the world around you. Sign up today to get started with Ecobecois!</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="btn btn-default btn-block" href="~/Registration" runat="server">Sign up now!</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="copyright">
-                    <div class="container">
-                        <div class="col-md-6">
-                            <p>© 2016 - All Rights with Webenlance</p>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="bottom_ul">
-                                <li><a href="https://github.com/noblefr/dataasp"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Faq's</a></li>
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">Site Map</a></li>
-                            </ul>
-                        </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="col-md-6">
+                        <p>© 2016 - All Rights with Webenlance</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="bottom_ul">
+                            <li><a href="https://github.com/noblefr/dataasp"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="http://hackqc.ca/">HackQC 2017</a></li>
+                        </ul>
                     </div>
                 </div>
-            </footer>
+            </div>
+        </footer>
     </form>
-    
 </body>
 </html>
