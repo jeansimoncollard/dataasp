@@ -1,8 +1,0 @@
-(function() {
-  var pids = ['tremor', 'appnexus', 'rubicon'];
-  for (var index = 0; index < pids.length; ++index) {
-    var _p = new Image();
-    _p.src = "https://cm.adgrx.com/bridge?AG_PID=" + pids[index];
-  }
-})();
-
