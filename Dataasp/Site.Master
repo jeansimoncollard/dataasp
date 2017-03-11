@@ -14,6 +14,7 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="/Content/googlemap.css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <form runat="server">
@@ -134,7 +135,7 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="bottom_ul">
-                            <li><a href="#">webenlance.com</a></li>
+                            <li><a href="https://github.com/noblefr/dataasp"><i class="fa fa-github" aria-hidden="true"></i></a></li>
                             <li><a href="#">About us</a></li>
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">Faq's</a></li>
