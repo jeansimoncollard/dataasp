@@ -10,5 +10,6 @@ namespace Dataasp.Backend.Entities
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public string MarkerTitle { get; set; }
+        public string color { get; set; } //blue/red/green/yellow work
     }
 }

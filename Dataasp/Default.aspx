@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Dataasp._Default" %>
+﻿<%@ Page Title="Welcome to Ecobecois!" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Dataasp._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
@@ -6,21 +6,22 @@
             <h1 class="page-header">Travel Now!</h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row element-bottom-20">
         <div class="col-md-6">
             <div class="container">
                 <p>Departing from:</p>
                 <asp:TextBox ID="fromTextBox" runat="server"></asp:TextBox>
                 <p>Destination:</p>
                 <asp:TextBox ID="toTextBox" runat="server"></asp:TextBox>
+                <div class="clearfix">
                 <ajaxToolkit:ComboBox ID="travelModeComboBox" runat="server">
                     <asp:ListItem Value="DRIVING">Car</asp:ListItem>
                     <asp:ListItem Value="TRANSIT">Public Transport</asp:ListItem>
                     <asp:ListItem Value="BICYCLING">Bicycle</asp:ListItem>
                     <asp:ListItem Value="WALKING">Walking</asp:ListItem>
                 </ajaxToolkit:ComboBox>
-                <br />
-                <p><b>Help us provide you with a sustainable alternative</b></p>
+                </div>
+                <p class="clearfix"><b>Help us provide you with a sustainable alternative</b></p>
                 <p>Distance of your travel:</p>
                 <div>
                     Long
@@ -32,7 +33,7 @@
                     <asp:TextBox ID="securitySlider" runat="server"></asp:TextBox>
                     <ajaxToolkit:SliderExtender ID="securitySlider_SliderExtender" runat="server" BehaviorID="securitySlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="securitySlider" />
                 </div>
-                <asp:Button ID="addTripButton" runat="server" Text="Button" OnClick="addTripButton_Click" />
+                <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click" />
                 <div id="quickStatsDiv" runat="server">
                     <!-- Alex's spot to add qucikstat stuff -->
                 </div>

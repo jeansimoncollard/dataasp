@@ -1,9 +1,10 @@
-﻿<%@ Page Title="Profile" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Dataasp.About" %>
+﻿<%@ Page Title="Your Profile" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Dataasp.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <br /><br />
     <h2><%: Title %>.</h2>
-    <h3>Your application description page.</h3>
-    <p>Use this area to provide additional information.</p>
+    <h3>Ecobecois gives you valuable information to improve your ecological footprint.</h3>
+    <p>In this section you will find useful graphs giving you statistics on your recent travel costs, both ecological and money related.</p>
 
 
     <!-- Features Section -->
@@ -12,17 +13,18 @@
             <h1 class="page-header">Ecobec</h1>
         </div>
         <div class="col-md-6">
-            <p>The Modern Business template by Start Bootstrap includes:</p>
+            <p>Your way of life has measurable costs on the environment. 
+                On this chart is displayed how much CO2 was released on the latest registered trips.</p>
             <ul>
-                <li><strong>Bootstrap v3.3.7</strong>
+                <li><strong>Here are the most well known consequences:</strong>
                 </li>
-                <li>jQuery v1.11.1</li>
-                <li>Font Awesome v4.2.0</li>
-                <li>Working PHP contact form with validation</li>
-                <li>Unstyled page elements for easy customization</li>
-                <li>17 HTML pages</li>
+                <li>Sea level rising</li>
+                <li>More frequent extrem weather</li>
+                <li>Ecosystem changes</li>
+                <li>Spread of diseases</li>
+                <li>Increased global warmth</li>
             </ul>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+            <p>A tree can absorb as much as 0.45kg of CO2 per year!</p>
         </div>
         <div class="col-md-6">
             <canvas id="myLineChart" width="100" height="100"></canvas>
