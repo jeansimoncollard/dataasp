@@ -1,4 +1,5 @@
-﻿using Dataasp.Backend.Enums;
+﻿using Dataasp.Backend.Entities;
+using Dataasp.Backend.Enums;
 using Dataasp.Backend.GoogleMaps.DistanceCalculter;
 using GoogleMaps.LocationServices;
 using System;
@@ -26,7 +27,13 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
             var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
 
             //.ToString("en-US") to have decimal point instead of comma as separator
-            return _mapGenerater.GenerateMap($"{{ lat: {startCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {startCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}}", $"{{ lat: {endCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {endCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", $"{{ lat: {wayPoint.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {wayPoint.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", travelMode.ToString(), isWaypoint); ;
+
+            var markers = new List<MarkerEntity>()
+            {
+                new MarkerEntity() {Latitude=startCoordinates.Latitude, Longitude=endCoordinates.Longitude, MarkerTitle= "Construction",color="green" },
+                 new MarkerEntity() {Latitude=endCoordinates.Latitude, Longitude=startCoordinates.Longitude, MarkerTitle= "Construction" ,color="red"}
+            };
+            return _mapGenerater.GenerateMap($"{{ lat: {startCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {startCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}}", $"{{ lat: {endCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {endCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", $"{{ lat: {wayPoint.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {wayPoint.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", travelMode.ToString(), isWaypoint, markers); ;
 
 
         }

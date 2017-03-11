@@ -58,15 +58,7 @@
                         <li><a runat="server" href="~/">Travel</a></li>
                         <li><a runat="server" href="~/Profile">Profile</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/About2.aspx">About</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">Login Stuff will go here</a>
-                                </li>
-                            </ul>
-                        </li>
+                        <!--<li><a runat="server" href="~/About2.aspx">About</a></li>-->
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
@@ -85,7 +77,6 @@
             </div>
             <!-- /.container -->
         </nav>
-        <div class="wrapper">
             <div class="container body-content">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
@@ -99,7 +90,7 @@
                                 <img src="images\logo.png" alt="Logo">
                                 About Us
                             </div>
-                            <p>Ecobecoisois creates awareness of your impact on the enviroment based on analytics of your personal transportation habits. Find out how sustainable your travel choices are and compare to those around you. Use Ecobecois to help make ecological choices in your daily commute.</p>
+                            <p>Ecobecois creates awareness of your impact on the enviroment based on analytics of your personal transportation habits. Find out how sustainable your travel choices are and compare to those around you. Use Ecobecois to help make ecological choices in your daily commute.</p>
                             <button class="btn">
                                 Learn More
                             </button>
@@ -109,8 +100,8 @@
                             <div>
                                 <b>Address:</b>
                                 <p><i class="fa fa-map-pin"></i>1600 Boulevard du Plateau-Saint-Joseph, Sherbrooke, QC J1L 0C8</p>
-                                <p><i class="fa fa-phone"></i>Phone (Canada) : <a href="tel:18272222193">(827)222-2193</a></p>
-                                <p><i class="fa fa-envelope"></i>E-mail : info@hackqc.azurewebsites.net</p>
+                                <p><i class="fa fa-phone"></i>Phone (Canada) : <a href="tel:18272222193">(827) 222-2193</a></p>
+                                <p><i class="fa fa-envelope"></i> E-mail : info@hackqc.azurewebsites.net</p>
                             </div>
                         </div>
                         <div class="col-md-4 element-top-50 element-bottom-30">
@@ -145,7 +136,6 @@
                     </div>
                 </div>
             </footer>
-        </div>
     </form>
     
 </body>

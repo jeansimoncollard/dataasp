@@ -130,11 +130,80 @@ a:hover, a:focus {
 }
 
 .navbar-brand img {
-    max-height: 120px;
+    max-height: 100px;
     background-color:#f5f5f5;
     border-radius: 100px;
     padding: 0;
-    margin: 5px;
+    text-align: center;
+
+}
+
+.period {
+    display: block;
+    font-style: italic;
+}
+
+
+/* Footer Styles */
+
+.footer {
+    width: 100%;
+    background-color: #46903E;
+    min-height: 350px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #6ED863;
+    text-decoration: underline;
+}
+
+/* Set some basic padding to keep content from hitting the edges */
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-inverse {
+    background-color: #228317;
+    border-color: #228317;
+}
+
+    .navbar-inverse .navbar-nav > li > a:focus,
+    .navbar-inverse .navbar-nav > li > a:hover {
+        color: #89D881;
+        background-color: transparent;
+    }
+
+    .navbar-inverse .navbar-brand:focus,
+    .navbar-inverse .navbar-brand:hover {
+        color: #89D881;
+        background-color: transparent;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #ffffff;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: #ffffff;
+    }
+
+.navbar-brand {
+    padding: 0 15px;
+}
+
+.navbar-brand img {
+    max-height: 100px;
+    background-color:#f5f5f5;
+    border-radius: 100px;
+    padding: 0;
     text-align: center;
 
 }
