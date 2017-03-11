@@ -60,7 +60,7 @@ namespace Dataasp
             var waypoint = new MapPoint() { Latitude = (startCoordinates.Latitude + endCoordinates.Latitude) / 2, Longitude = (startCoordinates.Longitude + endCoordinates.Longitude) / 2 };
             waypointValidater.IsWaypointViable(startAddress, endAddress, waypoint);
 
-            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, true);
+            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, false);
 
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
@@ -83,6 +83,10 @@ namespace Dataasp
             int _intSliderValue = Int32.Parse(distanceSlider.Text);
 
             MapPoint testMap = _wayPointGenerator.GenerateWayPoint(startCoordinates, endCoordinates, distance, _intSliderValue);
+
+            if (_intSliderValue != 0)
+                mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), testMap, true);
+
 
             div.InnerHtml += _intSliderValue;
         }
