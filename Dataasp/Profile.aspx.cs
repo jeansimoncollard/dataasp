@@ -19,7 +19,9 @@ namespace Dataasp
         public string Chart2Dates { get; set; }
         public string totalCO2Str { get; set; }
         public string DistanceChartData { get; set; }
-        
+        public string totalCostData { get; set; }
+        public string costData { get; set; }
+
         private JavascriptSerializer _jsArraySerializer;
         private UserHistoryLoader _userHistoryLoader;
 
@@ -31,7 +33,53 @@ namespace Dataasp
             travelbyTypeDisplay();
             volumeCO2Display();
             distanceChartDisplay();
+            costOfTravelDisplay();
         }
+        public void costOfTravelDisplay()
+        {
+                var currentUser = _userHistoryLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
+                ArrayList totalCost = new ArrayList() { 0 };
+                double y = 0;
+                double x = 0;
+                ArrayList individualCost = new ArrayList() { 0.0, 0.0, 0.0, 0.0 };
+                for (int i = 0; i < currentUser.UserHistory.Count; i++)
+                {
+                    UserTravelRecord Temp = new UserTravelRecord((UserTravelRecord)currentUser.UserHistory[i]);
+                    y += Temp.Cost;
+                    switch (Temp.TravelMode)
+                    {
+                        case TravelModeEnum.WALKING:
+                            x = (double)individualCost[0];
+                            x += Temp.Cost;
+                            individualCost[0] = x;
+                            break;
+                        case TravelModeEnum.BICYCLING:
+                            x = (double)individualCost[1];
+                            x += Temp.Cost;
+                            individualCost[1] = x;
+                            break;
+                    case TravelModeEnum.TRANSIT:
+                            x = (double)individualCost[2];
+                            x += Temp.Cost;
+                            individualCost[2] = x;
+                            break;
+                    case TravelModeEnum.DRIVING:
+                            x = (double)individualCost[3];
+                            x += Temp.Cost;
+                            individualCost[3] = x;
+                            break;
+
+
+                }
+
+                }
+
+                _jsArraySerializer = new JavascriptSerializer();
+                totalCost[0] = y;
+                totalCostData = _jsArraySerializer.Serialize(totalCost);
+                costData = _jsArraySerializer.Serialize(individualCost);
+
+            }
 
         public void distanceChartDisplay()
         {
