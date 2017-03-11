@@ -274,7 +274,7 @@
                         "#95a5a6",
                         "#9b59b6",
                     ],
-                    data:  <%= Chart1Data %>
+                    data:  <%= Chart1Data %>,
                 }]
             }
         });
