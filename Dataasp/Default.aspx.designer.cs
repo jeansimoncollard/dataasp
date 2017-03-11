@@ -31,6 +31,15 @@ namespace Dataasp {
         protected global::System.Web.UI.WebControls.TextBox toTextBox;
         
         /// <summary>
+        /// travelModeComboBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ComboBox travelModeComboBox;
+        
+        /// <summary>
         /// distanceSlider control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace Dataasp {
         protected global::System.Web.UI.WebControls.TextBox distanceSlider;
         
         /// <summary>
+        /// distanceSlider_SliderExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.SliderExtender distanceSlider_SliderExtender;
+        
+        /// <summary>
         /// securitySlider control.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace Dataasp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox securitySlider;
+        
+        /// <summary>
+        /// securitySlider_SliderExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.SliderExtender securitySlider_SliderExtender;
         
         /// <summary>
         /// addTripButton control.

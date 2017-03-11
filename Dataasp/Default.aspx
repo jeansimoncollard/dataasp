@@ -11,23 +11,34 @@
         <br />
         to:<asp:TextBox ID="toTextBox" runat="server"></asp:TextBox>
         <br />
+        <ajaxToolkit:ComboBox ID="travelModeComboBox" runat="server">
+            <asp:ListItem Value="DRIVING">Car</asp:ListItem>
+            <asp:ListItem Value="TRANSIT">Public Transport</asp:ListItem>
+            <asp:ListItem Value="BICYCLING">Bicycle</asp:ListItem>
+            <asp:ListItem Value="WALKING">Walking</asp:ListItem>
+        </ajaxToolkit:ComboBox>
         <br />
 
         <h1> Aidez-nous à vous suggérer une alternative durable</h1>
         <p> &nbsp;</p>
         <p> 
             <asp:TextBox ID="distanceSlider" runat="server"></asp:TextBox>
+            <ajaxToolkit:SliderExtender ID="distanceSlider_SliderExtender" runat="server" BehaviorID="distanceSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="distanceSlider" />
         </p>
         <p> 
             <asp:TextBox ID="securitySlider" runat="server"></asp:TextBox>
+            <ajaxToolkit:SliderExtender ID="securitySlider_SliderExtender" runat="server" BehaviorID="securitySlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="securitySlider" />
         </p>
         <p> &nbsp;</p>
         <p> 
-            <asp:Button ID="addTripButton" runat="server" Text="Button" />
+            <asp:Button ID="addTripButton" runat="server" Text="Button" OnClick="addTripButton_Click" />
         </p>
         <div id="mapDiv">
         </div>
-        <div id="quickStatsDiv">
+        <div id="quickStatsDiv"> <!-- Alex's spot to add qucikstat stuff -->
+            <ul id ="displayQuickstatsInfo">
+
+            </ul>
         </div>
         <p> &nbsp;</p>
     </div>
