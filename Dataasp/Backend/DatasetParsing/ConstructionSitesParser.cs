@@ -40,6 +40,16 @@ namespace Dataasp.Backend.DatasetParsing
 
         private void loadFileInDb(string fileContent)
         {
+            //clear table
+            using (SqlConnection connection = new SqlConnection(Settings.Default.ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("DELETE FROM construction_sites", connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
 
             var fileLines = _programLineDivider.DivideProgramLines(fileContent);
             foreach (Match line in fileLines)
@@ -56,19 +66,8 @@ namespace Dataasp.Backend.DatasetParsing
 
         private void insertInDb(MatchCollection match)
         {
-            //clear table
-            using (SqlConnection connection = new SqlConnection(Settings.Default.ConnectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand("DELETE FROM construction_sites", connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-                connection.Close();
-            }
-
             //insert new values
-            var query = $"insert into construction_sites values ('{match[0].Value.ToString(CultureInfo.CreateSpecificCulture("en-US"))}','{match[1].Value.ToString(CultureInfo.CreateSpecificCulture("en-US"))}')";
+            var query = $"insert into construction_sites values ('{match[0].Value.Replace(",",".")}','{match[1].Value.Replace(",", ".")}')";
 
             using (SqlConnection connection = new SqlConnection(Settings.Default.ConnectionString))
             {
