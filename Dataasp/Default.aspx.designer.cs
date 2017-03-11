@@ -58,22 +58,40 @@ namespace Dataasp {
         protected global::AjaxControlToolkit.SliderExtender distanceSlider_SliderExtender;
         
         /// <summary>
-        /// securitySlider control.
+        /// constructionSlider control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox securitySlider;
+        protected global::System.Web.UI.WebControls.TextBox constructionSlider;
         
         /// <summary>
-        /// securitySlider_SliderExtender control.
+        /// constructionSlider_SliderExtender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.SliderExtender securitySlider_SliderExtender;
+        protected global::AjaxControlToolkit.SliderExtender constructionSlider_SliderExtender;
+        
+        /// <summary>
+        /// photoRadarSlider control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox photoRadarSlider;
+        
+        /// <summary>
+        /// photoRadarSlider_SliderExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.SliderExtender photoRadarSlider_SliderExtender;
         
         /// <summary>
         /// addTripButton control.
