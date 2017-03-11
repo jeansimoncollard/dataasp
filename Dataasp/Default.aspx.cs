@@ -35,10 +35,5 @@ namespace Dataasp
             _quickstats.SetName("Yo dude");
             _quickstats.SetMeansOfTransportation("bus");
         }
-
-        protected void addTripButton_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

@@ -11,6 +11,9 @@ body {
     padding-right: 15px;
 }
 
+.nav {
+    color: #228317;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
