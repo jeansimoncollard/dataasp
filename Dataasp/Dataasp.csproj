@@ -368,6 +368,7 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Backend\Quickstats\Quickstats.cs" />
     <Compile Include="Backend\Serialization\JavascriptSerializer.cs" />
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

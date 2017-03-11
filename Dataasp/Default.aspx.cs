@@ -9,6 +9,10 @@ namespace Dataasp
 {
     public partial class _Default : Page
     {
+        //namespace Dataasp.Backend.Quickstats {
+       // Quickstats _quickstats;
+   // }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

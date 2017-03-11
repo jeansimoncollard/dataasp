@@ -23,7 +23,10 @@
         </p>
         <div id="mapDiv">
         </div>
-        <div id="quickStatsDiv">
+        <div id="quickStatsDiv"> <!-- Alex's spot to add qucikstat stuff -->
+            <ul id ="displayQuickstatsInfo">
+
+            </ul>
         </div>
         <p> &nbsp;</p>
     </div>
