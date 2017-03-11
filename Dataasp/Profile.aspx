@@ -10,7 +10,7 @@
     <!-- Features Section -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Ecobec</h1>
+            <h1 class="page-header">Ecobecois</h1>
         </div>
         <div class="col-md-6">
             <p>Your way of life has measurable costs on the environment. 
@@ -270,8 +270,8 @@
                         "#3498db",
                         "#95a5a6",
                         "#9b59b6",
-                    ],
-                    data:  <%= Chart1Data %>
+                   ],
+                    data:  <%= Chart1Data %>,
                 }]
             }
         });
@@ -322,7 +322,7 @@
             data: {
                 labels: <%= Chart2Dates %>,
                 datasets: [{
-                    label: 'total CO2 generated: ' + <%=totalCO2Str%>,
+                    label: 'total CO2 generated : ' + <%=totalCO2Str%>,
                     data: <%= ChartOnCO2Data %>,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
