@@ -1,19 +1,47 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
+
 /* Wrapping element */
+
+
 /* Set some basic padding to keep content from hitting the edges */
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.nav {
-    color: #228317;
+.navbar-inverse {
+    background-color: #228317;
+    border-color: #228317;
 }
+
+.navbar-inverse .navbar-nav>li>a:focus,
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #89D881;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-brand:focus,
+.navbar-inverse .navbar-brand:hover {
+    color: #89D881;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+}
+
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -35,50 +63,36 @@ input[type="select"] {
     .jumbotron {
         margin-top: 20px;
     }
+    
     .body-content {
         padding: 0;
     }
 }
 
-
-
 /*****************************************************************************
  * Extra small devices (phones, up to 767px)
  ****************************************************************************/
-@media (max-width: 767px) {
+@media (max-width: 767px) {}
 
-
-
-}
 /* Extra small devices (phones, up to 767px) end */
-
 
 /*****************************************************************************
  * Small devices (tablets, 768px and up)
  ****************************************************************************/
-@media (min-width: 768px) {
+@media (min-width: 768px) {}
 
-
-}
 /* Small devices (tablets, 768px and up) end */
-
 
 /*****************************************************************************
  * Medium devices (desktops, 992px and up)
  ****************************************************************************/
-@media (min-width: 992px) {
+@media (min-width: 992px) {}
 
-
-}
 /* Medium devices (desktops, 992px and up) end */
-
 
 /*****************************************************************************
  * Large devices (large desktops, 1200px and up)
  ****************************************************************************/
-@media (min-width: 1200px) {
+@media (min-width: 1200px) {}
 
-    
-}
 /* Large devices (large desktops, 1200px and up) end */
-
