@@ -57,7 +57,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" href="~/">Travel</a></li>
                         <li><a runat="server" href="~/Profile">Profile</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <!--<li><a runat="server" href="~/Contact">Contact</a></li>-->
                         <li><a runat="server" href="~/About2.aspx">About</a></li>
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
@@ -90,7 +90,7 @@
                                 <img src="images\logo.png" alt="Logo">
                                 About Us
                             </div>
-                            <p>Ecobecoisois creates awareness of your impact on the enviroment based on analytics of your personal transportation habits. Find out how sustainable your travel choices are and compare to those around you. Use Ecobecois to help make ecological choices in your daily commute.</p>
+                            <p>Ecobecois creates awareness of your impact on the enviroment based on analytics of your personal transportation habits. Find out how sustainable your travel choices are and compare to those around you. Use Ecobecois to help make ecological choices in your daily commute.</p>
                             <button class="btn">
                                 Learn More
                             </button>
