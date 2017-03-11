@@ -13,6 +13,7 @@ using Dataasp.Backend.Enums;
 //using Dataasp.Backend.jstemporaryclickbutton;
 using Dataasp.Backend.DataAccess;
 using Dataasp.Backend.Entities;
+using GoogleMaps.LocationServices;
 
 namespace Dataasp
 {
@@ -51,7 +52,8 @@ namespace Dataasp
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
             var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
             //_jstemporarybuttonclicker.clicked();
-           // mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, false);
+            MapPoint waypoint = new MapPoint();
+            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, false);
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
 
@@ -69,10 +71,10 @@ namespace Dataasp
             var sliderDistanceValue = distanceSlider.Text;
             int _intSliderValue = Int32.Parse(distanceSlider.Text);
 
-            MapPoint testMap = _wayPointGenerator.GenerateWayPoint(startCoordinates, endCoordinates, distance, _intSliderValue);
+            //MapPoint testMap = _wayPointGenerator.GenerateWayPoint(startCoordinates, endCoordinates, distance, _intSliderValue);
 
-            if (_intSliderValue != 0)
-                mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), testMap, true);
+           // if (_intSliderValue != 0)
+            //    mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), testMap, true);
 
 
             div.InnerHtml += _intSliderValue;
