@@ -50,9 +50,8 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">
-                        <img alt="Logo" src="~/images/logo.png" runat="server">
+                        <img alt="Logo" src="~/images/ecobecois_logo_couleur.png" runat="server">
                     </a>
-                    <h2 class="pull-left align-middle">Ecobecois</h2>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
