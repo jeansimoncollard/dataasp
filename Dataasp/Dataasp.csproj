@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=16.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.16.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GoogleMaps.LocationServices, Version=0.1.5926.26040, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleMaps.LocationServices.0.9.8.6\lib\net40\GoogleMaps.LocationServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -182,6 +190,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GoogleMaps.LocationServices.readme.txt" />
     <Content Include="Profile.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -369,6 +378,9 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Backend\Quickstats\Quickstats.cs" />
+    <Compile Include="Backend\Entities\UserHistoryEntity.cs" />
+    <Compile Include="Backend\Entities\UserTravelRecord.cs" />
+    <Compile Include="Backend\Enums\TravelModeEnum.cs" />
     <Compile Include="Backend\Serialization\JavascriptSerializer.cs" />
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
