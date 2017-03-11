@@ -15,19 +15,20 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
             var futureString = new List<char>();
             foreach (var marker in markers)
             {
-                futureString.AddRange(generateMaker(marker.Latitude, marker.Longitude, marker.MarkerTitle, marker.color));
+                futureString.AddRange(generateMaker(marker.Latitude, marker.Longitude, marker.MarkerTitle, marker.Image));
             }
             return new string(futureString.ToArray());
         }
-        private string generateMaker(double latitude, double longitude, string markerTitle, string color)
+        private string generateMaker(double latitude, double longitude, string markerTitle, string image)
         {
             return $@"
 
                 var marker = new google.maps.Marker({{
                 position: {{lat: {latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}},
                 map: map,
-                title: '{markerTitle}'
-                icon: 'http://maps.google.com/mapfiles/ms/icons/{color}-dot.png'
+                title: '{markerTitle}',
+                icon: '{image}',
+                label: '{markerTitle}'
               }});
 
         ";

@@ -320,7 +320,7 @@
                 data: {
                     labels: <%= Chart2Dates %>,
                 datasets: [{
-                    label: 'total CO2 generated: ' + <%=totalCO2Str%>,
+                    label: 'total CO2 generated : ' + <%=totalCO2Str%>,
                     data: <%= ChartOnCO2Data %>,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
