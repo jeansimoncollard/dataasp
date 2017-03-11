@@ -2,6 +2,7 @@
 using Dataasp.Backend.Enums;
 using Dataasp.Backend.GoogleMaps.DistanceCalculter;
 using Dataasp.Backend.GoogleMaps.MapGeneration;
+using Dataasp.Backend.Quickstats;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +17,14 @@ namespace Dataasp
         private DistanceCalculater _distanceCalculater;
         private MapGeneraterAdapter _mapGeneraterAdapter;
         private StringToTravelEnumConverter _stringToTravelEnumConvert;
+        private Quickstats _quickstats;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             _distanceCalculater = new DistanceCalculater();
             _mapGeneraterAdapter = new MapGeneraterAdapter();
             _stringToTravelEnumConvert = new StringToTravelEnumConverter();
+            _quickstats = new Quickstats();
         }
 
         protected void addTripButton_Click(object sender, EventArgs e)
@@ -39,7 +42,7 @@ namespace Dataasp
 
 
 
-            _quickstats.ShowStats(div);
+            _quickstats.ShowStats(quickStatsDiv);
         }
     }
 }
