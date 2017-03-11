@@ -19,7 +19,7 @@ namespace Dataasp
         {
 
             UserTravelRecord testRecord = new UserTravelRecord(DateTime.Now, 50, 0);
-            UserHistoryEntity currentUser = new UserHistoryEntity();
+            UserHistoryEntityArrayList currentUser = new UserHistoryEntityArrayList();
 
             currentUser.UserHistory = new ArrayList(){
                 new UserTravelRecord(DateTime.Now, 5, 0),

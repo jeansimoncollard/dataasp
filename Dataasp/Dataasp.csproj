@@ -384,13 +384,15 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Backend\DataAccess\UserHistoryLoader.cs" />
     <Compile Include="Backend\DataAccess\UserTravelStorer.cs" />
+    <Compile Include="Backend\Entities\UserHistoryEntityArraylist.cs" />
     <Compile Include="Backend\Enums\StringToTravelEnumConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\AddressLatLongConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\DistanceCalculater.cs" />
     <Compile Include="Backend\jstemporaryclickbutton\jstemporarybuttonclicker.cs" />
     <Compile Include="Backend\Quickstats\Quickstats.cs" />
-    <Compile Include="Backend\Entities\UserHistoryEntity.cs" />
+    <Compile Include="Backend\Entities\UserHistoryEntityList.cs" />
     <Compile Include="Backend\Entities\UserTravelRecord.cs" />
     <Compile Include="Backend\Enums\TravelModeEnum.cs" />
     <Compile Include="Backend\GoogleMaps\MapGeneration\MapGenerater.cs" />
