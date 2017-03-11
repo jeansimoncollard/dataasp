@@ -57,8 +57,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" href="~/">Travel</a></li>
                         <li><a runat="server" href="~/Profile">Profile</a></li>
-                        <!--<li><a runat="server" href="~/Contact">Contact</a></li>-->
-                        <li><a runat="server" href="~/About2.aspx">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <!--<li><a runat="server" href="~/About2.aspx">About</a></li>-->
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
