@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- saved from url=(1055)https://acs.adgear.com/clients/gouvcan/22057/R2-bigbox_fr/R3-2/Energy_Canada_BigBox_EnergyStarC2_Digtial_Ad_French_HTML5_Final.html?adserver=adgear&instance_string=8c36525e-061b-11e7-b7eb-0cc47ade8560&clickTAG=https%3A%2F%2Frtb.adgrx.com%2Fclicks%2Fd347SmnwwZrDRsDlChCLm1aMBhsR55xjpWOlFHgYEjZiY2I0ZTY4MS03YWJhLWRiNTEtMWY1NS0yNjk3ZjRhODNjNTM6MTQ4OTIxMDEwMzM2MToxOjEYDCAAKAEw840DOPHpBEAHSLuFuANSIWh0dHBzOi8veS1mbGlja3IueWFob28uY29tL2FkLmduZVgBYAJoAXACeAGAAQCyAR6RAwFjAQEBAQEBAQEBAQEBAwEBDQHUB_kBgLgYAQHAAQHlAQD3n0XoAUTwAQWCAhDiAdReLx0R5pgEW4ZIAzvmmAIArQLg959F0gINbGdhLWdhdGV3YXktMw%3D%3D%2Fhttps%3A%2F%2Fd.adgear.com%2Fclicks%2Fext%2Fb%3DVFhOPThjMzY1MjVlLTA2MWItMTFlNy1iN2ViLTBjYzQ3YWRlODU2MCZSVEI9cmVxdWVzdF9pZCUzRDhiOWI1NjhjLTA2MWItMTFlNy05YzYzLWE1NjNhNTE0NzgxOCUyNnNwb3RfaWQlM0RiY2I0ZTY4MS03YWJhLWRiNTEtMWY1NS0yNjk3ZjRhODNjNTMlMjUzQTE0ODkyMTAxMDMzNjElMjUzQTElMjUzQTElMjZmbGlnaHRfaWQlM0Q1MDkzMSUyNmNyZWF0aXZlX2lkJTNENzkwODklMjZiaWRkZXJfaWQlM0QxJTI2ZXhjaGFuZ2VfaWQlM0QxMiUyNmV4Y2hhbmdlX3NlbGxlcl9pZCUzRDA*%2Fp%3D266023%2Fa%3D175554%2Fc%3D159510%3FAG_RED%3D -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Energy_Canada_BigBox_EnergyStarC2_Digtial_Ad_French_HTML5_Final</title>
+<!-- AdGear HTML5 JS API -->
+<script type="text/javascript" src="./html5.min.js.téléchargement"></script>
+<!-- write your code here -->
+<script src="./createjs-2015.11.26.min.js.téléchargement"></script>
+<script src="./Energy_Canada_BigBox_EnergyStarC2_Digtial_Ad_French_HTML5_Final.js.téléchargement"></script>
+<script>
+var canvas, stage, exportRoot;
+function init() {
+	// --- write your JS code here ---
+	canvas = document.getElementById("canvas");
+	images = images||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+function handleComplete(evt) {
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.Energy_Canada_BigBox_EnergyStarC2_Digtial_Ad_French_HTML5_Final();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.enableMouseOver();
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="background-color:#D4D4D4;margin:0px;" marginwidth="0" marginheight="0">
+	<canvas id="canvas" width="300" height="250" style="background-color:rgba(255, 255, 255, 1.00)"></canvas>
+
+
+</body></html>
