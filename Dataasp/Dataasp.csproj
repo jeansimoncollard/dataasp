@@ -190,6 +190,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About2.aspx" />
     <Content Include="Content\googlemap.css" />
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
@@ -315,6 +316,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About2.aspx.cs">
+      <DependentUpon>About2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About2.aspx.designer.cs">
+      <DependentUpon>About2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

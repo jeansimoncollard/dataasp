@@ -10,6 +10,6 @@
 namespace Dataasp {
     
     
-    public partial class About {
+    public partial class About2 {
     }
 }
