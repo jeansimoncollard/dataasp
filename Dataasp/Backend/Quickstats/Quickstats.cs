@@ -17,7 +17,7 @@ namespace Dataasp.Backend.Quickstats
 
         private double _ETA;                    //estimated time before arrival for the user
 
-        private void setFootPrint()             //sets the user's ecological footprint based on means of transportation and distance
+        private void SetFootPrint()             //sets the user's ecological footprint based on means of transportation and distance
         {
             switch (_meansOfTransportation)
             {
@@ -33,19 +33,25 @@ namespace Dataasp.Backend.Quickstats
         }
 
 
-        public double getETA()                  //returns the user's ETA for his travel
+        public void SetMeansOfTransportation(string transp)
+        {
+            _meansOfTransportation = transp;
+        }
+
+
+        public double GetETA()                  //returns the user's ETA for his travel
         {
             return _ETA;
         }
 
 
-        private double getFootprint()           //returns the user's footprint
+        private double GetFootprint()           //returns the user's footprint
         {   
             return _footPrint;
         }
 
 
-        public void setName(string name)        //setter for user name
+        public void SetName(string name)        //setter for user name
         {
             _name = name;
         }

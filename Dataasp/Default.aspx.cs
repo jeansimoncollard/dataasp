@@ -10,12 +10,12 @@ namespace Dataasp
 {
     public partial class _Default : Page
     {
-        Quickstats _quickstats;
+        Quickstats _quickstats = new Quickstats();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            
+            _quickstats.SetName("Yo dude");
+            _quickstats.SetMeansOfTransportation("bus");
         }
 
         protected void addTripButton_Click(object sender, EventArgs e)
