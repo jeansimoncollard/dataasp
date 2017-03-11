@@ -10,16 +10,16 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
 
         public string GenerateMap(string start, string end, string waypoint, string transportationMode, bool isUseWayPoint)
         {
-            var commentLine = "//";//This string is used to comment out waypoint in javascript function if needed
+            var commentLine = "";//This string is used to comment out waypoint in javascript function if needed
 
-            if (isUseWayPoint)
+            if (!isUseWayPoint || transportationMode.ToUpper() == "TRANSIT") //If we force a waypoint when there's a but it's gonna give zero results unless the waypoint is on a busstop
             {
-                commentLine = "";
+                commentLine = "//";
             }
 
             return
                 @"<div class=""row"">
-                <div class=""col-md-8"">
+                <div class=""col-md-12"">
                     <div id=""map""></div>
                 </div>
             </div>
@@ -204,7 +204,7 @@ map.mapTypes.set('map_style', styledMap);
                         destination: end,
                         " + commentLine + @"waypoints: [{location: waypoint, stopover: false}],
                         origin: start,
-                        travelMode: transportationMode
+                        travelMode: google.maps.TravelMode[transportationMode]
                     };
 
                 // Pass the directions request to the directions service.

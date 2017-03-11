@@ -190,8 +190,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About2.aspx" />
     <Content Include="Content\googlemap.css" />
+    <Content Include="font-awesome\css\font-awesome.css" />
+    <Content Include="font-awesome\css\font-awesome.min.css" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="GoogleMaps.LocationServices.readme.txt" />
+    <Content Include="images\bikepathfall.jpg" />
+    <Content Include="images\bikers.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\panda-eating.jpg" />
+    <Content Include="images\rsz_1alex.jpg" />
     <Content Include="Profile.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -220,6 +229,36 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="font-awesome\less\bordered-pulled.less" />
+    <Content Include="font-awesome\less\core.less" />
+    <Content Include="font-awesome\less\fixed-width.less" />
+    <Content Include="font-awesome\less\font-awesome.less" />
+    <Content Include="font-awesome\less\icons.less" />
+    <Content Include="font-awesome\less\larger.less" />
+    <Content Include="font-awesome\less\list.less" />
+    <Content Include="font-awesome\less\mixins.less" />
+    <Content Include="font-awesome\less\path.less" />
+    <Content Include="font-awesome\less\rotated-flipped.less" />
+    <Content Include="font-awesome\less\spinning.less" />
+    <Content Include="font-awesome\less\stacked.less" />
+    <Content Include="font-awesome\less\variables.less" />
+    <Content Include="font-awesome\scss\font-awesome.scss" />
+    <Content Include="font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="font-awesome\scss\_core.scss" />
+    <Content Include="font-awesome\scss\_fixed-width.scss" />
+    <Content Include="font-awesome\scss\_icons.scss" />
+    <Content Include="font-awesome\scss\_larger.scss" />
+    <Content Include="font-awesome\scss\_list.scss" />
+    <Content Include="font-awesome\scss\_mixins.scss" />
+    <Content Include="font-awesome\scss\_path.scss" />
+    <Content Include="font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="font-awesome\scss\_spinning.scss" />
+    <Content Include="font-awesome\scss\_stacked.scss" />
+    <Content Include="font-awesome\scss\_variables.scss" />
     <None Include="Properties\PublishProfiles\dataasp.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -263,6 +302,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="UpdateDatabase.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -278,6 +318,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About2.aspx.cs">
+      <DependentUpon>About2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About2.aspx.designer.cs">
+      <DependentUpon>About2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -386,11 +433,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Backend\DataAccess\UserHistoryLoader.cs" />
     <Compile Include="Backend\DataAccess\UserTravelStorer.cs" />
+    <Compile Include="Backend\DatasetParsing\ConstructionSitesParser.cs" />
+    <Compile Include="Backend\DatasetParsing\DatasetParser.cs" />
+    <Compile Include="Backend\DatasetParsing\ParsingTools\ProgramLineDivider.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntityArraylist.cs" />
+    <Compile Include="Backend\Entities\WaypointScore.cs" />
     <Compile Include="Backend\Enums\StringToTravelEnumConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\AddressLatLongConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\DistanceCalculater.cs" />
-    <Compile Include="Backend\jstemporaryclickbutton\jstemporarybuttonclicker.cs" />
+    <Compile Include="Backend\GoogleMaps\WayPointGeneration\ConstructionSiteWaypointGenerater.cs" />
+    <Compile Include="Backend\GoogleMaps\WayPointGeneration\WaypointValidater.cs" />
+    <Compile Include="Backend\GoogleMaps\WayPointGeneration\WayPointGenerator.cs" />
     <Compile Include="Backend\Quickstats\Quickstats.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntityList.cs" />
     <Compile Include="Backend\Entities\UserTravelRecord.cs" />
@@ -447,6 +500,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UpdateDatabase.aspx.cs">
+      <DependentUpon>UpdateDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateDatabase.aspx.designer.cs">
+      <DependentUpon>UpdateDatabase.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -457,8 +517,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Backend\GoogleMaps\WayPointGeneration\" />
-    <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

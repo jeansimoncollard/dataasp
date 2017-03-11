@@ -28,12 +28,31 @@ namespace Dataasp.Backend.DataAccess
                         while (reader.Read())
                         {
                             var userTravelRecord = new UserTravelRecord();
-                            userTravelRecord.DateOfTrip = reader.GetDateTime(0);
-                            userTravelRecord.MetersTravelled = reader.GetInt32(1);
-                            userTravelRecord.TravelMode = (TravelModeEnum)reader.GetInt32(2);
-                            userTravelRecord.Username = reader.GetString(3).Trim();
-                            userTravelRecord.VolumeCO2 = (double)reader[4];
+                            if (!reader.IsDBNull(0))
+                            {
+                                userTravelRecord.DateOfTrip = reader.GetDateTime(0);
+                            }
+                            if (!reader.IsDBNull(1))
+                            {
+                                userTravelRecord.MetersTravelled = reader.GetInt32(1);
+                            }
+                            if (!reader.IsDBNull(2))
+                            {
+                                userTravelRecord.TravelMode = (TravelModeEnum)reader.GetInt32(2);
+                            }
+                            if (!reader.IsDBNull(3))
+                            {
+                                userTravelRecord.Username = reader.GetString(3).Trim();
+                            }
 
+                            if (!reader.IsDBNull(4))
+                            {
+                                userTravelRecord.VolumeCO2 = (double)reader[4];
+                            }
+                            if (!reader.IsDBNull(5))
+                            {
+                                userTravelRecord.Cost = (double)reader[5];
+                            }
                             userHistory.UserHistory.Add(userTravelRecord);
                         }
                     }
