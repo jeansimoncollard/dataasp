@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Your Profile" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Dataasp.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <br /><br />
     <h2><%: Title %>.</h2>
     <h3>Ecobecois gives you valuable information to improve your ecological footprint.</h3>
     <p>In this section you will find useful graphs giving you statistics on your recent travel costs, both ecological and money related.</p>
