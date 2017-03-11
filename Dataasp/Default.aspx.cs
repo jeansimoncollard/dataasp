@@ -63,7 +63,7 @@ namespace Dataasp
             _quickstats.SetDistance(distance);
             _quickstats.SetName("Alex");
             _quickstats.SetMeansOfTransportation(travelModeComboBox.SelectedValue);
-            _quickstats.SetFootPrint();            
+            _quickstats.SetFootPrint();
 
             _quickstats.ShowStats(div);
         }
@@ -79,6 +79,9 @@ namespace Dataasp
                 TravelMode = _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue)
             };
             _userTravelStorer.StoreTravel(travelRecord);
+
+            var historyLoader = new UserHistoryLoader();
+            historyLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
         }
     }
 }

@@ -384,6 +384,7 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Backend\DataAccess\UserHistoryLoader.cs" />
     <Compile Include="Backend\DataAccess\UserTravelStorer.cs" />
     <Compile Include="Backend\Enums\StringToTravelEnumConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\AddressLatLongConverter.cs" />
