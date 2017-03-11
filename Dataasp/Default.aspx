@@ -17,9 +17,15 @@
         <p> &nbsp;</p>
         <p> 
             <asp:TextBox ID="distanceSlider" runat="server"></asp:TextBox>
+            <ajaxToolkit:SliderExtender ID="distanceSlider_SliderExtender" runat="server" BehaviorID="distanceSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="distanceSlider" />
         </p>
         <p> 
             <asp:TextBox ID="securitySlider" runat="server"></asp:TextBox>
+            <ajaxToolkit:SliderExtender ID="securitySlider_SliderExtender" runat="server" BehaviorID="securitySlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="securitySlider" />
+        </p>
+        <p> &nbsp;</p>
+        <p> 
+            <asp:Button ID="addTripButton" runat="server" Text="Button" />
         </p>
         <div id="mapDiv">
         </div>
