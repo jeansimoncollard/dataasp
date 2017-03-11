@@ -1,4 +1,5 @@
-﻿using Dataasp.Backend.Entities;
+﻿using Dataasp.Backend.DataAccess;
+using Dataasp.Backend.Entities;
 using Dataasp.Backend.Enums;
 using Dataasp.Backend.Serialization;
 using System;
@@ -15,20 +16,17 @@ namespace Dataasp
     {
         public string Chart1Data { get; set; }
         private JavascriptSerializer _jsArraySerializer;
+        private UserHistoryLoader _userHistoryLoader;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
             UserTravelRecord testRecord = new UserTravelRecord(DateTime.Now, 50, 0);
-            UserHistoryEntityArrayList currentUser = new UserHistoryEntityArrayList();
 
-            currentUser.UserHistory = new ArrayList(){
-                new UserTravelRecord(DateTime.Now, 5, 0),
-                new UserTravelRecord(DateTime.Now, 5, 0),
-                new UserTravelRecord(DateTime.Now, 5, 2),
-                new UserTravelRecord(DateTime.Now, 5, 1),
-                 };
+            _userHistoryLoader = new UserHistoryLoader();
 
-            currentUser.UserHistory.Add(testRecord);
+            var currentUser = _userHistoryLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
+
             ArrayList travelByType = new ArrayList() { 0, 0, 0, 0 };
             int x = 0;
             for(int i = 0; i < currentUser.UserHistory.Count; i++)

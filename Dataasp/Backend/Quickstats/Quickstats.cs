@@ -57,7 +57,7 @@ namespace Dataasp.Backend.Quickstats
         }
 
 
-        private double GetFootprint()           //returns the user's footprint
+        public double GetFootprint()           //returns the user's footprint
         {   
             return _footPrint;
         }
@@ -87,7 +87,7 @@ namespace Dataasp.Backend.Quickstats
                 "<ul> <li>Your name: "+ _name+"</li>"+
                 "<li>Distance: "+ GetDistanceInKm() + " km</li>"+
                 "<li>Using: "+ _meansOfTransportation + "</li>"+
-                "<li>Your Ecological Footprint: " + _footPrint + " metric tons of co2</li>"+
+                "<li>Your Ecological Footprint: " + Math.Round(_footPrint,2) + " metric tons of co2</li>"+
                 "</ul>";
         }
     }

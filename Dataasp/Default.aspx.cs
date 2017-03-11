@@ -61,7 +61,7 @@ namespace Dataasp
             div.Attributes.Remove("class"); //removes the danger class highlight
 
             _quickstats.SetDistance(distance);
-            _quickstats.SetName("Alex");
+            _quickstats.SetName(HttpContext.Current.User.Identity.Name);
             _quickstats.SetMeansOfTransportation(travelModeComboBox.SelectedValue);
             _quickstats.SetFootPrint();
 
@@ -75,8 +75,9 @@ namespace Dataasp
                 Username = HttpContext.Current.User.Identity.Name,
                 DateOfTrip = DateTime.Now,
                 MetersTravelled = distance,
-                VolumeCO2 = 0,
-                TravelMode = _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue)
+                VolumeCO2 = _quickstats.GetFootprint(),
+                TravelMode = _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue),
+
             };
             _userTravelStorer.StoreTravel(travelRecord);
 

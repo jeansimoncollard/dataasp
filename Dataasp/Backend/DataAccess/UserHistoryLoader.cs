@@ -15,7 +15,6 @@ namespace Dataasp.Backend.DataAccess
         public UserHistoryEntityList LoadHistory(string username)
         {
             var userHistory = new UserHistoryEntityList();
-
             using (var conn = new SqlConnection(Settings.Default.ConnectionString))
             {
                 conn.Open();
