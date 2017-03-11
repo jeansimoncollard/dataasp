@@ -7,16 +7,14 @@ using System.Collections.Generic;
 
 namespace Dataasp.Backend.Entities
 {
-    public class UserHistoryEntity
+    public class UserHistoryEntityList
     {
-       
+
         public List<UserTravelRecord> UserHistory { get; set; }
 
-        public UserHistoryEntity()
+        public UserHistoryEntityList()
         {
             UserHistory = new List<UserTravelRecord>();
         }
     }
-
-
-u
+}

@@ -1,5 +1,6 @@
 ﻿
 using Dataasp.Backend.Entities;
+using Dataasp.Backend.Enums;
 using Dataasp.Properties;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ namespace Dataasp.Backend.DataAccess
 {
     public class UserHistoryLoader
     {
-        public UserHistoryEntity LoadHistory(string username)
+        public UserHistoryEntityList LoadHistory(string username)
         {
-            var userHistory = new UserHistoryEntity();
+            var userHistory = new UserHistoryEntityList();
 
             using (var conn = new SqlConnection(Settings.Default.ConnectionString))
             {
@@ -24,14 +25,16 @@ namespace Dataasp.Backend.DataAccess
                     command.Parameters.AddWithValue("@username", username);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
-                            userHistory.UserHistory.Add(new UserTravelRecord()
-                            {
-                                
+                            var userTravelRecord = new UserTravelRecord();
+                            userTravelRecord.DateOfTrip = reader.GetDateTime(0);
+                            userTravelRecord.MetersTravelled = reader.GetInt32(1);
+                            userTravelRecord.TravelMode = (TravelModeEnum)reader.GetInt32(2);
+                            userTravelRecord.Username = reader.GetString(3).Trim();
+                            userTravelRecord.VolumeCO2 = (double)reader[4];
 
-                            });
-                            Console.WriteLine(String.Format("{0}", reader["id"]));
+                            userHistory.UserHistory.Add(userTravelRecord);
                         }
                     }
                 }
