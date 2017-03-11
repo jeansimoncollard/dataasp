@@ -15,9 +15,11 @@ namespace Dataasp
     public partial class About : Page
     {
         public string Chart1Data { get; set; }
-        public string Chart2Data { get; set; }
+        public string ChartOnCO2Data { get; set; }
         public string Chart2Dates { get; set; }
         public string totalCO2Str { get; set; }
+        public string DistanceChartData { get; set; }
+        
         private JavascriptSerializer _jsArraySerializer;
         private UserHistoryLoader _userHistoryLoader;
 
@@ -28,10 +30,55 @@ namespace Dataasp
 
             travelbyTypeDisplay();
             volumeCO2Display();
+            distanceChartDisplay();
+        }
+
+        public void distanceChartDisplay()
+        {
+            var currentUser = _userHistoryLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
+            ArrayList distanceByType = new ArrayList() { 0.0, 0.0, 0.0, 0.0 };
+            double x = 0;
+            for (int i = 0; i < currentUser.UserHistory.Count; i++)
+            {
+                UserTravelRecord Temp = new UserTravelRecord((UserTravelRecord)currentUser.UserHistory[i]);
+                double kilometersTravelled = (Temp.MetersTravelled / 1000.0);
+                switch (Temp.TravelMode)
+                {
+                    case TravelModeEnum.WALKING:
+                        kilometersTravelled += (double)distanceByType[0];
+                        distanceByType[0] = kilometersTravelled;
+                        break;
+                    case TravelModeEnum.BICYCLING:
+                        x = (double)distanceByType[1];
+                        x += kilometersTravelled;
+                        distanceByType[1] = x;
+                        break;
+                    case TravelModeEnum.TRANSIT:
+                        x = (double)distanceByType[2];
+                        x += kilometersTravelled;
+                        distanceByType[2] = x;
+                        break;
+                    case TravelModeEnum.DRIVING:
+                        x = (double)distanceByType[3];
+                        x += kilometersTravelled;
+                        distanceByType[3] = x;
+                        break;
 
 
+                }
+
+            }
+            for(int i = 0; i < distanceByType.Count; i++)
+            {
+                x = (double)distanceByType[i];
+                distanceByType[i] = Math.Round(x, 2);
+            }
+            _jsArraySerializer = new JavascriptSerializer();
+
+            DistanceChartData = _jsArraySerializer.Serialize(distanceByType);
 
         }
+
         public void travelbyTypeDisplay()
         {
             var currentUser = _userHistoryLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
@@ -100,7 +147,7 @@ namespace Dataasp
             _jsArraySerializer = new JavascriptSerializer();
             totalCO2[0] = y;
             totalCO2Str = _jsArraySerializer.Serialize(totalCO2);
-            Chart2Data = _jsArraySerializer.Serialize(individualCO2);
+            ChartOnCO2Data = _jsArraySerializer.Serialize(individualCO2);
             Chart2Dates = _jsArraySerializer.Serialize(dates);
 
         }

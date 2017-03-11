@@ -18,17 +18,48 @@ namespace Dataasp.Backend.Quickstats
 
         private double _ETA;                    //estimated time before arrival for the user
 
+        private double _cost;                  //estimated cost in dollars
+        private string _costSTR;
+
         public void SetFootPrint()             //sets the user's ecological footprint based on means of transportation and distance
         {
+
             switch (_meansOfTransportation)
             {
-                case "a Car": _footPrint = Math.Round(( _distance) * (0.023/100), 10);     //100 km means 0.023t of co2
+                case "a Car":
+                    _footPrint = Math.Round((GetDistanceInKm()) * (13.86/100), 10);     //100 km means 13.8kg of co2
+                    _cost = Math.Round((((GetDistanceInKm()/100)*6.63)*1.11), 2);
+                    _costSTR = "based on current average fuel prices for Quebec";
                     break;
-                case "the Public Transport system": _footPrint = Math.Round((_distance / 100.0) * 0.01, 5); //100km means 0.01t of co2
+                case "the Public Transport system":
+                    _footPrint = Math.Round((GetDistanceInKm()) * 0.089, 5); //1km means 0.089kg of co2 per person
+                    if (GetDistanceInKm() < 50)
+                    {
+                        _cost = 3.25;
+                        break;
+                        _costSTR = "price of a single bus ticket for local transport";
+                    }
+                    else
+                    {
+                        _cost = 35.87;
+                        _costSTR = "approximate price of an inter-city bus";
+                    }
                     break;
-                case "a Bicycle": _footPrint = Math.Round((_distance / 1.6) * (150.0 / 1000 / 1000) / 100, 15);     //per km footprint of bycicle
+                case "a Bicycle":
+                    _footPrint = 0;     //per km footprint of bycicle
+                    if (GetDistanceInKm() < 50)
+                    {
+                        _cost = 2.95;
+                        _costSTR = "30 minute Bixi Rental";
+                        break;
+                    }
+                    else _cost = 5;
+                    _costSTR = "full day Bixi Rental";
                     break;
-                case "your feet!": _footPrint = Math.Round((_distance / 1.6) * (75.0 / 1000 / 1000) / 100, 15);     //for just walking
+                case "your feet!":
+                    _footPrint = 0;     //for just walking
+                    _cost = 0;
+                    _costSTR = "free";
                     break;
             }
         }
@@ -87,6 +118,7 @@ namespace Dataasp.Backend.Quickstats
                 "<ul> <li>Your name: "+ _name+"</li>"+
                 "<li>Distance: "+ GetDistanceInKm() + " km</li>"+
                 "<li>Using: "+ _meansOfTransportation + "</li>"+
+                "<li>Approximate cost: $" +_cost+ " " +_costSTR+
                 "<li>Your Ecological Footprint: " + Math.Round(_footPrint,2) + " Kilograms of CO2</li>"+
                "<li>Slider Value: </li>" +
                 "</ul>";
