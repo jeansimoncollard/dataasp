@@ -12,6 +12,7 @@ namespace Dataasp.Backend.DataAccess
 {
     public class UserHistoryLoader
     {
+        //Call this function to get history data of user. Use HttpContext.Current.User.Identity.Name to get username
         public UserHistoryEntityList LoadHistory(string username)
         {
             var userHistory = new UserHistoryEntityList();
