@@ -15,8 +15,13 @@ namespace Dataasp
         private JavascriptSerializer _jsArraySerializer;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             _jsArraySerializer = new JavascriptSerializer();
             Chart1Data = _jsArraySerializer.Serialize(new ArrayList() { 2, 4, 6, 7, 3, 2 });
+
+
+
+
         }
 
 
