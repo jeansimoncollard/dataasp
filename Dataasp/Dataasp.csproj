@@ -190,6 +190,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\googlemap.css" />
     <Content Include="GoogleMaps.LocationServices.readme.txt" />
     <Content Include="Profile.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
@@ -379,12 +380,16 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Backend\Enums\StringToTravelEnumConverter.cs" />
+    <Compile Include="Backend\GoogleMaps\DistanceCalculation\AddressLatLongConverter.cs" />
+    <Compile Include="Backend\GoogleMaps\DistanceCalculation\DistanceCalculater.cs" />
+    <Compile Include="Backend\jstemporaryclickbutton\jstemporarybuttonclicker.cs" />
     <Compile Include="Backend\Quickstats\Quickstats.cs" />
-    <Compile Include="Backend\GoogleMaps\DistanceCalculter\AddressLatLongConverter.cs" />
-    <Compile Include="Backend\GoogleMaps\DistanceCalculter\DistanceCalculater.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntity.cs" />
     <Compile Include="Backend\Entities\UserTravelRecord.cs" />
     <Compile Include="Backend\Enums\TravelModeEnum.cs" />
+    <Compile Include="Backend\GoogleMaps\MapGeneration\MapGenerater.cs" />
+    <Compile Include="Backend\GoogleMaps\MapGeneration\MapGeneraterAdapter.cs" />
     <Compile Include="Backend\Serialization\JavascriptSerializer.cs" />
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
@@ -440,6 +445,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
