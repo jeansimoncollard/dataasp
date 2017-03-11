@@ -6,16 +6,39 @@
     <p>Use this area to provide additional information.</p>
 
 
+         <!-- Features Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Ecobec</h1>
+            </div>
+            <div class="col-md-6">
+                <p>The Modern Business template by Start Bootstrap includes:</p>
+                <ul>
+                    <li><strong>Bootstrap v3.3.7</strong>
+                    </li>
+                    <li>jQuery v1.11.1</li>
+                    <li>Font Awesome v4.2.0</li>
+                    <li>Working PHP contact form with validation</li>
+                    <li>Unstyled page elements for easy customization</li>
+                    <li>17 HTML pages</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+            </div>
+            <div class="col-md-6">
+                <canvas id="myChart" width="100" height="100"></canvas>
+            </div>
+        </div>
+        <!-- /.row -->
 
-    <script src="Scripts/Chart.min.js" type="text/javascript"></script>
+    
     <script>
         var ctx = document.getElementById("myChart");
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                labels: ["Walking", "Biking", "Public Transit", "Car"],
                 datasets: [{
-                    label: '# of Votes',
+                    label: 'Recent travels by Type',
                     data: <%= Chart1Data %>,
                     backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
