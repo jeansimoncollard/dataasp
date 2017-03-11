@@ -35,10 +35,8 @@
         </p>
         <div id="mapDiv">
         </div>
-        <div id="quickStatsDiv"> <!-- Alex's spot to add qucikstat stuff -->
-            <ul id ="displayQuickstatsInfo">
-
-            </ul>
+        <div id="quickStatsDiv" runat="server"> <!-- Alex's spot to add qucikstat stuff -->
+           
         </div>
         <p> &nbsp;</p>
     </div>

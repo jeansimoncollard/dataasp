@@ -24,21 +24,27 @@ namespace Dataasp
 
         protected void addTripButton_Click(object sender, EventArgs e)
         {
+            var div = quickStatsDiv;
             var startAddress = fromTextBox.Text;
             var endAddress = toTextBox.Text;
+            if (toTextBox.Text.Length == 0 || fromTextBox.Text.Length == 0)
+            {
+                div.InnerHtml = "<h1>Please fill out the form properly</h1>";
+                return;
+            }
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
             var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
 
+            _quickstats.SetDistance(distance);
+            _quickstats.SetName("Alex");
+            _quickstats.SetMeansOfTransportation(travelModeComboBox.SelectedValue);
 
-            _quickstats.SetName("Yo dude");
-            _quickstats.SetMeansOfTransportation("bus");
-        }
-
-        protected void addTripButton_Click(object sender, EventArgs e)
-        {
             
+
+            _quickstats.ShowStats(div);
         }
+
     }
 }
