@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 
@@ -232,6 +233,17 @@ map.mapTypes.set('map_style', styledMap);
             <script src = ""https://maps.googleapis.com/maps/api/js?key=AIzaSyCyeTwU64siTHFVrI_h9bJX7VlMdReWvbc&callback=initMap""
                     async defer></script>
     </div>";
+        }
+
+        private string generateMaker(double latitude, double longitude, string markerTitle)
+        {
+            return $@"
+            var marker = new google.maps.Marker({{
+            position: {{lat: {latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}},
+            map: map,
+            title: '{markerTitle}'
+          }});
+        ";
         }
     }
 }

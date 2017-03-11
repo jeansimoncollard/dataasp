@@ -34,10 +34,10 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
             var middlePoint = new MapPoint() { Latitude = (start.Latitude + end.Latitude) / 2, Longitude = (start.Longitude + end.Longitude) / 2 };
 
             //Maximum value you can add to the lat and long coordinates (so that we don't generate waypoints in china when we are in sherbrooke)
-            var latMaxAddableValue = Math.Abs(start.Latitude - start.Latitude) / 2;
-            var longMaxAddableValue = Math.Abs(start.Longitude - start.Longitude) / 2;
+            var latMaxAddableValue = Math.Abs(start.Latitude - end.Latitude) / 2;
+            var longMaxAddableValue = Math.Abs(start.Longitude - end.Longitude) / 2;
 
-            for (var i = 0; i < 5 && wayPointList.Count<3; i++) //very expensive operation to check viabilty of waypoints so I'm not generating much
+            for (var i = 0; i < 5 && wayPointList.Count < 3; i++) //very expensive operation to check viabilty of waypoints so I'm not generating much
             {
                 var percentage = _random.NextDouble();
                 var wayPoint = new MapPoint();
@@ -50,18 +50,19 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
                 }
             }
             return getScoredWayPointList(wayPointList, latMaxAddableValue, longMaxAddableValue);
-
         }
 
 
         private List<WaypointScore> getScoredWayPointList(List<MapPoint> listWayPoints, double latMaxAddableValue, double longMaxAddableValue)
         {
             var listScoreWaypoints = new List<WaypointScore>();
-
-            foreach (var waypoint in listWayPoints)
+            if (listWayPoints.Count != 0)
             {
-                var score = scoreWaypoint(waypoint, latMaxAddableValue, longMaxAddableValue);
-                listScoreWaypoints.Add(new WaypointScore() { WayPoint = waypoint, Score = score });
+                foreach (var waypoint in listWayPoints)
+                {
+                    var score = scoreWaypoint(waypoint, latMaxAddableValue, longMaxAddableValue);
+                    listScoreWaypoints.Add(new WaypointScore() { WayPoint = waypoint, Score = score });
+                }
             }
             return listScoreWaypoints;
         }
@@ -70,10 +71,10 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
         {
             var score = 0;
 
-            var minlat = waypoint.Latitude - latMaxAddableValue / 4;
-            var maxlat = waypoint.Latitude + latMaxAddableValue / 4;
-            var minlong = waypoint.Latitude - longMaxAddableValue / 4;
-            var maxlong = waypoint.Latitude + longMaxAddableValue / 4;
+            var minlat = waypoint.Latitude - latMaxAddableValue / 3;
+            var maxlat = waypoint.Latitude + latMaxAddableValue / 3;
+            var minlong = Math.Abs(waypoint.Longitude) - longMaxAddableValue / 3;
+            var maxlong = Math.Abs(waypoint.Longitude) + longMaxAddableValue / 3;
 
             //en-us to have decimal dot insead of comma
             var minlatstring = minlat.ToString(CultureInfo.CreateSpecificCulture("en-US"));

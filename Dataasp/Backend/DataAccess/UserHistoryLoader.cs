@@ -28,6 +28,7 @@ namespace Dataasp.Backend.DataAccess
                         while (reader.Read())
                         {
                             var userTravelRecord = new UserTravelRecord();
+
                             if (!reader.IsDBNull(0))
                             {
                                 userTravelRecord.DateOfTrip = reader.GetDateTime(0);
@@ -53,6 +54,7 @@ namespace Dataasp.Backend.DataAccess
                             {
                                 userTravelRecord.Cost = (double)reader[5];
                             }
+
                             userHistory.UserHistory.Add(userTravelRecord);
                         }
                     }
