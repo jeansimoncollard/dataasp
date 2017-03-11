@@ -14,6 +14,7 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="/Content/googlemap.css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <form runat="server">
@@ -49,7 +50,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">
-                        <img alt="Logo" src="images/logo.png">
+                        <img alt="Logo" src="images\logo.png">
                     </a>
                     <h2 class="pull-left align-middle">Ecobecois</h2>
                 </div>
@@ -96,7 +97,7 @@
                 <div class="row">
                     <div class="col-md-4 footerleft ">
                         <div class="logofooter">
-                            <img src="images/logo.png" alt="Logo">
+                            <img src="images\logo.png" alt="Logo">
                             About Us
                         </div>
                         <p>Ecobecoisois creates awareness of your impact on the enviroment based on analytics of your personal transportation habits. Find out how sustainable your travel choices are and compare to those around you. Use Ecobecois to help make ecological choices in your daily commute.</p>
@@ -134,7 +135,7 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="bottom_ul">
-                            <li><a href="#">webenlance.com</a></li>
+                            <li><a href="https://github.com/noblefr/dataasp"><i class="fa fa-github" aria-hidden="true"></i></a></li>
                             <li><a href="#">About us</a></li>
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">Faq's</a></li>
