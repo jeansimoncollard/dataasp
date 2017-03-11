@@ -30,8 +30,8 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
 
             var markers = new List<MarkerEntity>()
             {
-                new MarkerEntity() {Latitude=startCoordinates.Latitude, Longitude=endCoordinates.Longitude, MarkerTitle= "Construction",color="green" },
-                 new MarkerEntity() {Latitude=endCoordinates.Latitude, Longitude=startCoordinates.Longitude, MarkerTitle= "Construction" ,color="red"}
+                new MarkerEntity() {Latitude=startCoordinates.Latitude, Longitude=endCoordinates.Longitude, MarkerTitle= "Construction",Image="http://img4.hostingpics.net/pics/990085construction.png" },
+                 new MarkerEntity() {Latitude=endCoordinates.Latitude, Longitude=startCoordinates.Longitude, MarkerTitle= "Construction" ,Image="http://img4.hostingpics.net/pics/990085construction.png"}
             };
             return _mapGenerater.GenerateMap($"{{ lat: {startCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {startCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}}", $"{{ lat: {endCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {endCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", $"{{ lat: {wayPoint.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {wayPoint.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", travelMode.ToString(), isWaypoint, markers); ;
 
