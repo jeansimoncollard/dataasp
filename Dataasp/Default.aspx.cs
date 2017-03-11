@@ -32,6 +32,14 @@ namespace Dataasp
             mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue));
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
+
+            _quickstats.SetDistance(distance);
+            _quickstats.SetName("Alex");
+            _quickstats.SetMeansOfTransportation(travelModeComboBox.SelectedValue);
+
+
+
+            _quickstats.ShowStats(div);
         }
     }
 }

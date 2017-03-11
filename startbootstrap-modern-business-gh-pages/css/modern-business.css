@@ -4,6 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+
 /* Global Styles */
 
 html,
@@ -12,7 +13,8 @@ body {
 }
 
 body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 50px;
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 .img-portfolio {
@@ -22,6 +24,7 @@ body {
 .img-hover:hover {
     opacity: 0.8;
 }
+
 
 /* Home Page Carousel */
 
@@ -41,12 +44,12 @@ header.carousel .fill {
     background-position: center;
     background-size: cover;
 }
-
 /* 404 Page Styles */
 
 .error-404 {
     font-size: 100px;
 }
+
 
 /* Pricing Page Styles */
 
@@ -67,11 +70,14 @@ header.carousel .fill {
     font-style: italic;
 }
 
+
 /* Footer Styles */
 
 footer {
     margin: 50px 0;
+    color: #228317;
 }
+
 
 /* Responsive Styles */
 
@@ -86,7 +92,6 @@ footer {
     .img-portfolio {
         margin-bottom: 15px;
     }
-
     header.carousel .carousel {
         height: 70%;
     }
