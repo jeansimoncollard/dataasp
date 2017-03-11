@@ -33,7 +33,7 @@
         <p> 
             <asp:Button ID="addTripButton" runat="server" Text="Button" OnClick="addTripButton_Click" />
         </p>
-        <div id="mapDiv">
+        <div id="mapResults" runat="server">
         </div>
         <div id="quickStatsDiv" runat="server"> <!-- Alex's spot to add qucikstat stuff -->
            
