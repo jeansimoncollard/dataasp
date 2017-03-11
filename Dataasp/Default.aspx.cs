@@ -36,9 +36,6 @@ namespace Dataasp
             _quickstats.SetMeansOfTransportation("bus");
         }
 
-        protected void addTripButton_Click(object sender, EventArgs e)
-        {
-            
-        }
+
     }
 }
