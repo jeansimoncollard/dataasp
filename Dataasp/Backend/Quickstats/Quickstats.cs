@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+
 namespace Dataasp.Backend.Quickstats
 {
     public class Quickstats
@@ -17,17 +18,17 @@ namespace Dataasp.Backend.Quickstats
 
         private double _ETA;                    //estimated time before arrival for the user
 
-        private void SetFootPrint()             //sets the user's ecological footprint based on means of transportation and distance
+        public void SetFootPrint()             //sets the user's ecological footprint based on means of transportation and distance
         {
             switch (_meansOfTransportation)
             {
-                case "car": _footPrint = _distance * 12345.0;
+                case "a Car": _footPrint = Math.Round(( _distance) * (0.023/100), 10);     //100 km means 0.023t of co2
                     break;
-                case "bus": _footPrint = _distance * 12345.0;
+                case "the Public Transport system": _footPrint = Math.Round((_distance / 100.0) * 0.01, 5); //100km means 0.01t of co2
                     break;
-                case "walk": _footPrint = _distance * 12345.0;
+                case "a Bicycle": _footPrint = Math.Round((_distance / 1.6) * (150.0 / 1000 / 1000) / 100, 15);     //per km footprint of bycicle
                     break;
-                case "metro": _footPrint = _distance * 12345.0;
+                case "your feet!": _footPrint = Math.Round((_distance / 1.6) * (75.0 / 1000 / 1000) / 100, 15);     //for just walking
                     break;
             }
         }
@@ -35,7 +36,18 @@ namespace Dataasp.Backend.Quickstats
 
         public void SetMeansOfTransportation(string transp)
         {
-            _meansOfTransportation = transp;
+            switch (transp)
+            {
+                case "DRIVING":
+                    _meansOfTransportation = "a Car";
+                    break;
+                case "TRANSIT": _meansOfTransportation = "the Public Transport system";
+                    break;
+                case "BICYCLING": _meansOfTransportation = "a Bicycle";
+                    break;
+                case "WALKING": _meansOfTransportation = "your feet!";
+                    break;
+            }
         }
 
 
@@ -57,9 +69,26 @@ namespace Dataasp.Backend.Quickstats
         }
 
 
-        public void ShowStats()                 //displays the quickstat summary as an innerhtml
+        public void SetDistance(double dist)
         {
+            _distance = dist;
+        }
 
+
+        public double GetDistanceInKm()
+        {
+            return Math.Round(_distance / 1000, 2);
+        }
+
+
+        public void ShowStats(System.Web.UI.HtmlControls.HtmlGenericControl div)                 //displays the quickstat summary as an innerhtml
+        {
+            div.InnerHtml = 
+                "<ul> <li>Your name: "+ _name+"</li>"+
+                "<li>Distance: "+ GetDistanceInKm() + " km</li>"+
+                "<li>Using: "+ _meansOfTransportation + "</li>"+
+                "<li>Your Ecological Footprint: " + _footPrint + " metric tons of co2</li>"+
+                "</ul>";
         }
     }
 }

@@ -12,8 +12,10 @@ namespace Dataasp.Backend.Entities
         private int v1;
         private int v2;
 
+        public string Username { get; set; }
         public DateTime DateOfTrip { get; set; }
         public int MetersTravelled { get; set; }
+        public double VolumeCO2 { get; set; }
         public TravelModeEnum TravelMode { get; set; }
     
         public UserTravelRecord(DateTime x, int y, int z)
@@ -46,6 +48,4 @@ namespace Dataasp.Backend.Entities
             this.TravelMode = v.TravelMode;
         }
     }
-
-
 }
