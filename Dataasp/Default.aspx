@@ -21,6 +21,10 @@
         <p> 
             <asp:TextBox ID="securitySlider" runat="server"></asp:TextBox>
         </p>
+        <p> &nbsp;</p>
+        <p> 
+            <asp:Button ID="addTripButton" runat="server" Text="Button" />
+        </p>
         <div id="mapDiv">
         </div>
         <div id="quickStatsDiv"> <!-- Alex's spot to add qucikstat stuff -->
