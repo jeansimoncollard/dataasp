@@ -36,6 +36,7 @@ namespace Dataasp
             _stringToTravelEnumConvert = new StringToTravelEnumConverter();
          //   _jstemporarybuttonclicker = new jstemporarybuttonclicker();
             _userTravelStorer = new UserTravelStorer();
+
         }
 
         protected void addTripButton_Click(object sender, EventArgs e)
@@ -54,6 +55,7 @@ namespace Dataasp
             //_jstemporarybuttonclicker.clicked();
             MapPoint waypoint = new MapPoint();
             mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, false);
+
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
 
