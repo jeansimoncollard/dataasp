@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+
 namespace Dataasp.Backend.Quickstats
 {
     public class Quickstats
@@ -21,13 +22,13 @@ namespace Dataasp.Backend.Quickstats
         {
             switch (_meansOfTransportation)
             {
-                case "car": _footPrint = _distance * 12345.0;
+                case "Car": _footPrint = _distance * 12345.0;
                     break;
-                case "bus": _footPrint = _distance * 12345.0;
+                case "Public Transport": _footPrint = _distance * 12345.0;
                     break;
-                case "walk": _footPrint = _distance * 12345.0;
+                case "Bicycle": _footPrint = _distance * 12345.0;
                     break;
-                case "metro": _footPrint = _distance * 12345.0;
+                case "Walking": _footPrint = _distance * 12345.0;
                     break;
             }
         }
@@ -35,7 +36,18 @@ namespace Dataasp.Backend.Quickstats
 
         public void SetMeansOfTransportation(string transp)
         {
-            _meansOfTransportation = transp;
+            switch (transp)
+            {
+                case "DRIVING":
+                    _meansOfTransportation = " a Car";
+                    break;
+                case "TRANSIT": _meansOfTransportation = "the Public Transport system";
+                    break;
+                case "BICYCLING": _meansOfTransportation = "a Bicycle";
+                    break;
+                case "WALKING": _meansOfTransportation = "your feet!";
+                    break;
+            }
         }
 
 
@@ -57,9 +69,26 @@ namespace Dataasp.Backend.Quickstats
         }
 
 
-        public void ShowStats()                 //displays the quickstat summary as an innerhtml
+        public void SetDistance(double dist)
         {
+            _distance = dist;
+        }
 
+
+        public double GetDistanceInKm()
+        {
+            return Math.Round(_distance / 1000, 2);
+        }
+
+
+        public void ShowStats(System.Web.UI.HtmlControls.HtmlGenericControl div)                 //displays the quickstat summary as an innerhtml
+        {
+            div.InnerHtml = 
+                "<ul> <li>Your name: "+ _name+"</li>"+
+                "<li>Distance: "+ GetDistanceInKm() + " km</li>"+
+                "<li>Using: "+ _meansOfTransportation + "</li>"+
+                "<li>Your Ecological Footprint: " + _footPrint + "</li>"+
+                "</ul>";
         }
     }
 }
