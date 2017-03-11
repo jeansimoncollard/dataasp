@@ -4,9 +4,6 @@ html,
 body {
     height: 100%;
 }
-.wrapper {
-    min-height: 100%;
-}
 
 body {
     padding-top: 50px;
@@ -170,6 +167,7 @@ a:hover, a:focus {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    min-height: 50vh;
 }
 
 .navbar-inverse {
