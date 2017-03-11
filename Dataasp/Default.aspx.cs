@@ -36,6 +36,7 @@ namespace Dataasp
             _stringToTravelEnumConvert = new StringToTravelEnumConverter();
          //   _jstemporarybuttonclicker = new jstemporarybuttonclicker();
             _userTravelStorer = new UserTravelStorer();
+
         }
 
         protected void addTripButton_Click(object sender, EventArgs e)
