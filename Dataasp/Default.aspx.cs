@@ -81,7 +81,7 @@ namespace Dataasp
                 MetersTravelled = distance,
                 VolumeCO2 = VolumeOfCO2,
                 TravelMode = _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue),
-                cost = _quickstats.getCost()
+                Cost = _quickstats.getCost()
             };
             _userTravelStorer.StoreTravel(travelRecord);
 

@@ -61,7 +61,7 @@
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="~/images/rsz_djs.jpg" runat="Server" alt="Jean-Simon Collard">
                     <div class="caption">
                         <h3>John Smith<br>
                             <small>Job Title</small>
@@ -80,7 +80,7 @@
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="~/images/rsz_mitch.jpg" runat="Server" alt="Mitchell Burr Bedard">
                     <div class="caption">
                         <h3>John Smith<br>
                             <small>Job Title</small>
@@ -99,7 +99,7 @@
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="~/images/rsz_nat.jpg" runat="Server" alt="Natacha Levesque">
                     <div class="caption">
                         <h3>John Smith<br>
                             <small>Job Title</small>
