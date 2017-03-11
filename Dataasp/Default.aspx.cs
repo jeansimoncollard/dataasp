@@ -1,5 +1,7 @@
 ﻿using Dataasp.Backend.DistanceCalculter;
+using Dataasp.Backend.Enums;
 using Dataasp.Backend.GoogleMaps.DistanceCalculter;
+using Dataasp.Backend.GoogleMaps.MapGeneration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,24 +13,25 @@ namespace Dataasp
 {
     public partial class _Default : Page
     {
-        private AddressLatLongConverter _addressLatLongConverter;
         private DistanceCalculater _distanceCalculater;
+        private MapGeneraterAdapter _mapGeneraterAdapter;
+        private StringToTravelEnumConverter _stringToTravelEnumConvert;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            _addressLatLongConverter = new AddressLatLongConverter();
             _distanceCalculater = new DistanceCalculater();
+            _mapGeneraterAdapter = new MapGeneraterAdapter();
+            _stringToTravelEnumConvert = new StringToTravelEnumConverter();
         }
 
         protected void addTripButton_Click(object sender, EventArgs e)
         {
             var startAddress = fromTextBox.Text;
             var endAddress = toTextBox.Text;
-            var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
-            var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
+
+            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue));
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
-
-
         }
     }
 }
