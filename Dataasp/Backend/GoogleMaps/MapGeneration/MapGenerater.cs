@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dataasp.Backend.Entities;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -235,15 +236,6 @@ map.mapTypes.set('map_style', styledMap);
     </div>";
         }
 
-        private string generateMaker(double latitude, double longitude, string markerTitle)
-        {
-            return $@"
-            var marker = new google.maps.Marker({{
-            position: {{lat: {latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}},
-            map: map,
-            title: '{markerTitle}'
-          }});
-        ";
-        }
+
     }
 }

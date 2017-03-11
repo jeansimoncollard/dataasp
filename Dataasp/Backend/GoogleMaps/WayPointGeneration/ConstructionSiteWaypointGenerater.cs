@@ -71,8 +71,8 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
         {
             var score = 0;
 
-            var minlat = waypoint.Latitude - latMaxAddableValue / 3;
-            var maxlat = waypoint.Latitude + latMaxAddableValue / 3;
+            var minlat = Math.Abs(waypoint.Latitude) - latMaxAddableValue / 3;
+            var maxlat = Math.Abs(waypoint.Latitude) + latMaxAddableValue / 3;
             var minlong = Math.Abs(waypoint.Longitude) - longMaxAddableValue / 3;
             var maxlong = Math.Abs(waypoint.Longitude) + longMaxAddableValue / 3;
 

@@ -6,21 +6,22 @@
             <h1 class="page-header">Travel Now!</h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row element-bottom-20">
         <div class="col-md-6">
             <div class="container">
                 <p>Departing from:</p>
                 <asp:TextBox ID="fromTextBox" runat="server"></asp:TextBox>
                 <p>Destination:</p>
                 <asp:TextBox ID="toTextBox" runat="server"></asp:TextBox>
+                <div class="clearfix">
                 <ajaxToolkit:ComboBox ID="travelModeComboBox" runat="server">
                     <asp:ListItem Value="DRIVING">Car</asp:ListItem>
                     <asp:ListItem Value="TRANSIT">Public Transport</asp:ListItem>
                     <asp:ListItem Value="BICYCLING">Bicycle</asp:ListItem>
                     <asp:ListItem Value="WALKING">Walking</asp:ListItem>
                 </ajaxToolkit:ComboBox>
-                <br />
-                <p><b>Help us provide you with a sustainable alternative</b></p>
+                </div>
+                <p class="clearfix"><b>Help us provide you with a sustainable alternative</b></p>
                 <p>Distance of your travel:</p>
                 <div>
                     Long

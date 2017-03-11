@@ -126,7 +126,6 @@ namespace Dataasp.Backend.Quickstats
                 "<li>Using: "+ _meansOfTransportation + "</li>"+
                 "<li>Approximate cost: $" +_cost+ " " +_costSTR+
                 "<li>Your Ecological Footprint: " + Math.Round(_footPrint,2) + " Kilograms of CO2</li>"+
-               "<li>Slider Value: </li>" +
                 "</ul>";
         }
     }
