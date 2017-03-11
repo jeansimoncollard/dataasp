@@ -123,11 +123,7 @@ header.carousel .fill {
     padding: 0 15px;
 }
 
-.navbar-header h2 {
-    margin: 10px 0;
-}
-
-.navbar-brand img{
+#logo {
     max-height: 50px;
 }
 
