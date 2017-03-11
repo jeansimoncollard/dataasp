@@ -10,10 +10,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dataasp.Backend.GoogleMaps.MapGeneration;
 using Dataasp.Backend.Enums;
-//using Dataasp.Backend.jstemporaryclickbutton;
 using Dataasp.Backend.DataAccess;
 using Dataasp.Backend.Entities;
 using GoogleMaps.LocationServices;
+using Dataasp.Backend.GoogleMaps.WayPointGeneration;
 
 namespace Dataasp
 {
@@ -25,8 +25,9 @@ namespace Dataasp
         private DistanceCalculater _distanceCalculater;
         private MapGeneraterAdapter _mapGeneraterAdapter;
         private StringToTravelEnumConverter _stringToTravelEnumConvert;
-       // private jstemporarybuttonclicker _jstemporarybuttonclicker;
         private UserTravelStorer _userTravelStorer;
+        private WayPointGenerator _wayPointGenerator;
+
         public double VolumeOfCO2;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,8 +35,8 @@ namespace Dataasp
             _distanceCalculater = new DistanceCalculater();
             _mapGeneraterAdapter = new MapGeneraterAdapter();
             _stringToTravelEnumConvert = new StringToTravelEnumConverter();
-         //   _jstemporarybuttonclicker = new jstemporarybuttonclicker();
             _userTravelStorer = new UserTravelStorer();
+            _wayPointGenerator = new WayPointGenerator();
 
         }
 
@@ -52,9 +53,10 @@ namespace Dataasp
             }
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
             var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
-            //_jstemporarybuttonclicker.clicked();
-            MapPoint waypoint = new MapPoint();
-            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, false);
+
+            var waypoint = generateWayPoint(startAddress, endAddress);
+            var useWayPoint = !(waypoint == null); //Don't use waypoint if it's equal to null
+            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, useWayPoint);
 
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
@@ -73,10 +75,6 @@ namespace Dataasp
             var sliderDistanceValue = distanceSlider.Text;
             int _intSliderValue = Int32.Parse(distanceSlider.Text);
 
-            //MapPoint testMap = _wayPointGenerator.GenerateWayPoint(startCoordinates, endCoordinates, distance, _intSliderValue);
-
-           // if (_intSliderValue != 0)
-            //    mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), testMap, true);
         }
 
         private void saveTravel(int distance, string travelModeValue)
@@ -95,6 +93,17 @@ namespace Dataasp
             var historyLoader = new UserHistoryLoader();
             if (HttpContext.Current.User.Identity.Name != "")               //prevent crash if not logged in
                 historyLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
+        }
+
+        private MapPoint generateWayPoint(string startAddress, string endAddress)
+        {
+            var sliderValues = new List<SliderValues>();
+
+            sliderValues.Add(new SliderValues() { SliderId = distanceSlider.ID, SliderValue = Convert.ToInt32(distanceSlider.Text) });
+            sliderValues.Add(new SliderValues() { SliderId = constructionSlider.ID, SliderValue = Convert.ToInt32(constructionSlider.Text) });
+            sliderValues.Add(new SliderValues() { SliderId = photoRadarSlider.ID, SliderValue = Convert.ToInt32(photoRadarSlider.Text) });
+
+            return _wayPointGenerator.GenerateWayPoint(startAddress, endAddress, sliderValues, distanceSlider, constructionSlider, photoRadarSlider);
         }
     }
 }

@@ -29,6 +29,12 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
             var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
 
+            //avoid null reference error
+            if (wayPoint == null)
+            {
+                wayPoint = new MapPoint();
+            }
+
             //.ToString("en-US") to have decimal point instead of comma as separator
 
             var markers = GetMarkers(startAddress, endAddress);
