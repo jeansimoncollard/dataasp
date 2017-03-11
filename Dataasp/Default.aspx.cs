@@ -82,7 +82,8 @@ namespace Dataasp
             _userTravelStorer.StoreTravel(travelRecord);
 
             var historyLoader = new UserHistoryLoader();
-            historyLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
+            if (HttpContext.Current.User.Identity.Name != "")               //prevent crash if not logged in
+                historyLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
         }
     }
 }
