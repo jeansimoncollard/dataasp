@@ -33,7 +33,7 @@
                     <asp:TextBox ID="securitySlider" runat="server"></asp:TextBox>
                     <ajaxToolkit:SliderExtender ID="securitySlider_SliderExtender" runat="server" BehaviorID="securitySlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="securitySlider" />
                 </div>
-                <asp:Button ID="addTripButton" runat="server" Text="Button" OnClick="addTripButton_Click" />
+                <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click" />
                 <div id="quickStatsDiv" runat="server">
                     <!-- Alex's spot to add qucikstat stuff -->
                 </div>
