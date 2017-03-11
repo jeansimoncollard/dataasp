@@ -28,7 +28,7 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
             var wayPoint = _addressLatLongConverter.GetLatLong("mcdonald king ouest sherbrooke");
 
             //.ToString("en-US") to have decimal point instead of comma as separator
-            return _mapGenerater.GenerateMap($"{{ lat: {startCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {startCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}}", $"{{ lat: {endCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {endCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", $"{{ lat: {wayPoint.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {wayPoint.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", travelMode.ToString(), true); ;
+            return _mapGenerater.GenerateMap($"{{ lat: {startCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {startCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}}", $"{{ lat: {endCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {endCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", $"{{ lat: {wayPoint.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {wayPoint.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", travelMode.ToString(), false); ;
 
 
         }

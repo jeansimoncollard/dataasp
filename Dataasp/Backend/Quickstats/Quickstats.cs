@@ -18,17 +18,17 @@ namespace Dataasp.Backend.Quickstats
 
         private double _ETA;                    //estimated time before arrival for the user
 
-        private void SetFootPrint()             //sets the user's ecological footprint based on means of transportation and distance
+        public void SetFootPrint()             //sets the user's ecological footprint based on means of transportation and distance
         {
             switch (_meansOfTransportation)
             {
-                case "Car": _footPrint = (100 / _distance) * 0.023;     //100 km means 0.023t of co2
+                case "a Car": _footPrint = Math.Round(( _distance) * (0.023/100), 10);     //100 km means 0.023t of co2
                     break;
-                case "Public Transport": _footPrint = (100 / _distance) * 0.01; //100km means 0.01t of co2
+                case "the Public Transport system": _footPrint = Math.Round((_distance / 100.0) * 0.01, 5); //100km means 0.01t of co2
                     break;
-                case "Bicycle": _footPrint = _distance * 12345.0;
+                case "a Bicycle": _footPrint = Math.Round((_distance / 1.6) * (150.0 / 1000 / 1000) / 100, 15);     //per km footprint of bycicle
                     break;
-                case "Walking": _footPrint = _distance * 12345.0;
+                case "your feet!": _footPrint = Math.Round((_distance / 1.6) * (75.0 / 1000 / 1000) / 100, 15);     //for just walking
                     break;
             }
         }
@@ -39,7 +39,7 @@ namespace Dataasp.Backend.Quickstats
             switch (transp)
             {
                 case "DRIVING":
-                    _meansOfTransportation = " a Car";
+                    _meansOfTransportation = "a Car";
                     break;
                 case "TRANSIT": _meansOfTransportation = "the Public Transport system";
                     break;
@@ -87,7 +87,7 @@ namespace Dataasp.Backend.Quickstats
                 "<ul> <li>Your name: "+ _name+"</li>"+
                 "<li>Distance: "+ GetDistanceInKm() + " km</li>"+
                 "<li>Using: "+ _meansOfTransportation + "</li>"+
-                "<li>Your Ecological Footprint: " + _footPrint + "</li>"+
+                "<li>Your Ecological Footprint: " + _footPrint + " metric tons of co2</li>"+
                 "</ul>";
         }
     }
