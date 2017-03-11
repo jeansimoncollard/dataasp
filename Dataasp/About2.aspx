@@ -8,6 +8,7 @@
                 <img class="img-responsive" src="http://placehold.it/750x450" alt="">
             </div>
             <div class="col-md-6">
+                <br /><br />
                 <h2>About Modern Business</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
@@ -25,8 +26,8 @@
                 <div class="thumbnail">
                     <img class="img-responsive" src="~/images/rsz_1alex.jpg" runat="Server" alt="Alexandre Charbonneau">
                     <div class="caption">
-                        <h3>John Smith<br>
-                            <small>Job Title</small>
+                        <h3>Alexandre Charbonneau<br>
+                            <small>Backend Programmer</small>
                         </h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
                         <ul class="list-inline">
@@ -44,8 +45,8 @@
                 <div class="thumbnail">
                     <img class="img-responsive" src="~/images/rsz_duncan.jpg" runat="Server" alt="Duncan Mackay">
                     <div class="caption">
-                        <h3>John Smith<br>
-                            <small>Job Title</small>
+                        <h3>Duncan Mackay<br>
+                            <small>User Profile</small>
                         </h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
                         <ul class="list-inline">
@@ -63,8 +64,8 @@
                 <div class="thumbnail">
                     <img class="img-responsive" src="~/images/rsz_djs.jpg" runat="Server" alt="Jean-Simon Collard">
                     <div class="caption">
-                        <h3>John Smith<br>
-                            <small>Job Title</small>
+                        <h3>Jean-Simon Collard<br>
+                            <small>Database Management</small>
                         </h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
                         <ul class="list-inline">
@@ -82,8 +83,8 @@
                 <div class="thumbnail">
                     <img class="img-responsive" src="~/images/rsz_mitch.jpg" runat="Server" alt="Mitchell Burr Bedard">
                     <div class="caption">
-                        <h3>John Smith<br>
-                            <small>Job Title</small>
+                        <h3>Mitchell Burr Bedard<br>
+                            <small>Frontend Programmer</small>
                         </h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
                         <ul class="list-inline">
@@ -101,8 +102,8 @@
                 <div class="thumbnail">
                     <img class="img-responsive" src="~/images/rsz_nat.jpg" runat="Server" alt="Natacha Levesque">
                     <div class="caption">
-                        <h3>John Smith<br>
-                            <small>Job Title</small>
+                        <h3>Natacha Levesque<br>
+                            <small>Frontend & Design</small>
                         </h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
                         <ul class="list-inline">
@@ -118,10 +119,10 @@
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="~/images/rsz_js.jpg" runat="Server" alt="Jean Simon Collard">
                     <div class="caption">
-                        <h3>John Smith<br>
-                            <small>Job Title</small>
+                        <h3>Jean Simon Collard<br>
+                            <small>Database Management</small>
                         </h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
                         <ul class="list-inline">
