@@ -26,7 +26,7 @@ namespace Dataasp
         private StringToTravelEnumConverter _stringToTravelEnumConvert;
         private jstemporarybuttonclicker _jstemporarybuttonclicker;
         private UserTravelStorer _userTravelStorer;
-
+        public double VolumeOfCO2;
         protected void Page_Load(object sender, EventArgs e)
         {
             _addressLatLongConverter = new AddressLatLongConverter();
@@ -51,12 +51,11 @@ namespace Dataasp
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
             var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
             _jstemporarybuttonclicker.clicked();
-            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue));
+            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue),false);
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
 
             //Save travel in database
-            saveTravel(distance, travelModeComboBox.SelectedValue);
 
             div.Attributes.Remove("class"); //removes the danger class highlight
 
@@ -64,8 +63,13 @@ namespace Dataasp
             _quickstats.SetName(HttpContext.Current.User.Identity.Name);
             _quickstats.SetMeansOfTransportation(travelModeComboBox.SelectedValue);
             _quickstats.SetFootPrint();
-
+            VolumeOfCO2 = _quickstats.GetFootprint();
             _quickstats.ShowStats(div);
+
+            var sliderDistanceValue = distanceSlider.Text;
+            int midDistance = Int32.Parse(distanceSlider.Text) / 2;
+            div.InnerHtml += midDistance;
+            saveTravel(distance, travelModeComboBox.SelectedValue);
         }
 
         private void saveTravel(int distance, string travelModeValue)
@@ -75,7 +79,7 @@ namespace Dataasp
                 Username = HttpContext.Current.User.Identity.Name,
                 DateOfTrip = DateTime.Now,
                 MetersTravelled = distance,
-                VolumeCO2 = _quickstats.GetFootprint(),
+                VolumeCO2 = VolumeOfCO2,
                 TravelMode = _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue),
 
             };

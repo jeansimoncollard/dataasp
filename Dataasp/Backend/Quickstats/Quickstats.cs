@@ -87,7 +87,8 @@ namespace Dataasp.Backend.Quickstats
                 "<ul> <li>Your name: "+ _name+"</li>"+
                 "<li>Distance: "+ GetDistanceInKm() + " km</li>"+
                 "<li>Using: "+ _meansOfTransportation + "</li>"+
-                "<li>Your Ecological Footprint: " + Math.Round(_footPrint,2) + " metric tons of co2</li>"+
+                "<li>Your Ecological Footprint: " + Math.Round(_footPrint,2) + " Kilograms of CO2</li>"+
+               "<li>Slider Value: </li>" +
                 "</ul>";
         }
     }
