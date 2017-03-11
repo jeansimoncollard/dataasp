@@ -10,7 +10,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #373a3c;
+    color: #0b3c00;
     background-color: #fff;
     /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
@@ -73,19 +73,16 @@ header.carousel .fill {
 
 /* Footer Styles */
 
-.heading7 {
-    font-size: 21px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 22px;
-}
-
 .footer {
     background-color: #46903E;
     min-height: 350px;
     font-family: 'Open Sans', sans-serif;
 }
 
+a {
+    color: #89D881;
+    text-decoration: none;
+}
 
 /* Set some basic padding to keep content from hitting the edges */
 
@@ -266,7 +263,7 @@ footer {
 .heading7 {
     font-size: 21px;
     font-weight: 700;
-    color: #d9d6d6;
+    color: #ffffff;
     margin-bottom: 22px;
 }
 

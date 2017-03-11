@@ -394,6 +394,8 @@
     <Compile Include="Backend\Enums\StringToTravelEnumConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\AddressLatLongConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\DistanceCalculater.cs" />
+    <Compile Include="Backend\GoogleMaps\WayPointGeneration\WaypointValidater.cs" />
+    <Compile Include="Backend\GoogleMaps\WayPointGeneration\WayPointGenerator.cs" />
     <Compile Include="Backend\jstemporaryclickbutton\jstemporarybuttonclicker.cs" />
     <Compile Include="Backend\Quickstats\Quickstats.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntityList.cs" />
@@ -461,7 +463,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Backend\GoogleMaps\WayPointGeneration\" />
     <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>
