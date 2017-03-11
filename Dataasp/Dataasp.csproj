@@ -223,6 +223,8 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.bundle.js" />
+    <Content Include="Scripts\Chart.bundle.min.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -377,6 +379,9 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Backend\Quickstats\Quickstats.cs" />
+    <Compile Include="Backend\GoogleMaps\DistanceCalculter\AddressLatLongConverter.cs" />
+    <Compile Include="Backend\GoogleMaps\DistanceCalculter\DistanceCalculater.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntity.cs" />
     <Compile Include="Backend\Entities\UserTravelRecord.cs" />
     <Compile Include="Backend\Enums\TravelModeEnum.cs" />
