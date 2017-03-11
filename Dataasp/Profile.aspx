@@ -7,15 +7,16 @@
 
 
 
-    <script src="Scripts/Chart.min.js" type="text/javascript"></script>
+    <script src="Scripts/Chart.min.js" type="text/javascript"></script>\
+    <canvas id="myChart" width="400" height="400"></canvas>
     <script>
         var ctx = document.getElementById("myChart");
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                labels: ["Walking", "Biking", "Public Transit", "Car"],
                 datasets: [{
-                    label: '# of Votes',
+                    label: 'Recent travels by Type',
                     data: <%= Chart1Data %>,
                     backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
