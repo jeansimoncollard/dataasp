@@ -5,7 +5,7 @@
 <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                <img class="img-responsive" src="~/images/ecobecois_logo_couleur.png" runat="Server" alt="Ecobecois Logo">>
             </div>
             <div class="col-md-6">
                 <h2>About Modern Business</h2>
