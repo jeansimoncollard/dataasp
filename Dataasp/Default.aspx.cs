@@ -76,6 +76,15 @@ namespace Dataasp
             _quickstats.SetFootPrint();
 
             _quickstats.ShowStats(div);
+
+            WayPointGenerator _wayPointGenerator = new WayPointGenerator();
+
+            var sliderDistanceValue = distanceSlider.Text;
+            int _intSliderValue = Int32.Parse(distanceSlider.Text);
+
+            MapPoint testMap = _wayPointGenerator.GenerateWayPoint(startCoordinates, endCoordinates, distance, _intSliderValue);
+
+            div.InnerHtml += _intSliderValue;
         }
 
         private void saveTravel(int distance, string travelModeValue)

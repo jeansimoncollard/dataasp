@@ -397,6 +397,7 @@
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\AddressLatLongConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\DistanceCalculater.cs" />
     <Compile Include="Backend\GoogleMaps\WayPointGeneration\WaypointValidater.cs" />
+    <Compile Include="Backend\GoogleMaps\WayPointGeneration\WayPointGenerator.cs" />
     <Compile Include="Backend\jstemporaryclickbutton\jstemporarybuttonclicker.cs" />
     <Compile Include="Backend\Quickstats\Quickstats.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntityList.cs" />
