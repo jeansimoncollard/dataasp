@@ -451,6 +451,7 @@
     <Compile Include="Backend\GoogleMaps\WayPointGeneration\ConstructionSiteWaypointGenerater.cs" />
     <Compile Include="Backend\GoogleMaps\WayPointGeneration\WaypointValidater.cs" />
     <Compile Include="Backend\GoogleMaps\WayPointGeneration\WayPointGenerator.cs" />
+    <Compile Include="Backend\GoogleMaps\MarkerGeneration\ConstructionMarkerGenerater.cs" />
     <Compile Include="Backend\Quickstats\Quickstats.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntityList.cs" />
     <Compile Include="Backend\Entities\UserTravelRecord.cs" />
