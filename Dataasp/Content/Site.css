@@ -120,8 +120,8 @@ a {
     padding: 0 15px;
 }
 
-#logo {
-    max-height: 50px;
+.navbar-brand img {
+    max-height:50px;
 }
 
 .page-header {
