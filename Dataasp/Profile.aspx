@@ -7,8 +7,8 @@
 
 
 
-    <script src="Scripts/Chart.min.js" type="text/javascript"></script>\
-    <canvas id="myChart" width="400" height="400"></canvas>
+
+    <canvas id="myChart" width="100" height="100"></canvas>
     <script>
         var ctx = document.getElementById("myChart");
         var myChart = new Chart(ctx, {

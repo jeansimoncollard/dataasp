@@ -17,7 +17,12 @@ namespace Dataasp.Backend.Entities
         public int MetersTravelled { get; set; }
         public double VolumeCO2 { get; set; }
         public TravelModeEnum TravelMode { get; set; }
-    
+
+        public UserTravelRecord()
+        {
+
+        }
+
         public UserTravelRecord(DateTime x, int y, int z)
         {
             DateOfTrip = x;
