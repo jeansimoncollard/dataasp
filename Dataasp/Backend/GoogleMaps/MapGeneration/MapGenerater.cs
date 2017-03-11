@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 
@@ -10,16 +11,16 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
 
         public string GenerateMap(string start, string end, string waypoint, string transportationMode, bool isUseWayPoint)
         {
-            var commentLine = "//";//This string is used to comment out waypoint in javascript function if needed
+            var commentLine = "";//This string is used to comment out waypoint in javascript function if needed
 
-            if (isUseWayPoint)
+            if (!isUseWayPoint || transportationMode.ToUpper() == "TRANSIT") //If we force a waypoint when there's a but it's gonna give zero results unless the waypoint is on a busstop
             {
-                commentLine = "";
+                commentLine = "//";
             }
 
             return
                 @"<div class=""row"">
-                <div class=""col-md-8"">
+                <div class=""col-md-12"">
                     <div id=""map""></div>
                 </div>
             </div>
@@ -204,7 +205,7 @@ map.mapTypes.set('map_style', styledMap);
                         destination: end,
                         " + commentLine + @"waypoints: [{location: waypoint, stopover: false}],
                         origin: start,
-                        travelMode: transportationMode
+                        travelMode: google.maps.TravelMode[transportationMode]
                     };
 
                 // Pass the directions request to the directions service.
@@ -232,6 +233,17 @@ map.mapTypes.set('map_style', styledMap);
             <script src = ""https://maps.googleapis.com/maps/api/js?key=AIzaSyCyeTwU64siTHFVrI_h9bJX7VlMdReWvbc&callback=initMap""
                     async defer></script>
     </div>";
+        }
+
+        private string generateMaker(double latitude, double longitude, string markerTitle)
+        {
+            return $@"
+            var marker = new google.maps.Marker({{
+            position: {{lat: {latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}},
+            map: map,
+            title: '{markerTitle}'
+          }});
+        ";
         }
     }
 }

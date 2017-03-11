@@ -9,12 +9,10 @@
     <div class="row">
         <div class="col-md-6">
             <div class="container">
-                from:
-                                <asp:TextBox ID="fromTextBox" runat="server"></asp:TextBox>
-
-                to:
-                                <asp:TextBox ID="toTextBox" runat="server"></asp:TextBox>
-
+                <p>Departing from:</p>
+                <asp:TextBox ID="fromTextBox" runat="server"></asp:TextBox>
+                <p>Destination:</p>
+                <asp:TextBox ID="toTextBox" runat="server"></asp:TextBox>
                 <ajaxToolkit:ComboBox ID="travelModeComboBox" runat="server">
                     <asp:ListItem Value="DRIVING">Car</asp:ListItem>
                     <asp:ListItem Value="TRANSIT">Public Transport</asp:ListItem>
@@ -22,22 +20,19 @@
                     <asp:ListItem Value="WALKING">Walking</asp:ListItem>
                 </ajaxToolkit:ComboBox>
                 <br />
-                <h1>Aidez-nous à vous suggérer une alternative durable</h1>
-                <p>Distance:</p>
-                <p>
+                <p><b>Help us provide you with a sustainable alternative</b></p>
+                <p>Distance of your travel:</p>
+                <div>
                     Long
-                                    <asp:TextBox ID="distanceSlider" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="distanceSlider" runat="server"></asp:TextBox>
                     <ajaxToolkit:SliderExtender ID="distanceSlider_SliderExtender" runat="server" BehaviorID="distanceSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="distanceSlider" />
-                    &nbsp;Short
-                </p>
-                <p>
+                    Short
+                </div>
+                <div>
                     <asp:TextBox ID="securitySlider" runat="server"></asp:TextBox>
                     <ajaxToolkit:SliderExtender ID="securitySlider_SliderExtender" runat="server" BehaviorID="securitySlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="securitySlider" />
-                </p>
-                <p>&nbsp;</p>
-                <p>
-                    <asp:Button ID="addTripButton" runat="server" Text="Button" OnClick="addTripButton_Click" />
-                </p>
+                </div>
+                <asp:Button ID="addTripButton" runat="server" Text="Button" OnClick="addTripButton_Click" />
                 <div id="quickStatsDiv" runat="server">
                     <!-- Alex's spot to add qucikstat stuff -->
                 </div>
@@ -49,5 +44,3 @@
         </div>
     </div>
 </asp:Content>
-
-

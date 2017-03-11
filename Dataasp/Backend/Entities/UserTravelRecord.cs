@@ -13,6 +13,7 @@ namespace Dataasp.Backend.Entities
         public int MetersTravelled { get; set; }
         public double VolumeCO2 { get; set; }
         public TravelModeEnum TravelMode { get; set; }
+        public double Cost { get; set; }
 
         public UserTravelRecord()
         {

@@ -10,11 +10,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dataasp.Backend.GoogleMaps.MapGeneration;
 using Dataasp.Backend.Enums;
-using Dataasp.Backend.jstemporaryclickbutton;
+//using Dataasp.Backend.jstemporaryclickbutton;
 using Dataasp.Backend.DataAccess;
 using Dataasp.Backend.Entities;
-using Dataasp.Backend.GoogleMaps.WayPointGeneration;
-using GoogleMaps.LocationServices;
 
 namespace Dataasp
 {
@@ -26,16 +24,16 @@ namespace Dataasp
         private DistanceCalculater _distanceCalculater;
         private MapGeneraterAdapter _mapGeneraterAdapter;
         private StringToTravelEnumConverter _stringToTravelEnumConvert;
-        private jstemporarybuttonclicker _jstemporarybuttonclicker;
+       // private jstemporarybuttonclicker _jstemporarybuttonclicker;
         private UserTravelStorer _userTravelStorer;
-
+        public double VolumeOfCO2;
         protected void Page_Load(object sender, EventArgs e)
         {
             _addressLatLongConverter = new AddressLatLongConverter();
             _distanceCalculater = new DistanceCalculater();
             _mapGeneraterAdapter = new MapGeneraterAdapter();
             _stringToTravelEnumConvert = new StringToTravelEnumConverter();
-            _jstemporarybuttonclicker = new jstemporarybuttonclicker();
+         //   _jstemporarybuttonclicker = new jstemporarybuttonclicker();
             _userTravelStorer = new UserTravelStorer();
         }
 
@@ -52,21 +50,12 @@ namespace Dataasp
             }
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
             var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
-            _jstemporarybuttonclicker.clicked();
-
-            //Just tests
-
-            var waypointValidater = new WaypointValidater();
-            var waypoint = new MapPoint() { Latitude = (startCoordinates.Latitude + endCoordinates.Latitude) / 2, Longitude = (startCoordinates.Longitude + endCoordinates.Longitude) / 2 };
-            waypointValidater.IsWaypointViable(startAddress, endAddress, waypoint);
-
-            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, false);
-
+            //_jstemporarybuttonclicker.clicked();
+           // mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, false);
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
 
             //Save travel in database
-            saveTravel(distance, travelModeComboBox.SelectedValue);
 
             div.Attributes.Remove("class"); //removes the danger class highlight
 
@@ -74,10 +63,8 @@ namespace Dataasp
             _quickstats.SetName(HttpContext.Current.User.Identity.Name);
             _quickstats.SetMeansOfTransportation(travelModeComboBox.SelectedValue);
             _quickstats.SetFootPrint();
-
+            VolumeOfCO2 = _quickstats.GetFootprint();
             _quickstats.ShowStats(div);
-
-            WayPointGenerator _wayPointGenerator = new WayPointGenerator();
 
             var sliderDistanceValue = distanceSlider.Text;
             int _intSliderValue = Int32.Parse(distanceSlider.Text);
@@ -98,9 +85,9 @@ namespace Dataasp
                 Username = HttpContext.Current.User.Identity.Name,
                 DateOfTrip = DateTime.Now,
                 MetersTravelled = distance,
-                VolumeCO2 = _quickstats.GetFootprint(),
+                VolumeCO2 = VolumeOfCO2,
                 TravelMode = _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue),
-
+                Cost = _quickstats.getCost()
             };
             _userTravelStorer.StoreTravel(travelRecord);
 

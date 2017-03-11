@@ -1,4 +1,4 @@
-﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Dataasp.About" %>
+﻿<%@ Page Title="Profile" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Dataasp.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
@@ -70,10 +70,9 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="panel panel-default text-center">
                                 <div class="panel-heading">
-                                    <span class="fa-stack fa-5x">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                        <i class="fa fa-car fa-stack-1x fa-inverse"></i>
-                                    </span>
+                                     <div class="container">
+                                           <canvas id="DistanceChart" width="100" height="100"></canvas>
+                                     </div>
                                 </div>
                                 <div class="panel-body">
                                     <h4>Service Two</h4>
@@ -258,14 +257,32 @@
 
 
     <script>
-        var ctx = document.getElementById("myChart");
+        var ctx = document.getElementById("myChart").getContext('2d');
         var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ["Walking", "Biking", "Public Transit", "Driving"],
+                datasets: [{
+                    backgroundColor: [
+                        "#2ecc71",
+                        "#3498db",
+                        "#95a5a6",
+                        "#9b59b6",
+                    ],
+                    data:  <%= Chart1Data %>
+                }]
+            }
+        });
+        </script>
+        <script>
+        var ctx3 = document.getElementById("DistanceChart");
+        var DistanceChart = new Chart(ctx3, {
             type: 'bar',
             data: {
                 labels: ["Walking", "Biking", "Public Transit", "Car"],
                 datasets: [{
-                    label: 'Recent travels by Type',
-                    data: <%= Chart1Data %>,
+                    label: 'Kilometers traveled by Type',
+                    data: <%= DistanceChartData %>,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -290,12 +307,13 @@
                     yAxes: [{
                         ticks: {
                             beginAtZero: true,
-                            max: 100,
                         }
                     }]
                 }
             }
         });
+          </script>
+        <script>
         var ctx2 = document.getElementById("myLineChart");
         var myLineChart = new Chart(ctx2, {
             type: 'line',
@@ -303,7 +321,7 @@
                 labels: <%= Chart2Dates %>,
                 datasets: [{
                     label: 'total CO2 generated: ' + <%=totalCO2Str%>,
-                    data: <%= Chart2Data %>,
+                    data: <%= ChartOnCO2Data %>,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
