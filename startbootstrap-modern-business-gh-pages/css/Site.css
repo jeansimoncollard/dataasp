@@ -16,44 +16,8 @@ body {
     padding-right: 15px;
 }
 
-.navbar-inverse {
-    background-color: #228317;
-    border-color: #228317;
-}
-
-.navbar-inverse .navbar-nav>li>a:focus,
-.navbar-inverse .navbar-nav>li>a:hover {
-    color: #89D881;
-    background-color: transparent;
-}
-
-.navbar-inverse .navbar-brand:focus,
-.navbar-inverse .navbar-brand:hover {
-    color: #89D881;
-    background-color: transparent;
-}
-
-.navbar-inverse .navbar-nav>li>a {
-    color: #ffffff;
-}
-
-
-.navbar-inverse .navbar-brand {
-    color: #ffffff;
-}
-
-
-bootstrap.min.css:5
-.page-header {
-    padding-bottom: 9px;
-    margin: 40px 0 20px;
-    border-bottom: 1px solid #228317;
-}
-
-.btn-default {
-    color: #fff;
-    background-color: #228317;
-    border-color: #40B334;
+.nav {
+    color: #228317;
 }
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -224,6 +188,7 @@ footer {
 
 /* Extra small devices (phones, up to 767px) end */
 
+
 /*****************************************************************************
  * Small devices (tablets, 768px and up)
  ****************************************************************************/
@@ -240,6 +205,7 @@ footer {
 
 /* Small devices (tablets, 768px and up) end */
 
+
 /*****************************************************************************
  * Medium devices (desktops, 992px and up)
  ****************************************************************************/
@@ -248,6 +214,7 @@ footer {
 
 
 /* Medium devices (desktops, 992px and up) end */
+
 
 /*****************************************************************************
  * Large devices (large desktops, 1200px and up)
