@@ -29,7 +29,8 @@ namespace Dataasp
             var endAddress = toTextBox.Text;
             if (toTextBox.Text.Length == 0 || fromTextBox.Text.Length == 0)
             {
-                div.InnerHtml = "<h1>Please fill out the form properly</h1>";
+                div.Attributes.Add("class", "btn-danger");
+                div.InnerHtml = "<h1 class='danger'>Please fill out the form properly</h1>";
                 return;
             }
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
@@ -37,6 +38,7 @@ namespace Dataasp
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
 
+            div.Attributes.Remove("class"); //removes the danger class highlight
             _quickstats.SetDistance(distance);
             _quickstats.SetName("Alex");
             _quickstats.SetMeansOfTransportation(travelModeComboBox.SelectedValue);
