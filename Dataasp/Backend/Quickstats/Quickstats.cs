@@ -22,9 +22,9 @@ namespace Dataasp.Backend.Quickstats
         {
             switch (_meansOfTransportation)
             {
-                case "Car": _footPrint = _distance * 12345.0;
+                case "Car": _footPrint = (100 / _distance) * 0.023;     //100 km means 0.023t of co2
                     break;
-                case "Public Transport": _footPrint = _distance * 12345.0;
+                case "Public Transport": _footPrint = (100 / _distance) * 0.01; //100km means 0.01t of co2
                     break;
                 case "Bicycle": _footPrint = _distance * 12345.0;
                     break;
