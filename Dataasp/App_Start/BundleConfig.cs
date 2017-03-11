@@ -41,6 +41,14 @@ namespace Dataasp
                     Path = "~/Scripts/respond.min.js",
                     DebugPath = "~/Scripts/respond.js",
                 });
+
+            ScriptManager.ScriptResourceMapping.AddDefinition(
+                "respond",
+                new ScriptResourceDefinition
+                {
+                    Path = "~/Scripts/Chart.bundle.min.js",
+                    DebugPath = "~/Scripts/Chart.bundle.js",
+                });
         }
     }
 }
