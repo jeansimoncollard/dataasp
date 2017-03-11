@@ -13,6 +13,8 @@ using Dataasp.Backend.Enums;
 using Dataasp.Backend.jstemporaryclickbutton;
 using Dataasp.Backend.DataAccess;
 using Dataasp.Backend.Entities;
+using Dataasp.Backend.GoogleMaps.WayPointGeneration;
+using GoogleMaps.LocationServices;
 
 namespace Dataasp
 {
@@ -67,9 +69,14 @@ namespace Dataasp
 
             _quickstats.ShowStats(div);
 
+            WayPointGenerator _wayPointGenerator = new WayPointGenerator();
+
             var sliderDistanceValue = distanceSlider.Text;
-            int midDistance = Int32.Parse(distanceSlider.Text) / 2;
-            div.InnerHtml += midDistance;
+            int _intSliderValue = Int32.Parse(distanceSlider.Text);
+
+            MapPoint testMap = _wayPointGenerator.GenerateWayPoint(startCoordinates, endCoordinates, distance, _intSliderValue);
+
+            div.InnerHtml += _intSliderValue;
         }
 
         private void saveTravel(int distance, string travelModeValue)
