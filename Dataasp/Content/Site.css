@@ -130,7 +130,7 @@ body {
     padding: 0 15px;
 }
 
-#logo {
+.navbar-brand img {
     max-height: 50px;
 }
 

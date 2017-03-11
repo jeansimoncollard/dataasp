@@ -101,7 +101,7 @@
                         </div>
                         <p>Ecobecoisois creates awareness of your impact on the enviroment based on analytics of your personal transportation habits. Find out how sustainable your travel choices are and compare to those around you. Use Ecobecois to help make ecological choices in your daily commute.</p>
                         <button class="btn">
-                            <a href="about.html">Learn More</a>
+                            Learn More
                         </button>
                     </div>
                     <div class="col-md-4 element-top-50 element-bottom-30">
@@ -120,7 +120,7 @@
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
+                                    <a class="btn btn-default btn-block" href="#">Call to Action</a>
                                 </div>
                             </div>
                         </div>
