@@ -442,6 +442,7 @@
     <Compile Include="Backend\DatasetParsing\DatasetParser.cs" />
     <Compile Include="Backend\DatasetParsing\ParsingTools\ProgramLineDivider.cs" />
     <Compile Include="Backend\Entities\MarkerEntity.cs" />
+    <Compile Include="Backend\Entities\SliderValues.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntityArraylist.cs" />
     <Compile Include="Backend\Entities\WaypointScore.cs" />
     <Compile Include="Backend\Enums\StringToTravelEnumConverter.cs" />

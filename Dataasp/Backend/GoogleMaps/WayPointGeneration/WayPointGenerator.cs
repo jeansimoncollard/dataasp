@@ -6,28 +6,36 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Dataasp.Backend.Entities;
+using System.Web.UI.WebControls;
 
 namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
 {
     public class WayPointGenerator
     {
-        public MapPoint GenerateWayPoint(MapPoint begin, MapPoint end, int distance, int sliderValue)
+        private ConstructionSiteWaypointGenerater _constructionSiteWaypointGenerater;
+
+        public WayPointGenerator()
         {
+            _constructionSiteWaypointGenerater = new WayPointGeneration.ConstructionSiteWaypointGenerater();
+        }
 
-            //var distance = DistanceCalculater.
-            double offsetDistance = (distance / 2);
+        public MapPoint GenerateWayPoint(string startAddress, string endAddress, List<SliderValues> sliderValues, TextBox distanceSlider, TextBox constructionSlider, TextBox photoRadarSlider)
+        {
+            sliderValues = sliderValues.OrderBy(x => x.SliderValue).Reverse().ToList();
 
-            double newlat = (begin.Latitude + end.Latitude) / 2;      //find out the height of the triangle created with the begin and end
-            double newlong = (begin.Longitude + end.Longitude) / 2;    //find out the length of the triangle created with the begin and end
+            if (sliderValues.First().SliderId == distanceSlider.ID) //If the slider with most importance given is distance, return no waypoint to have shortest path.
+            {
+                return null;
+            }
 
-            double latTravelled = Math.Abs(Math.Abs(begin.Latitude) - Math.Abs(end.Latitude));
-            double longTravelled = Math.Abs(Math.Abs(begin.Longitude) - Math.Abs(end.Longitude));
+            if (sliderValues.First().SliderId == constructionSlider.ID)
+            {
+                return _constructionSiteWaypointGenerater.Generate(startAddress, endAddress);
 
-            MapPoint _middleWayPoint = new MapPoint();
-            _middleWayPoint.Latitude = newlat - (latTravelled * (sliderValue / 100.0));
-            _middleWayPoint.Longitude = newlong - (longTravelled * (sliderValue / 100.0));
+            }
 
-            return _middleWayPoint;
+            return null; //Could should never reach here anyway
         }
     }
 }

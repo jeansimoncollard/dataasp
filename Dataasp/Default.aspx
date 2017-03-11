@@ -24,16 +24,16 @@
                 <p class="clearfix"><b>Help us provide you with a sustainable alternative</b></p>
                 <p>Shortest Distance:</p>
 
-                    <asp:TextBox ID="distanceSlider" runat="server"></asp:TextBox>
-                    <ajaxToolkit:SliderExtender ID="distanceSlider_SliderExtender" runat="server" BehaviorID="distanceSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="distanceSlider" />
+                <asp:TextBox ID="distanceSlider" runat="server" Text="50"></asp:TextBox>
+                <ajaxToolkit:SliderExtender ID="distanceSlider_SliderExtender" runat="server" BehaviorID="distanceSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="distanceSlider" />
 
                 <p>Avoid Construction:</p>
-                    <asp:TextBox ID="constructionSlider" runat="server"></asp:TextBox>
-                    <ajaxToolkit:SliderExtender ID="constructionSlider_SliderExtender" runat="server" BehaviorID="constructionSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="constructionSlider" />
+                <asp:TextBox ID="constructionSlider" runat="server" Text="50"></asp:TextBox>
+                <ajaxToolkit:SliderExtender ID="constructionSlider_SliderExtender" runat="server" BehaviorID="constructionSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="constructionSlider" />
 
                 <p>Avoid Speed Traps:</p>
-                    <asp:TextBox ID="photoRadarSlider" runat="server"></asp:TextBox>
-                    <ajaxToolkit:SliderExtender ID="photoRadarSlider_SliderExtender" runat="server" BehaviorID="photoRadarSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="photoRadarSlider" />
+                <asp:TextBox ID="photoRadarSlider" runat="server" Text="50"></asp:TextBox>
+                <ajaxToolkit:SliderExtender ID="photoRadarSlider_SliderExtender" runat="server" BehaviorID="photoRadarSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="photoRadarSlider" />
                 <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click" />
                 <div id="quickStatsDiv" runat="server">
                     <!-- Alex's spot to add qucikstat stuff -->
