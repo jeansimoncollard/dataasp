@@ -21,6 +21,11 @@ namespace Dataasp.Backend.Quickstats
         private double _cost;                  //estimated cost in dollars
         private string _costSTR;
 
+        public double getCost()
+        {
+            return _cost;
+        }
+
         public void SetFootPrint()             //sets the user's ecological footprint based on means of transportation and distance
         {
 
@@ -36,8 +41,9 @@ namespace Dataasp.Backend.Quickstats
                     if (GetDistanceInKm() < 50)
                     {
                         _cost = 3.25;
-                        break;
                         _costSTR = "price of a single bus ticket for local transport";
+                        break;
+
                     }
                     else
                     {
