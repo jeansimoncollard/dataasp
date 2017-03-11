@@ -26,7 +26,13 @@ body {
     opacity: 0.8;
 }
 
-
+.heading7 {
+    font-size: 25px;
+    color: #67c4e7;
+    padding-top: 15px;
+    font-weight: 700;
+    padding-bottom: 25px;
+}
 /* Home Page Carousel */
 
 header.carousel {
@@ -67,8 +73,7 @@ header.carousel {
         left: 2px;
         font-size: 20px;
     }
-
-======= ﻿ /* Move down content because we have a fixed navbar that is 50px tall */
+ /* Move down content because we have a fixed navbar that is 50px tall */
 html,
 body {
     height: 100%;
@@ -318,6 +323,9 @@ h1, .h1, h2, .h2, h3, .h3 {
         border-color: #46903E;
     }
 
+.btn-primary {
+    background-color: #67c4e7;
+}
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -347,6 +355,20 @@ footer {
 .footerleft {
     margin-top: 50px;
     padding: 0 36px;
+}
+
+.footercenter {
+    margin-top: 0;
+    margin-bottom: 50px;
+    padding: 0 50px 0 0;
+}
+
+.footercenter p {
+    color: #000;
+    font-size: 13.5px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 15px;
+    text-align: justify;
 }
 
 .logofooter {
