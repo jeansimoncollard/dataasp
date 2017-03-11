@@ -73,13 +73,13 @@ namespace Dataasp.Backend.DatasetParsing
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Connection = connection;            // <== lacking
+                    command.Connection = connection;            
                     try
                     {
                         connection.Open();
                         command.ExecuteNonQuery();
                     }
-                    catch (SqlException e)
+                    catch (SqlException)
                     {
                         // error here
                     }
