@@ -102,6 +102,12 @@ footer {
     color: #ffffff;
 }
 
+.navbar-brand {
+    padding: 0 15px;
+}
+#logo {
+    max-height: 50px;
+}
 
 bootstrap.min.css:5
 .page-header {
