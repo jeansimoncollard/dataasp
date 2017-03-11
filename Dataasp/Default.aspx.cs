@@ -53,7 +53,15 @@ namespace Dataasp
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
             var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
             _jstemporarybuttonclicker.clicked();
-            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue),false);
+
+            //Just tests
+
+            var waypointValidater = new WaypointValidater();
+            var waypoint = new MapPoint() { Latitude = (startCoordinates.Latitude + endCoordinates.Latitude) / 2, Longitude = (startCoordinates.Longitude + endCoordinates.Longitude) / 2 };
+            waypointValidater.IsWaypointViable(startAddress, endAddress, waypoint);
+
+            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, true);
+
 
             var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
 

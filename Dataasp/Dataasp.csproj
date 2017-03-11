@@ -192,6 +192,10 @@
   <ItemGroup>
     <Content Include="Content\googlemap.css" />
     <Content Include="GoogleMaps.LocationServices.readme.txt" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\panda-eating.jpg" />
+    <Content Include="images\tree.jpg" />
+    <Content Include="images\trees.jpg" />
     <Content Include="Profile.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -390,6 +394,7 @@
     <Compile Include="Backend\Enums\StringToTravelEnumConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\AddressLatLongConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\DistanceCalculater.cs" />
+    <Compile Include="Backend\GoogleMaps\WayPointGeneration\WaypointValidater.cs" />
     <Compile Include="Backend\GoogleMaps\WayPointGeneration\WayPointGenerator.cs" />
     <Compile Include="Backend\jstemporaryclickbutton\jstemporarybuttonclicker.cs" />
     <Compile Include="Backend\Quickstats\Quickstats.cs" />

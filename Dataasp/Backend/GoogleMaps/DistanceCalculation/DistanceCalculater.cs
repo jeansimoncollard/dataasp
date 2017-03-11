@@ -30,6 +30,26 @@ namespace Dataasp.Backend.DistanceCalculter
             }
         }
 
+        public int GetDistance(string startAddress, string endAddress, string wayPoint, string travelmode)
+        {
+            System.Threading.Thread.Sleep(1000);
+            int distance = 0;
+            //string from = origin.Text;
+            //string to = destination.Text;
+            string requesturl = $@"http://maps.googleapis.com/maps/api/directions/json?origin={startAddress}&destination={endAddress}&waypoints={wayPoint}&sensor=false&mode={travelmode.ToLower()}";
+            string content = fileGetContents(requesturl);
+            var o = JObject.Parse(content);
+            try
+            {
+                distance = (int)o.SelectToken("routes[0].legs[0].distance.value");
+                return distance;
+            }
+            catch
+            {
+                return distance;
+            }
+        }
+
         protected string fileGetContents(string fileName)
         {
             string sContents = string.Empty;
