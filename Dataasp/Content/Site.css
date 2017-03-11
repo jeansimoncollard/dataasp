@@ -77,6 +77,9 @@ header.carousel {
 /* Footer Styles */
 
 .footer {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
     background-color: #46903E;
     min-height: 350px;
     font-family: 'Open Sans', sans-serif;

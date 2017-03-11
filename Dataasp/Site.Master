@@ -152,7 +152,7 @@
 
                 var viewportHeight = $(document).height();
 
-                $('MainContent').css('min-height', viewportHeight - 200); // minus size of your header & footer
+                $('.wrapper').css('min-height', viewportHeight - 200); // minus size of your header & footer
 
             });
         </script>
