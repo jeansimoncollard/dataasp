@@ -232,12 +232,12 @@ a {
 }
 
 a {
-    color: #000000;
+    color: #67c4e7;
     text-decoration: none;
 }
 
     a:hover, a:focus {
-        color: #337ab7;
+        color:#286090;
         text-decoration: underline;
     }
 
