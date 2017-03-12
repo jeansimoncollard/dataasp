@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="col-lg-12 element-top-30 element-bottom-30">
-            <h1 class="page-header">Travel Now!</h1>
+            <h1 class="page-header">Itinerary</h1>
         </div>
     </div>
     <div class="row element-bottom-20">
@@ -87,13 +87,9 @@
                 </script>
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyeTwU64siTHFVrI_h9bJX7VlMdReWvbc&libraries=places&callback=initAutocomplete"
                     async defer></script>
-
-
                 <p>Destination:</p><input id="autocomplete2" placeholder="Enter Destination" onfocus="geolocate2()" type="text" runat="server" clientidmode="Static"></input>
-                <br>
-                <br>
                 <div class="clearfix">
-                    <select id="travelModeComboBox" runat="server">
+                    <p>Method:</p><select id="travelModeComboBox" runat="server">
                         <option value="DRIVING">Car</option>
                         <option value="TRANSIT">Public Transport</option>
                         <option value="BICYCLING">Bicycle</option>

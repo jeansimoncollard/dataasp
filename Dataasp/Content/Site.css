@@ -292,6 +292,7 @@ a {
         border-radius: 100px;
         padding: 0;
         text-align: center;
+        margin-top: 5px;
     }
 
 .navbar {
@@ -507,8 +508,15 @@ input[type="select"] {
         }
 /*Organizes the form on the travel page.*/
 .container p {
-     margin-top: 12px;
+    margin-top: 12px;
     margin-bottom:0;
+    margin-left: 0;
+    font-size: 20px;
+}
+
+.input, select, textarea {
+    font-size: 20px;
+    width: 172px; 
 }
 
 input[type=range]::-webkit-slider-runnable-track {
@@ -626,7 +634,7 @@ input[type=range]::-ms-thumb {
 }
 
 .element-bottom-30 {
-    padding-bottom: 30px;
+    padding-bottom: 5px;
 }
 
 .element-bottom-40 {

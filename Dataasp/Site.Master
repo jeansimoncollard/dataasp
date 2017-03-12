@@ -54,7 +54,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/Default">Travel</a></li>
+                        <li><a runat="server" href="~/Default">Itinerary</a></li>
                         <li><a runat="server" href="~/Profile">Profile</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="~/About2">About</a></li>
