@@ -15,13 +15,13 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
     {
         public AddressLatLongConverter _addressLatLongConverter;
         public MapGenerater _mapGenerater;
-        public ConstructionMarkerGenerater _constructionMarkerGenerater;
+        public ConstructionMarkerGenerater _markerGenerater;
 
         public MapGeneraterAdapter()
         {
             _mapGenerater = new MapGenerater();
             _addressLatLongConverter = new AddressLatLongConverter();
-            _constructionMarkerGenerater = new ConstructionMarkerGenerater();
+            _markerGenerater = new ConstructionMarkerGenerater();
         }
 
         public string GenerateMap(string startAddress, string endAddress, TravelModeEnum travelMode, MapPoint wayPoint, bool isWaypoint)
@@ -44,7 +44,10 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
 
         private List<MarkerEntity> GetMarkers(string startAddress, string endAddress)
         {
-            return _constructionMarkerGenerater.Generate(startAddress, endAddress);
+            var markersList = new List<MarkerEntity>();
+            markersList.AddRange(_markerGenerater.Generate(startAddress, endAddress, "construction_sites", "Construction", "http://img4.hostingpics.net/pics/990085construction.png"));
+            markersList.AddRange(_markerGenerater.Generate(startAddress, endAddress, "speedtraps", "Speed Trap", "http://img4.hostingpics.net/pics/146471police.png"));
+            return markersList;
         }
     }
 }

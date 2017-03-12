@@ -26,7 +26,7 @@ namespace Dataasp
         private MapGeneraterAdapter _mapGeneraterAdapter;
         private StringToTravelEnumConverter _stringToTravelEnumConvert;
         private UserTravelStorer _userTravelStorer;
-        private WayPointGenerator _wayPointGenerator;
+        private WayPointSelecter _wayPointGenerator;
 
         public double VolumeOfCO2;
         protected void Page_Load(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace Dataasp
             _mapGeneraterAdapter = new MapGeneraterAdapter();
             _stringToTravelEnumConvert = new StringToTravelEnumConverter();
             _userTravelStorer = new UserTravelStorer();
-            _wayPointGenerator = new WayPointGenerator();
+            _wayPointGenerator = new WayPointSelecter();
 
         }
 

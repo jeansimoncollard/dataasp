@@ -318,6 +318,11 @@ h1, .h1, h2, .h2, h3, .h3 {
     margin: 10px;
 }
 
+h1, .h1 {
+    margin-top: 20px;
+    font-size: 46px;
+    font-family: 'Calibri, 'Trebuchet MS';
+}
 .btn-default {
     color: #fff;
     background-color: #228317;
