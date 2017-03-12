@@ -374,16 +374,16 @@
             }
             switch (preferedType) {
                 case 0:
-                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have walked ' + tranType[0] +'km. This is equivalent to walking [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be walkable.</p > ');
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have walked ' + tranType[0] +'km. This is equivalent to walking  '+ (tranType[0]/384400*100).toFixed(3) +'% of  the way to the moon!</p>');
                     break;
                 case 1:
-                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have biked ' + tranType[1] +'km. This is equivalent to biking [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be bikable.</p>');
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have biked ' + tranType[1] +'km. This is equivalent to biking  '+ (tranType[1]/384400*100).toFixed(3) +'% of  the way to the moon!</p>');
                     break;
                 case 2:
-                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have rode ' + tranType[2] +'km. This is equivalent to riding [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be ridable.</p>');
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have rode ' + tranType[2] +'km. This is equivalent to riding  '+ (tranType[2]/384400*100).toFixed(3) +'% of  the way to the moon!</p>');
                     break;
                 case 3:
-                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have drove ' + tranType[3] +'km. This is equivalent to driving [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be drivable.</p>');
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have drove ' + tranType[3] +'km. This is equivalent to driving '+ (tranType[3]/384400*100).toFixed(3) +'% of  the way to the moon!</p>');
                     break;
             }
 
