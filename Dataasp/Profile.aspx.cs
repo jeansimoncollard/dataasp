@@ -22,6 +22,14 @@ namespace Dataasp
         public string totalCostData { get; set; }
         public string costData { get; set; }
 
+        public string AverageChart1Data { get; set; }
+        public string AverageChartOnCO2Data { get; set; }
+        public string AverageChart2Dates { get; set; }
+        public string AveragetotalCO2Str { get; set; }
+        public string AverageDistanceChartData { get; set; }
+        public string AveragetotalCostData { get; set; }
+        public string AveragecostData { get; set; }
+
         private JavascriptSerializer _jsArraySerializer;
         private UserHistoryLoader _userHistoryLoader;
 
@@ -76,8 +84,8 @@ namespace Dataasp
 
                 _jsArraySerializer = new JavascriptSerializer();
                 totalCost[0] = Math.Round(y, 2);
-                totalCostData = _jsArraySerializer.Serialize(totalCost);
-                costData = _jsArraySerializer.Serialize(individualCost);
+            totalCostData = _jsArraySerializer.Serialize(totalCost);
+            costData = _jsArraySerializer.Serialize(individualCost);
 
             }
 
@@ -181,13 +189,24 @@ namespace Dataasp
             var currentUser = _userHistoryLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
             ArrayList totalCO2 = new ArrayList() { 0 };
             double y = 0;
+            double w = 0;
             ArrayList dates = new ArrayList();
             ArrayList individualCO2 = new ArrayList();
+            ArrayList AverageCO2 = new ArrayList();
             for (int i = 0; i < currentUser.UserHistory.Count; i++)
             {
                 UserTravelRecord Temp = new UserTravelRecord(currentUser.UserHistory[i]);
                 dates.Add(Temp.DateOfTrip.ToString());
                 individualCO2.Add(Temp.VolumeCO2);
+                if (i < 3 && i > 4)
+                {
+                    AverageCO2.Add((Temp.VolumeCO2 - Math.Round(Temp.VolumeCO2, 0)) * 100);
+                    w = w + ((Temp.VolumeCO2 - Math.Round(Temp.VolumeCO2, 0)) * 100);
+                }
+                else
+                {
+                    AverageCO2.Add(0);
+                }
                 y = y + Temp.VolumeCO2;
 
             }
@@ -196,8 +215,9 @@ namespace Dataasp
             totalCO2[0] = y;
             totalCO2Str = _jsArraySerializer.Serialize(totalCO2);
             ChartOnCO2Data = _jsArraySerializer.Serialize(individualCO2);
+            AverageChartOnCO2Data = _jsArraySerializer.Serialize(AverageCO2);
             Chart2Dates = _jsArraySerializer.Serialize(dates);
-
+            AverageChart2Dates = _jsArraySerializer.Serialize(dates);
         }
     }
 }
