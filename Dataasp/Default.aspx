@@ -9,38 +9,37 @@
     <div class="row element-bottom-20">
         <div class="col-md-6">
             <div class="container">
-                <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
-                <asp:TextBox ID="fromTextBox" runat="server"></asp:TextBox>
+                <input id="autocomplete" placeholder="Enter your address" onfocus="geolocate()" type="text" runat="server" clientidmode="Static"></input>
                 <script>
-                  var placeSearch, autocomplete;
+                    var placeSearch, autocomplete;
 
-                  function initAutocomplete() {
-                    // Create the autocomplete object, restricting the search to geographical
-                    // location types.
-                    autocomplete = new google.maps.places.Autocomplete(
-                        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-                        {types: ['geocode']});
-                        
-                    // When the user selects an address from the dropdown, populate the address
-                    // fields in the form.
-                    autocomplete.addListener('place_changed', fillInAddress);
+                    function initAutocomplete() {
+                        // Create the autocomplete object, restricting the search to geographical
+                        // location types.
+                        autocomplete = new google.maps.places.Autocomplete(
+                            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+                            { types: ['geocode'] });
 
-                    // Create the autocomplete object, restricting the search to geographical
-                    // location types.
-                    autocomplete2 = new google.maps.places.Autocomplete(
-                        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete2')),
-                        { types: ['geocode'] });
+                        // When the user selects an address from the dropdown, populate the address
+                        // fields in the form.
+                        autocomplete.addListener('place_changed', fillInAddress);
 
-                    // When the user selects an address from the dropdown, populate the address
-                    // fields in the form.
-                    autocomplete2.addListener('place_changed', fillInAddress2);
-                  }
+                        // Create the autocomplete object, restricting the search to geographical
+                        // location types.
+                        autocomplete2 = new google.maps.places.Autocomplete(
+                            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete2')),
+                            { types: ['geocode'] });
 
-                  function fillInAddress() {
-                    // Get the place details from the autocomplete object.
-                      var place = autocomplete.getPlace();
-                      document.getElementById(fromTextBox).value = place;
-                      
+                        // When the user selects an address from the dropdown, populate the address
+                        // fields in the form.
+                        autocomplete2.addListener('place_changed', fillInAddress2);
+                    }
+
+                    function fillInAddress() {
+                        // Get the place details from the autocomplete object.
+                        var place = autocomplete.getPlace();
+                        document.getElementById(fromTextBox).value = place;
+
                     }
 
                     // Bias the autocomplete object to the user's geographical location,
@@ -87,12 +86,11 @@
                     }
                 </script>
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyeTwU64siTHFVrI_h9bJX7VlMdReWvbc&libraries=places&callback=initAutocomplete"
-                 async defer></script>
+                    async defer></script>
 
 
                 <p>Destination:</p>
-                <input id="autocomplete2" placeholder="Enter your address" onFocus="geolocate2()" type="text"></input>
-                <asp:TextBox ID="toTextBox" runat="server"></asp:TextBox>
+                <input id="autocomplete2" placeholder="Enter your address" onfocus="geolocate2()" type="text" runat="server" clientidmode="Static"></input>
                 <div class="clearfix">
                     <ajaxToolkit:ComboBox ID="travelModeComboBox" runat="server">
                         <asp:ListItem Value="DRIVING">Car</asp:ListItem>
@@ -114,7 +112,7 @@
                 <p>Avoid Speed Traps:</p>
                 <asp:TextBox ID="photoRadarSlider" runat="server" Text="50"></asp:TextBox>
                 <ajaxToolkit:SliderExtender ID="photoRadarSlider_SliderExtender" runat="server" BehaviorID="photoRadarSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="photoRadarSlider" />
-                <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click" />
+                <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click"/>
                 <div id="quickStatsDiv" runat="server">
                     <!-- Alex's spot to add qucikstat stuff -->
                 </div>
