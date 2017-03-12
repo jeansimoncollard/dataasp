@@ -56,10 +56,10 @@ namespace Dataasp
 
             var waypoint = generateWayPoint(startAddress, endAddress);
             var useWayPoint = !(waypoint == null); //Don't use waypoint if it's equal to null
-            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue), waypoint, useWayPoint);
+            mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.Value), waypoint, useWayPoint);
 
 
-            var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.SelectedValue);
+            var distance = _distanceCalculater.GetDistance(startAddress, endAddress, travelModeComboBox.Value);
 
             //Save travel in database
 
@@ -67,13 +67,13 @@ namespace Dataasp
 
             _quickstats.SetDistance(distance);
             _quickstats.SetName(HttpContext.Current.User.Identity.Name);
-            _quickstats.SetMeansOfTransportation(travelModeComboBox.SelectedValue);
+            _quickstats.SetMeansOfTransportation(travelModeComboBox.Value);
             _quickstats.SetFootPrint();
             VolumeOfCO2 = _quickstats.GetFootprint();
             _quickstats.ShowStats(div);
 
-            var sliderDistanceValue = distanceSlider.Text;
-            int _intSliderValue = Int32.Parse(distanceSlider.Text);
+            var sliderDistanceValue = distanceSlider.Value;
+            int _intSliderValue = Int32.Parse(distanceSlider.Value);
 
         }
 
@@ -85,7 +85,7 @@ namespace Dataasp
                 DateOfTrip = DateTime.Now,
                 MetersTravelled = distance,
                 VolumeCO2 = VolumeOfCO2,
-                TravelMode = _stringToTravelEnumConvert.Convert(travelModeComboBox.SelectedValue),
+                TravelMode = _stringToTravelEnumConvert.Convert(travelModeComboBox.Value),
                 Cost = _quickstats.getCost()
             };
             _userTravelStorer.StoreTravel(travelRecord);
@@ -99,11 +99,14 @@ namespace Dataasp
         {
             var sliderValues = new List<SliderValues>();
 
-            sliderValues.Add(new SliderValues() { SliderId = distanceSlider.ID, SliderValue = Convert.ToInt32(distanceSlider.Text) });
-            sliderValues.Add(new SliderValues() { SliderId = constructionSlider.ID, SliderValue = Convert.ToInt32(constructionSlider.Text) });
-            sliderValues.Add(new SliderValues() { SliderId = photoRadarSlider.ID, SliderValue = Convert.ToInt32(photoRadarSlider.Text) });
+            sliderValues.Add(new SliderValues() { SliderId = distanceSlider.ID, SliderValue = Convert.ToInt32(distanceSlider.Value) });
+            sliderValues.Add(new SliderValues() { SliderId = constructionSlider.ID, SliderValue = Convert.ToInt32(constructionSlider.Value) });
+            sliderValues.Add(new SliderValues() { SliderId = photoRadarSlider.ID, SliderValue = Convert.ToInt32(photoRadarSlider.Value) });
+            sliderValues.Add(new SliderValues() { SliderId = savingFuelSlider.ID, SliderValue = Convert.ToInt32(savingFuelSlider.Value) });
+           
 
-            return _wayPointGenerator.GenerateWayPoint(startAddress, endAddress, sliderValues, distanceSlider, constructionSlider, photoRadarSlider);
+            return _wayPointGenerator.GenerateWayPoint(startAddress, endAddress, sliderValues, distanceSlider, constructionSlider, photoRadarSlider, savingFuelSlider);
         }
+
     }
 }

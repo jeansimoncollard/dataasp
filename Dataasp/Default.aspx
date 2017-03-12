@@ -9,7 +9,7 @@
     <div class="row element-bottom-20">
         <div class="col-md-6">
             <div class="container">
-                <input id="autocomplete" placeholder="Enter your address" onfocus="geolocate()" type="text" runat="server" clientidmode="Static"></input>
+                <input id="autocomplete" placeholder="Enter your location" onfocus="geolocate()" type="text" runat="server" clientidmode="Static"></input>
                 <script>
                     var placeSearch, autocomplete;
 
@@ -90,29 +90,36 @@
 
 
                 <p>Destination:</p>
-                <input id="autocomplete2" placeholder="Enter your address" onfocus="geolocate2()" type="text" runat="server" clientidmode="Static"></input>
+                <input id="autocomplete2" placeholder="Enter Destination" onfocus="geolocate2()" type="text" runat="server" clientidmode="Static"></input>
+                <br>
+                <br>
                 <div class="clearfix">
-                    <ajaxToolkit:ComboBox ID="travelModeComboBox" runat="server">
-                        <asp:ListItem Value="DRIVING">Car</asp:ListItem>
-                        <asp:ListItem Value="TRANSIT">Public Transport</asp:ListItem>
-                        <asp:ListItem Value="BICYCLING">Bicycle</asp:ListItem>
-                        <asp:ListItem Value="WALKING">Walking</asp:ListItem>
-                    </ajaxToolkit:ComboBox>
+                    <select id="travelModeComboBox" runat="server">
+                        <option value="DRIVING">Car</option>
+                        <option value="TRANSIT">Public Transport</option>
+                        <option value="BICYCLING">Bicycle</option>
+                        <option value="WALKING">Walking</option>
+                    </select>
                 </div>
                 <p class="clearfix"><b>Help us provide you with a sustainable alternative</b></p>
+
+
+                <p>Distance:</p>
+
+                <input id="distanceSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
+
                 <p>Saving Fuel:</p>
 
-                <asp:TextBox ID="distanceSlider" runat="server" Text="50"></asp:TextBox>
-                <ajaxToolkit:SliderExtender ID="distanceSlider_SliderExtender" runat="server" BehaviorID="distanceSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="distanceSlider" />
-
+                <input id="savingFuelSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
                 <p>Avoid Construction:</p>
-                <asp:TextBox ID="constructionSlider" runat="server" Text="50"></asp:TextBox>
-                <ajaxToolkit:SliderExtender ID="constructionSlider_SliderExtender" runat="server" BehaviorID="constructionSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="constructionSlider" />
+
+                <input id="constructionSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
 
                 <p>Avoid Speed Traps:</p>
-                <asp:TextBox ID="photoRadarSlider" runat="server" Text="50"></asp:TextBox>
-                <ajaxToolkit:SliderExtender ID="photoRadarSlider_SliderExtender" runat="server" BehaviorID="photoRadarSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="photoRadarSlider" />
-                <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click"/>
+
+                <input id="photoRadarSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
+                <br>
+                <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click" />
                 <div id="quickStatsDiv" runat="server">
                     <!-- Alex's spot to add qucikstat stuff -->
                 </div>

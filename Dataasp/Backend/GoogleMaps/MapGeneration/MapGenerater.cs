@@ -34,8 +34,6 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
 
 
 
-                function initMap()
-        {
             var start = " + start + @";
         var end = " + end + @";
         var waypoint = " + waypoint + @";
@@ -231,14 +229,12 @@ map.mapTypes.set('map_style', styledMap);
                 });
 " + _markerGenerater.GenerateMarkers(markers) + @"
 
-                }
+                
 
             </script>
 
 
-            <script src = ""https://maps.googleapis.com/maps/api/js?key=AIzaSyCyeTwU64siTHFVrI_h9bJX7VlMdReWvbc&callback=initMap""
-                    async defer></script>
-    </div>";
+            ";
 
 
             return mapdiv;
