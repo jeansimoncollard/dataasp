@@ -7,7 +7,7 @@ body {
 body {
     padding-top: 50px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.42857143;
     background-image: url("/images/treebark.jpg");
     background-repeat: no-repeat;
@@ -16,6 +16,7 @@ body {
     background-size: cover;
 
 }
+
 /*Equalize thumbnails for aboout page*/
 .thumbnail {
     height: 420px;
@@ -302,9 +303,8 @@ a {
 
 .page-header {
     color: #000;
-
+    margin-top: 65px;
     padding-bottom: 9px;
-    margin: 40px 0 20px;
     border-bottom: 1px solid #000;
 
 }
@@ -320,7 +320,7 @@ h1, .h1, h2, .h2 {
 }
 
 h1, .h1 {
-    margin-top: 20px;
+    margin-top: 75px;
     font-size: 46px;
     font-family: 'Calibri, 'Trebuchet MS';
 }
@@ -513,6 +513,17 @@ input[type="select"] {
     margin-bottom:0;
     margin-left: 0;
     font-size: 20px;
+}
+
+.container p a{
+    font-size: 10px;
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.container p a:hover{
+    color: #67c4e7;
+  
 }
 
 .input, select, textarea {
