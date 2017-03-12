@@ -29,12 +29,12 @@ namespace Dataasp.Backend.Quickstats
 
             switch (_meansOfTransportation)
             {
-                case "a Car":
+                case "Car":
                     _footPrint = Math.Round((GetDistanceInKm()) * (13.86 / 100), 10);     //100 km means 13.8kg of co2
                     _cost = Math.Round((((GetDistanceInKm() / 100) * 6.63) * 1.11), 2);
                     _costSTR = "based on current average fuel prices for Quebec";
                     break;
-                case "the Public Transport system":
+                case "Public Transport":
                     _footPrint = Math.Round((GetDistanceInKm()) * 0.089, 5); //1km means 0.089kg of co2 per person
                     if (GetDistanceInKm() < 50)
                     {
@@ -49,7 +49,7 @@ namespace Dataasp.Backend.Quickstats
                         _costSTR = "approximate price of an inter-city bus";
                     }
                     break;
-                case "a Bicycle":
+                case "Bicycle":
                     _footPrint = 0;     //per km footprint of bycicle
                     if (GetDistanceInKm() < 50)
                     {
@@ -60,7 +60,7 @@ namespace Dataasp.Backend.Quickstats
                     else _cost = 5;
                     _costSTR = "full day Bixi Rental";
                     break;
-                case "your feet!":
+                case "Your Feet!":
                     _footPrint = 0;     //for just walking
                     _cost = 0;
                     _costSTR = "free";

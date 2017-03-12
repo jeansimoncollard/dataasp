@@ -94,7 +94,7 @@
                             <a href="~/About2" class="btn btn-primary element-bottom-10" role="button" runat="server">Learn more</a>
                         </div>
                     </div>
-                    <div class="col-md-4 element-top-50 element-bottom-30">
+                    <div class="col-md-4 footerleft element-bottom-30">
                         <div class="row">
                             <div id="registerFooter" runat="server">
                                 <h6 class="heading7">Register</h6>
@@ -112,7 +112,7 @@
 
                         </div>
                     </div>
-                    <div class="col-md-4 element-top-50 element-bottom-30">
+                    <div class="col-md-4 footerleft element-bottom-30">
                         <div class="row">
                             <h6 class="heading7">Contact Us</h6>
                             <div class="footercenter">
