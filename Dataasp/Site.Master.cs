@@ -15,9 +15,27 @@ namespace Dataasp
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+        public string Username { get; set; }
 
         protected void Page_Init(object sender, EventArgs e)
         {
+
+            Username = "";
+            if (!string.IsNullOrEmpty(HttpContext.Current.User.Identity.Name))
+            {
+                int charLocation = HttpContext.Current.User.Identity.Name.IndexOf("@", StringComparison.Ordinal);
+
+                if (charLocation > 0)
+                {
+                    Username = HttpContext.Current.User.Identity.Name.Substring(0, charLocation);
+                }
+                registerFooter.Visible = false;
+            }
+            else
+            {
+                alreadyRegistedFooter.Visible = false;
+            }
+
             // The code below helps to protect against XSRF attacks
             var requestCookie = Request.Cookies[AntiXsrfTokenKey];
             Guid requestCookieGuidValue;
