@@ -210,11 +210,12 @@ namespace Dataasp
 
                 var x = (double)individualCO2[Temp.DateOfTrip.Month - 1];
                 x += Temp.VolumeCO2;
+                y = y + Temp.VolumeCO2;
                 individualCO2[Temp.DateOfTrip.Month - 1] = x;
             }
 
             _jsArraySerializer = new JavascriptSerializer();
-            totalCO2[0] = y;
+            totalCO2[0] = Math.Round(y, 2);
             totalCO2Str = _jsArraySerializer.Serialize(totalCO2);
             ChartOnCO2Data = _jsArraySerializer.Serialize(individualCO2);
             AverageChartOnCO2Data = _jsArraySerializer.Serialize(AverageCO2);

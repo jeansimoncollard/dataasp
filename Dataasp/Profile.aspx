@@ -15,7 +15,7 @@
                         <li><strong>Here are the most well known consequences:</strong>
                         </li>
                         <em><li>Sea level rising</li>
-                        <li>More frequent extrem weather</li>
+                        <li>More frequent cases of extreme weather</li>
                         <li>Ecosystem changes</li>
                         <li>Spread of diseases</li>
                         <li>Increased global warmth</li></em>
@@ -389,14 +389,14 @@
 
 
     </script>
-    <script>
+     <script>
             var ctx2 = document.getElementById("myLineChart");
             var myLineChart = new Chart(ctx2, {
                 type: 'line',
                 data: {
                     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                     datasets: [{
-                        label: 'total CO2 generated : ' + <%=totalCO2Str%>,
+                        label: 'total CO2 generated : ' + <%=totalCO2Str%> + 'kg',
                         data: <%= ChartOnCO2Data %>,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
