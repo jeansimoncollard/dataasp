@@ -9,7 +9,7 @@
     <div class="row element-bottom-20">
         <div class="col-md-6">
             <div class="container">
-                <input id="autocomplete" placeholder="Enter your location" onfocus="geolocate()" type="text" runat="server" clientidmode="Static"></input>
+                <p>Location:</p><input id="autocomplete" placeholder="Enter your location" onfocus="geolocate()" type="text" runat="server" clientidmode="Static"></input>
                 <script>
                     var placeSearch, autocomplete;
 
@@ -89,8 +89,7 @@
                     async defer></script>
 
 
-                <p>Destination:</p>
-                <input id="autocomplete2" placeholder="Enter Destination" onfocus="geolocate2()" type="text" runat="server" clientidmode="Static"></input>
+                <p>Destination:</p><input id="autocomplete2" placeholder="Enter Destination" onfocus="geolocate2()" type="text" runat="server" clientidmode="Static"></input>
                 <br>
                 <br>
                 <div class="clearfix">
@@ -104,20 +103,14 @@
                 <p class="clearfix"><b>Help us provide you with a sustainable alternative</b></p>
 
 
-                <p>Distance:</p>
+                <p>Distance:</p><input class="slider" id="distanceSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
 
-                <input id="distanceSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
-
-                <p>Saving Fuel:</p>
-
-                <input id="savingFuelSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
+                <p>Saving Fuel:</p><input class="slider" id="savingFuelSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
                 <p>Avoid Construction:</p>
 
-                <input id="constructionSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
+                <input class="slider" id="constructionSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
 
-                <p>Avoid Speed Traps:</p>
-
-                <input id="photoRadarSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
+                <p>Avoid Speed Traps:</p><input class="slider" id="photoRadarSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
                 <br>
                 <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click" />
                 <div id="quickStatsDiv" runat="server">
