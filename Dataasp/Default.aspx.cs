@@ -42,6 +42,8 @@ namespace Dataasp
 
         protected void addTripButton_Click(object sender, EventArgs e)
         {
+            initial_map.Visible = false;
+
             var div = quickStatsDiv;
             var startAddress = autocomplete.Value;
             var endAddress = autocomplete2.Value;

@@ -223,6 +223,15 @@
         var ctx = document.getElementById("myChart").getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'doughnut',
+            options: {
+                title: {
+                    display: true,
+                    text: 'Travel type percentage'
+                },
+                animation: {
+                    animateScale: true
+                }
+            },
             data: {
                 labels: ["Walking", "Biking", "Public Transit", "Driving"],
                 datasets: [{
@@ -244,7 +253,7 @@
                 data: {
                     labels: ["Walking", "Biking", "Public Transit", "Car"],
                     datasets: [{
-                        label: "Total travel expenditure" + <%= totalCostData %>,
+                        label: "Total travel expenditure " + "$" +<%= totalCostData %>,
                     data: <%= costData %>,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -265,9 +274,14 @@
                     borderWidth: 1
                 }]
             },
-            options: {
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Travel costs'
+                    },
                 scales: {
                     yAxes: [{
+                        scaleTitle: "$",
                         ticks: {
                             beginAtZero: true,
                         }
@@ -283,7 +297,7 @@
                 data: {
                     labels: ["Walking", "Biking", "Public Transit", "Car"],
                     datasets: [{
-                        label: 'Kilometers traveled by Type',
+                        label: 'Kilometers',
                         data: <%= DistanceChartData %>,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -304,7 +318,11 @@
                     borderWidth: 1
                 }]
             },
-            options: {
+              options: {
+                  title: {
+                      display: true,
+                      text: 'Distance by Type'
+                  },
                 scales: {
                     yAxes: [{
                         ticks: {
@@ -343,7 +361,11 @@
                     borderWidth: 1
                 }]
             },
-            options: {
+                options: {
+                    title: {
+                        display: true,
+                        text: 'CO2 Emissions'
+                    },
                 scales: {
                     yAxes: [{
                         ticks: {

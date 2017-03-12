@@ -52,6 +52,7 @@ namespace Dataasp.Backend.Entities
             this.MetersTravelled = v.MetersTravelled;
             this.Username = v.Username;
             this.VolumeCO2 = v.VolumeCO2;
+            this.Cost = v.Cost;
 
         }
     }
