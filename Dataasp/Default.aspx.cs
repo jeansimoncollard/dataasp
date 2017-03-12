@@ -41,8 +41,7 @@ namespace Dataasp
         }
 
         protected void addTripButton_Click(object sender, EventArgs e)
-        {
-            initial_map.Visible = false;
+        {          
 
             var div = quickStatsDiv;
             var startAddress = autocomplete.Value;
@@ -53,11 +52,19 @@ namespace Dataasp
                 failed.InnerHtml = "<h4>Please fill out all fields properly.</h4>";
                 return;
             }
+
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
             var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
 
-            var waypoint = generateWayPoint(startAddress, endAddress);
-            var useWayPoint = !(waypoint == null); //Don't use waypoint if it's equal to null
+            MapPoint waypoint = new MapPoint();
+            bool useWayPoint = false;
+
+            if (startCoordinates == null || endCoordinates == null)
+            {
+                mapResults.InnerHtml = "<script>window.alert('There is no path that links your location to your destination.');</script>";
+                return;
+
+            }
             mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.Value), waypoint, useWayPoint);
 
 
@@ -106,7 +113,7 @@ namespace Dataasp
             sliderValues.Add(new SliderValues() { SliderId = constructionSlider.ID, SliderValue = Convert.ToInt32(constructionSlider.Value) });
             sliderValues.Add(new SliderValues() { SliderId = photoRadarSlider.ID, SliderValue = Convert.ToInt32(photoRadarSlider.Value) });
             sliderValues.Add(new SliderValues() { SliderId = savingFuelSlider.ID, SliderValue = Convert.ToInt32(savingFuelSlider.Value) });
-           
+
 
             return _wayPointGenerator.GenerateWayPoint(startAddress, endAddress, sliderValues, distanceSlider, constructionSlider, photoRadarSlider, savingFuelSlider);
         }

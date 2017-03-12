@@ -48,9 +48,9 @@
                                     <div class="panel-heading">
                                         <canvas id="myChart" width="100" height="100"></canvas>
                                     </div>
-                                    <div class="panel-body">
-                                        <h4>Service One</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <div id="drivingAlternatives"class="panel-body">
+                                        <h4>Driving Alternatives</h4>
+                                        <p></p>
                                         <a href="#" class="btn btn-primary">Learn More</a>
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@
                                         <canvas id="DistanceChart" width="100" height="100"></canvas>
                                     </div>
                                     <div class="panel-body">
-                                        <h4>Service Two</h4>
+                                        <h4>Driving Alternatives</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                         <a href="#" class="btn btn-primary">Learn More</a>
                                     </div>
@@ -73,7 +73,7 @@
                                         <canvas id="CostChart" width="100" height="100"></canvas>
                                     </div>
                                     <div class="panel-body">
-                                        <h4>Service Three</h4>
+                                        <h4>Money you've saved</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                         <a href="#" class="btn btn-primary">Learn More</a>
                                     </div>
@@ -207,18 +207,16 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-recycle fa-stack-1x fa-inverse"></i>
                     </span>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Service Nine</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Service Nine</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /.row -->
-    <hr>
-
-
+        <!-- /.row -->
+        <hr>
     <script>
         var ctx = document.getElementById("myChart").getContext('2d');
         var myChart = new Chart(ctx, {
