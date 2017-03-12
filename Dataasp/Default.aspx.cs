@@ -75,6 +75,7 @@ namespace Dataasp
             var sliderDistanceValue = distanceSlider.Value;
             int _intSliderValue = Int32.Parse(distanceSlider.Value);
 
+            saveTravel(distance, travelModeComboBox.Value);
         }
 
         private void saveTravel(int distance, string travelModeValue)
