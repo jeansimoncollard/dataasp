@@ -214,6 +214,7 @@
     <Content Include="images\satisfied5.jpg" />
     <Content Include="images\satisfied6.jpg" />
     <Content Include="images\white.jpg" />
+    <Content Include="images\whitee.jpg" />
     <Content Include="Profile.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
