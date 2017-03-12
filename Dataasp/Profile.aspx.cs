@@ -44,29 +44,29 @@ namespace Dataasp
                 ArrayList individualCost = new ArrayList() { 0.0, 0.0, 0.0, 0.0 };
                 for (int i = 0; i < currentUser.UserHistory.Count; i++)
                 {
-                    UserTravelRecord Temp = new UserTravelRecord((UserTravelRecord)currentUser.UserHistory[i]);
-                    y += Temp.Cost;
+                    UserTravelRecord Temp = new UserTravelRecord(currentUser.UserHistory[i]);
+                    y = y + Temp.Cost;
                     switch (Temp.TravelMode)
                     {
                         case TravelModeEnum.WALKING:
                             x = (double)individualCost[0];
-                            x += Temp.Cost;
+                            x = x + Math.Round(Temp.Cost, 2);
                             individualCost[0] = x;
                             break;
                         case TravelModeEnum.BICYCLING:
                             x = (double)individualCost[1];
-                            x += Temp.Cost;
-                            individualCost[1] = x;
+                            x = x + Math.Round(Temp.Cost, 2);
+                        individualCost[1] = x;
                             break;
                     case TravelModeEnum.TRANSIT:
                             x = (double)individualCost[2];
-                            x += Temp.Cost;
-                            individualCost[2] = x;
+                            x = x + Math.Round(Temp.Cost, 2);
+                        individualCost[2] = x;
                             break;
                     case TravelModeEnum.DRIVING:
                             x = (double)individualCost[3];
-                            x += Temp.Cost;
-                            individualCost[3] = x;
+                            x = x + Math.Round(Temp.Cost, 2);
+                        individualCost[3] = x;
                             break;
 
 
@@ -75,7 +75,7 @@ namespace Dataasp
                 }
 
                 _jsArraySerializer = new JavascriptSerializer();
-                totalCost[0] = y;
+                totalCost[0] = Math.Round(y, 2);
                 totalCostData = _jsArraySerializer.Serialize(totalCost);
                 costData = _jsArraySerializer.Serialize(individualCost);
 
