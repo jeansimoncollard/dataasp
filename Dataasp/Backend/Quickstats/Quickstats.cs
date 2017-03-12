@@ -30,8 +30,8 @@ namespace Dataasp.Backend.Quickstats
             switch (_meansOfTransportation)
             {
                 case "a Car":
-                    _footPrint = Math.Round((GetDistanceInKm()) * (13.86/100), 10);     //100 km means 13.8kg of co2
-                    _cost = Math.Round((((GetDistanceInKm()/100)*6.63)*1.11), 2);
+                    _footPrint = Math.Round((GetDistanceInKm()) * (13.86 / 100), 10);     //100 km means 13.8kg of co2
+                    _cost = Math.Round((((GetDistanceInKm() / 100) * 6.63) * 1.11), 2);
                     _costSTR = "based on current average fuel prices for Quebec";
                     break;
                 case "the Public Transport system":
@@ -74,20 +74,23 @@ namespace Dataasp.Backend.Quickstats
             switch (transp)
             {
                 case "DRIVING":
-                    _meansOfTransportation = "a Car";
+                    _meansOfTransportation = "Car";
                     break;
-                case "TRANSIT": _meansOfTransportation = "the Public Transport system";
+                case "TRANSIT":
+                    _meansOfTransportation = "Public Transportation";
                     break;
-                case "BICYCLING": _meansOfTransportation = "a Bicycle";
+                case "BICYCLING":
+                    _meansOfTransportation = "Bicycle";
                     break;
-                case "WALKING": _meansOfTransportation = "your feet!";
+                case "WALKING":
+                    _meansOfTransportation = "Your Feet!";
                     break;
             }
         }
 
 
         public double GetFootprint()           //returns the user's footprint
-        {   
+        {
             return _footPrint;
         }
 
@@ -112,13 +115,21 @@ namespace Dataasp.Backend.Quickstats
 
         public void ShowStats(System.Web.UI.HtmlControls.HtmlGenericControl div)                 //displays the quickstat summary as an innerhtml
         {
-            div.InnerHtml = 
-                "<ul> <li>Your name: "+ _name+"</li>"+
-                "<li>Distance: "+ GetDistanceInKm() + " km</li>"+
-                "<li>Using: "+ _meansOfTransportation + "</li>"+
-                "<li>Approximate cost: $" +_cost+ " " +_costSTR+
-                "<li>Your Ecological Footprint: " + Math.Round(_footPrint,2) + " Kilograms of CO2</li>"+
-                "</ul>";
+            div.InnerHtml =
+                $@"<div class=""row"">
+                <br>
+                <h3><strong> Environmental Impact</strong></h3>
+                    <p>Your way of life has measurable costs on the environment.</p>
+                    <ul>
+                        <li>Distance: {GetDistanceInKm()} km</li>
+                        <li> Using:  { _meansOfTransportation} </li>
+                        <li> Distance: { GetDistanceInKm() }km</li>
+                        <li>Using: { _meansOfTransportation }</li>
+                        <li>Approximate cost: { _cost }  </ li >
+                        <li>Your Ecological Footprint: { Math.Round(_footPrint, 2) } Kilograms of CO2</li>                        
+                        </ul>
+                </div>
+                ";
         }
     }
 }
