@@ -26,7 +26,7 @@ namespace Dataasp
         private MapGeneraterAdapter _mapGeneraterAdapter;
         private StringToTravelEnumConverter _stringToTravelEnumConvert;
         private UserTravelStorer _userTravelStorer;
-        private WayPointGenerator _wayPointGenerator;
+        private WayPointSelecter _wayPointGenerator;
 
         public double VolumeOfCO2;
         protected void Page_Load(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace Dataasp
             _mapGeneraterAdapter = new MapGeneraterAdapter();
             _stringToTravelEnumConvert = new StringToTravelEnumConverter();
             _userTravelStorer = new UserTravelStorer();
-            _wayPointGenerator = new WayPointGenerator();
+            _wayPointGenerator = new WayPointSelecter();
 
         }
 
@@ -49,8 +49,8 @@ namespace Dataasp
             var endAddress = autocomplete2.Value;
             if (autocomplete.Value.Length == 0 || autocomplete2.Value.Length == 0)
             {
-                div.Attributes.Add("class", "btn-danger");
-                div.InnerHtml = "<h1 class='danger'>Please fill out the form properly</h1>";
+                failed.Attributes.Add("class", "btn-danger");
+                failed.InnerHtml = "<h4>Please fill out all fields properly.</h4>";
                 return;
             }
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);

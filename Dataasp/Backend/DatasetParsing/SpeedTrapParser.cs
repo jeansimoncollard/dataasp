@@ -52,14 +52,31 @@ namespace Dataasp.Backend.DatasetParsing
             }
 
             var fileLines = _programLineDivider.DivideProgramLines(fileContent);
+
+            var isFirst = true;
             foreach (Match line in fileLines)
             {
+                if (isFirst)
+                {
+                    isFirst = false;
+                    continue;
+                }
+                
                 var record = line.Value.Split(',');
 
-                var latitude = record.Last();
+                if (record.Count() <= 2)
+                {
+                    continue;
+                }
+
+                    var latitude = record.Last();
                 var longitude = record.ElementAt(record.Count() - 2); //second last
 
-                insertInDb(latitude,longitude);
+                //remove minus
+                longitude = longitude.Substring(1, longitude.Length - 1);
+                latitude = latitude.Substring(0, latitude.Length-1);//remove endline 
+
+                insertInDb(latitude, longitude);
 
 
             }
@@ -68,28 +85,28 @@ namespace Dataasp.Backend.DatasetParsing
         private void insertInDb(string lat, string longitude)
         {
             //insert new values
-            ////var query = $"insert into speedtraps values ('{match[0].Value.Replace(",", ".")}','{match[1].Value.Replace(",", ".")}')";
+            var query = $"insert into speedtraps values ('{lat.ToString().Replace(",", ".")}','{longitude.ToString().Replace(",", ".")}')";
 
-            //using (SqlConnection connection = new SqlConnection(Settings.Default.ConnectionString))
-            //{
-            //    using (SqlCommand command = new SqlCommand(query, connection))
-            //    {
-            //        command.Connection = connection;
-            //        try
-            //        {
-            //            connection.Open();
-            //            command.ExecuteNonQuery();
-            //        }
-            //        catch (SqlException)
-            //        {
-            //            // error here
-            //        }
-            //        finally
-            //        {
-            //            connection.Close();
-            //        }
-            //    }
-            //}
+            using (SqlConnection connection = new SqlConnection(Settings.Default.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Connection = connection;
+                    try
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+                        // error here
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
         }
     }
 }

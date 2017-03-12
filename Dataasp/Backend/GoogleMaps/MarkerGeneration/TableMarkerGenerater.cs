@@ -14,15 +14,13 @@ namespace Dataasp.Backend.MarkerGeneration
     {
         private AddressLatLongConverter _addressLatLongConverter;
 
-        private const string PATH_CONSTRUCTION_IMAGE = "http://img4.hostingpics.net/pics/990085construction.png";
-        private const string MARKER_TITLE = "construction";
 
         public ConstructionMarkerGenerater()
         {
             _addressLatLongConverter = new AddressLatLongConverter();
         }
 
-        public List<MarkerEntity> Generate(string startAddress, string endAddress)
+        public List<MarkerEntity> Generate(string startAddress, string endAddress, string tableName, string markerTitle, string imageUrl)
         {
             var markerList = new List<MarkerEntity>();
 
@@ -46,7 +44,7 @@ namespace Dataasp.Backend.MarkerGeneration
             {
                 conn.Open();
 
-                using (var command = new SqlCommand($"Select * from construction_sites where latitude < {maxlatstring} and latitude > {minlatstring} and longitude < {maxlongstring} and longitude > {minlongstring}", conn))
+                using (var command = new SqlCommand($"Select * from {tableName} where latitude < {maxlatstring} and latitude > {minlatstring} and longitude < {maxlongstring} and longitude > {minlongstring}", conn))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -62,8 +60,8 @@ namespace Dataasp.Backend.MarkerGeneration
                                 marker.Longitude = -(double)reader.GetDecimal(1);
                             }
 
-                            marker.Image = PATH_CONSTRUCTION_IMAGE;
-                            marker.MarkerTitle = MARKER_TITLE;
+                            marker.Image = imageUrl;
+                            marker.MarkerTitle = markerTitle;
 
                             markerList.Add(marker);
                         }

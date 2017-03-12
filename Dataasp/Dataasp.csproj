@@ -458,10 +458,10 @@
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\AddressLatLongConverter.cs" />
     <Compile Include="Backend\GoogleMaps\DistanceCalculation\DistanceCalculater.cs" />
     <Compile Include="Backend\GoogleMaps\MapGeneration\MarkerGenerater.cs" />
-    <Compile Include="Backend\GoogleMaps\WayPointGeneration\ConstructionSiteWaypointGenerater.cs" />
+    <Compile Include="Backend\GoogleMaps\WayPointGeneration\WaypointGenerater.cs" />
     <Compile Include="Backend\GoogleMaps\WayPointGeneration\WaypointValidater.cs" />
-    <Compile Include="Backend\GoogleMaps\WayPointGeneration\WayPointGenerator.cs" />
-    <Compile Include="Backend\GoogleMaps\MarkerGeneration\ConstructionMarkerGenerater.cs" />
+    <Compile Include="Backend\GoogleMaps\WayPointGeneration\WayPointSelecter.cs" />
+    <Compile Include="Backend\GoogleMaps\MarkerGeneration\TableMarkerGenerater.cs" />
     <Compile Include="Backend\Quickstats\Quickstats.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntityList.cs" />
     <Compile Include="Backend\Entities\UserTravelRecord.cs" />
