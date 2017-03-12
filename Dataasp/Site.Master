@@ -100,7 +100,7 @@
                                 <h6 class="heading7">Register</h6>
                                 <div class="footercenter">
                                     <p>Have you ever wondered how your day to day travels impact the world around you. Sign up today to get started with Ecobecois!</p>
-                                    <a class="btn btn-primary" href="~/Registration" runat="server">Sign up now!</a>
+                                    <a class="btn btn-primary" href="~/Account/Register" runat="server">Sign up now!</a>
                                 </div>
                             </div>
                             <div id="alreadyRegistedFooter" runat="server">
