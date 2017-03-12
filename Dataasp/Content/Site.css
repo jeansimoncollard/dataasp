@@ -9,10 +9,15 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #000000;
-    background-imager: url();
-    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-image: url("/images/white.jpg");
+    background-repeat: no-repeat;
+    background-position: initial;
+    background-attachment: fixed;
+    background-size: cover;
+
 }
+
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 
 .ajax__combobox_itemlist {
     position: fixed !important;
@@ -74,23 +79,9 @@ header.carousel {
         font-size: 20px;
     }
  /* Move down content because we have a fixed navbar that is 50px tall */
-html,
-body {
-    height: 100%;
-}
 
 .wrapper {
     min-height: 100%;
-}
-
-body {
-    padding-top: 50px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #000000;
-    background-color: #fff;
-    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 .img-portfolio {
@@ -346,11 +337,6 @@ input[type="select"] {
     max-width: 280px;
 }
 
-footer {
-    background-color: #0c1a1e;
-    min-height: 350px;
-    font-family: 'Open Sans', sans-serif;
-}
 
 .footerleft {
     margin-top: 50px;
