@@ -78,6 +78,7 @@
                 <div class="tab-pane fade" id="Community">
                     <div class="row">
                         <div class="col-md-6">
+                            <h2><strong> Your Community Stats</strong></h2>
                             <ul>
                                 <li class="element-top-10 element-bottom-10">
                                     Your Friend Sebastian saved $30 this month with Bixi
@@ -123,7 +124,7 @@
                         <h4 class="media-heading">Your car and Green House Gases</h4>
                         <p>"While GHGs are emitted in the extraction phase of the crude oil production process, most of the life cycle emissions of fuel come from a vehicle’s tailpipe. Final combustion of gasoline emerging from your tailpipe accounts for approximately 70%-80% of well-to-wheel life-cycle emissions."
                             <br />
-                            <a href="http://www.nrcan.gc.ca/energy/oil-sands/18091">Gov. Canada</a>
+                            <a href="http://www.nrcan.gc.ca/energy/oil-sands/18091">Learn more here</a>
                         </p>
                     </div>
                 </div>
