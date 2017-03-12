@@ -5,7 +5,7 @@
 <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6">
-                <img class="img-responsive" src="~/images/ecobecois_logo_couleur.png" runat="Server" alt="Ecobecois Logo">>
+                <img class="img-responsive" src="~/images/ecobecois_logo_couleur.png" runat="Server" alt="Ecobecois Logo">
             </div>
             <div class="col-md-6">
                 <br /><br />
@@ -31,11 +31,11 @@
                         </h3>
                         <p>First year student at Bishop's University in computer science. Wants to code video games for a living.</p>
                         <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            <li><a href="https://www.facebook.com/roger.bosch.520"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
                             <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
                             </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                            <li><a href="https://github.com/alexcharbonneau"><i class="fa fa-2x fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -50,11 +50,11 @@
                         </h3>
                         <p>4th year student at Bishop's University in computer science. Highly skilled programmer and best of friends. Wants a carreer with CSIS.</p>
                         <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            <li><a href="https://www.facebook.com/duncan.mackay.75"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
                             <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
                             </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                            <li><a href="https://github.com/DRFMacKay"><i class="fa fa-2x fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -70,11 +70,11 @@
                         </h3>
                         <p>5th year student at Bishop's University in double major computer science and business. Aspires to continue as a freelance web developer.</p>
                         <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            <li><a href="https://www.facebook.com/mitchell.bedard"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
                             <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
                             </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                            <li><a href="https://github.com/mbb3-mitch"><i class="fa fa-2x fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -89,11 +89,11 @@
                         </h3>
                         <p>1st year student at Bishop's University in computer science. Wishes to do web design for a living.</p>
                         <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            <li><a href="https://www.facebook.com/profile.php?id=100009091485382"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
                             <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
                             </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                            <li><a href="https://github.com/natachalevesque"><i class="fa fa-2x fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -101,18 +101,18 @@
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="~/images/rsz_js.jpg" runat="Server" alt="Jean Simon Collard">
+                    <img class="img-responsive" src="~/images/rsz_js.jpg" runat="Server" alt="Jean-Simon Collard">
                     <div class="caption">
-                        <h3>Jean Simon Collard<br>
+                        <h3>Jean-Simon Collard<br>
                             <small>Database Management</small>
                         </h3>
                         <p>3rd year student at Bishops's University in computer science. Would enjoy a carreer as a computer consultant.</p>
                         <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            <li><a href="https://www.facebook.com/jeansimon.collard"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
                             <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
                             </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                            <li><a href="https://github.com/noblefr"><i class="fa fa-2x fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -120,10 +120,10 @@
             </div>
              <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/500x340" runat="Server" alt="Hiring!">
+                    <img class="img-responsive" src="~/images/rsz_question_mark.jpg" runat="Server" alt="Hiring!">
                     <div class="caption">
                         <h3>There is a place for you!<br>
-                            <small>How can you help you?</small>
+                            <small>How can you help us?</small>
                         </h3>
                         <p>We are always looking for motivated and skilled people work with us.</p>
                         <ul class="list-inline">
@@ -131,7 +131,7 @@
                             </li>
                             <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
                             </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                            <li><a href="#"><i class="fa fa-2x fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
