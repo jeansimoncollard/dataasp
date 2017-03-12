@@ -24,7 +24,7 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
             _random = new Random(1321432);//random constant seed
         }
 
-        public List<WaypointScore> Generate(string startAddress, string endAddress)
+        public MapPoint Generate(string startAddress, string endAddress)
         {
             var start = _addressLatLongConverter.GetLatLong(startAddress);
             var end = _addressLatLongConverter.GetLatLong(endAddress);
@@ -49,7 +49,9 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
                     wayPointList.Add(wayPoint);
                 }
             }
-            return getScoredWayPointList(wayPointList, latMaxAddableValue, longMaxAddableValue);
+            var candidates = getScoredWayPointList(wayPointList, latMaxAddableValue, longMaxAddableValue).OrderBy(x => x.Score);
+
+            return candidates.Last().WayPoint;//The one with least construciton points nearby
         }
 
 
