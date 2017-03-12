@@ -120,8 +120,8 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div id="mapResults" runat="server">
-            </div>
+            <img id="initial_map" src="~/images/initial_map.png" class="img-responsive" alt="Google Map" runat="server"/>
+            <div id="mapResults" runat="server"></div>
         </div>
     </div>
 </asp:Content>
