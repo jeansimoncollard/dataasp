@@ -208,6 +208,7 @@
     <Content Include="images\rsz_nat.jpg" />
     <Content Include="images\rsz_question_mark.jpg" />
     <Content Include="images\satisfied1.jpg" />
+    <Content Include="images\treebark.jpg" />
     <Content Include="images\white.jpg" />
     <Content Include="images\whitee.jpg" />
     <Content Include="Profile.aspx" />
