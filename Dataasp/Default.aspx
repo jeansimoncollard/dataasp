@@ -132,7 +132,7 @@
         <div class="col-md-6">
 
             <div id="mapResults" runat="server">
-                <img id="initial_map" src="~/images/ecobecois_logo_couleur.png" class="img-responsive" alt="Logo" runat="server" />
+                <img id="initial_map" src="~/images/ecobecois_logo_couleur.png" class="img-responsive" alt="Logo" runat="server" style="background: #f5f5f5; border-radius: 100%; position: center;" />
             </div>
         </div>
     </div>
