@@ -9,10 +9,12 @@
             </div>
             <div class="col-md-6">
                 <br /><br />
-                <h2>About Modern Business</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+                <h2>About Us</h2>
+                <p>Most People don't know this, but the average trip from Sherbrooke to Montreal produces roughly 35kg of CO2 emissions. That's about the weight of your dishwasher at home.
+                <p>Ecobecois offers you a knowledge base to build your awareness of your impact on the environment. Our easy to use format is perfect for any Quebec 
+                    citizen who would like to reduce their carbon emissions, drive more safely and avoid traffic.</p>
+                <p>Ecobecois analyses the data you input to give you real life statistics on your CO2 emissions. Most importantly we seek to personalize your regular and occaisonal 
+                    travels to make your comute as easy, secure and convinient as possible, all while improving your impact on the environment. </p>
             </div>
         </div>
         <!-- /.row -->
