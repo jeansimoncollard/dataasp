@@ -73,7 +73,7 @@
                                 <div class="panel-heading">
                                     <canvas id="CostChart" width="100" height="100"></canvas>
                                 </div>
-                                <div id="costSavings" class="panel-body">
+                                <div id="costSaving" class="panel-body">
                                 </div>
                             </div>
                         </div>
@@ -248,39 +248,39 @@
                         "#9b59b6",
                     ],
                     data: <%= Chart1Data %>,
-                    }]
-                }
+                }]
+            }
         });
         var tranType = <%= Chart1Data %>;
-            var preferedType;
+        var preferedType;
 
-            if (tranType[0] >= tranType[1] && tranType[0] >= tranType[2] && tranType[0] >= tranType[4]) {
-                //If walking is greatest
-                preferedType = 0;
-            } else if (tranType[1] >= tranType[2] && tranType[1] >= tranType[3] && tranType[1] >= tranType[0]) {
-                //If Biking is greatest
-                preferedType = 1;
-            } else if (tranType[2] >= tranType[3] && tranType[2] >= tranType[0] && tranType[2] >= tranType[1]) {
-                //If Public Transit is greatest
-                preferedType = 2;
-            } else {
-                //Else Driving is greatest
-                preferedType = 3;
-            }
-            switch (preferedType) {
-                case 0:
-
-                    $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is walking. You transportation habits have a positive impact on the enviroment. Keep up the good work!</p>')
-                case 1:
-
-                    $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is cycling. Using a bicycle is a sustainable alternative and you should be proud of you\'re self.</p>')
-                case 2:
-
-                    $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is public transportation. It is great to see that you take initiative to reduce your carbon foot print.</p>')
-                case 3:
-
-                    $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is driving. You should consider carpooling when possible or seeking alternative methods of transportation. Use our route tracker to help you find sustainable options that suit your goals.</p>')
-            }
+        if (tranType[0] >= tranType[1] && tranType[0] >= tranType[2] && tranType[0] >= tranType[4]) {
+            //If walking is greatest
+            preferedType = 0;
+        } else if (tranType[1] >= tranType[2] && tranType[1] >= tranType[3] && tranType[1] >= tranType[0]) {
+            //If Biking is greatest
+            preferedType = 1;
+        } else if (tranType[2] >= tranType[3] && tranType[2] >= tranType[0] && tranType[2] >= tranType[1]) {
+            //If Public Transit is greatest
+            preferedType = 2;
+        } else {
+            //Else Driving is greatest
+            preferedType = 3;
+        }
+        switch (preferedType) {
+            case 0:
+                $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is walking. You transportation habits have a positive impact on the enviroment. Keep up the good work!</p>');
+                break;
+            case 1:
+                $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is cycling. Using a bicycle is a sustainable alternative and you should be proud of you\'re self.</p>');
+                break;
+            case 2:
+                $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is public transportation. It is great to see that you take initiative to reduce your carbon foot print.</p>');
+                break;
+            case 3:
+                $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is driving. You should consider carpooling when possible or seeking alternative methods of transportation. Use our route tracker to help you find sustainable options that suit your goals.</p>');
+                break;
+        }
     </script>
     <script>
             var ctx4 = document.getElementById("CostChart");
@@ -326,16 +326,21 @@
                 }
             });
             var totalCost = <%= totalCostData %>;
-            alert(totalCost);
+      
             var distanceData = <%= DistanceChartData %>;
             var totalDistance = 0.0;
             for (var i = 0; i < distanceData.length; i++) {
                 totalDistance += distanceData[i];
             }
-            alert(totalDistance);
+            
             var carTotalCost = (((totalDistance / 100) * 6.63) * 1.11); //Cost calculated based on distance divided by minimum fuel efficiency required by cars produce in 2017 multiplied by average cost per litre in Quebec in 2017.
             var costPercent = (totalCost / carTotalCost) * 100;
-            alert("last asdfas "+costPercent);
+            var moneySaved = carTotalCost - totalCost;
+            if (costPercent > 100) {
+                costPercent = 100;
+                moneySaved = 0.00;
+
+            }
             var savings;
             if (costPercent < 65) {
                 //saved over 35%
@@ -350,16 +355,20 @@
                 //saved under 15%
                 savings = 3;
             }
-            alert(savings);
+
             switch (savings) {
                 case 0:
-                    $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of ' + (carTotalCost - totalCost) + ' which is a' + costPercent + '% compared to if you only drove. This is a good indication that you often use cost efficient alternatives and make economical choices.</p>');
+                    $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of $' + moneySaved + ' which is a ' + costPercent + '% compared to if you only drove. This is a good indication that you often use cost efficient alternatives and make economical choices.</p>');
+                    break;
                 case 1:
-                    $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of ' + (carTotalCost - totalCost) + ' which is a' + costPercent + '% compared to if you only drove. Using a bicycle is a sustainable alternative and you should be proud of you\'re self.</p>');
+                    $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of $' + moneySaved + ' which is a ' + costPercent + '% compared to if you only drove. Using a bicycle is a sustainable alternative and you should be proud of you\'re self.</p>');
+                    break;
                 case 2:
-                    $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of ' + (carTotalCost - totalCost) + ' which is a' + costPercent + '% compared to if you only drove. It is great to see that you take initiative to reduce your carbon foot print.</p>');
+                    $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of $' + moneySaved + ' which is a ' + costPercent + '% compared to if you only drove. It is great to see that you take initiative to reduce your carbon foot print.</p>');
+                    break;
                 case 3:
-                    $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of ' + (carTotalCost - totalCost) + ' which is a' + costPercent + '% compared to if you only drove. You should consider carpooling when possible or seeking alternative methods of transportation. Use our route tracker to help you find sustainable options that suit your goals.</p>');
+                    $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of $' + moneySaved + ' which is a ' + costPercent + '% compared to if you only drove. You should consider carpooling when possible or seeking alternative methods of transportation. Use our route tracker to help you find sustainable options that suit your goals.</p>');
+                    break;
             }
     </script>
     <script>
@@ -413,24 +422,24 @@
                     labels: <%= Chart2Dates %>,
                     datasets: [{
                         label: 'total CO2 generated : ' + <%=totalCO2Str%>,
-                    data: <%= ChartOnCO2Data %>,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
+                        data: <%= ChartOnCO2Data %>,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
                     }]
                 },
                 options: {
