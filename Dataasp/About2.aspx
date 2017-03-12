@@ -146,24 +146,26 @@
                 <h2 class="page-header">Our Customers</h2>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="rsz_1alex.jpg" alt="">
+                <img class="img-responsive customer-img" src="images/satisfied1.jpg" alt="">
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
+                <img class="img-responsive customer-img" src="images/satisfied2.jpg" alt="">
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
+                <img class="img-responsive customer-img" src="images/satisfied3.jpg" alt="">
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
+                <img class="img-responsive customer-img" src="images/satisfied4.jpg" alt="">
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
+                <img class="img-responsive customer-img" src="images/satisfied5.jpg" alt="">
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
+                <img class="img-responsive customer-img" src="images/satisfied6.jpg" alt="">
             </div>
+          
         </div>
+      <br /><br />
         <!-- /.row -->
 
 
