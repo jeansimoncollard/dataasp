@@ -14,7 +14,7 @@ namespace Dataasp.Backend.DataAccess
         public void StoreTravel(UserTravelRecord userTravelRecord)
         {
             //co2 volume to add when function ready.
-            var query = $"insert into user_history values ('{userTravelRecord.DateOfTrip.ToString("yyyy-MM-dd HH:mm:ss")}','{userTravelRecord.MetersTravelled}','{(int)userTravelRecord.TravelMode}','{userTravelRecord.Username}','{userTravelRecord.VolumeCO2}','{userTravelRecord.Cost}')";
+            var query = $"insert into user_history values ('{userTravelRecord.DateOfTrip.ToString("yyyy-MM-dd HH:mm:ss")}','{userTravelRecord.MetersTravelled}','{(int)userTravelRecord.TravelMode}','{userTravelRecord.Username}',{userTravelRecord.VolumeCO2.ToString(CultureInfo.CreateSpecificCulture("en-US"))},{userTravelRecord.Cost.ToString(CultureInfo.CreateSpecificCulture("en-US"))})";
 
             using (SqlConnection connection = new SqlConnection(Settings.Default.ConnectionString))
             {
@@ -26,7 +26,7 @@ namespace Dataasp.Backend.DataAccess
                         connection.Open();
                         int recordsAffected = command.ExecuteNonQuery();
                     }
-                    catch (SqlException)
+                    catch (SqlException e)
                     {
                         // error here
                     }

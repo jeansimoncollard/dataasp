@@ -9,14 +9,27 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    background-image: url("/images/white.jpg");
+    background-image: url("/images/treebark.jpg");
     background-repeat: no-repeat;
     background-position: initial;
     background-attachment: fixed;
     background-size: cover;
 
 }
-
+/*Equalize thumbnails for aboout page*/
+.thumbnail {
+    height: 420px;
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
     /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 
 .ajax__combobox_itemlist {
@@ -287,9 +300,12 @@ a {
 }
 
 .page-header {
+    color: #000;
+
     padding-bottom: 9px;
-    margin: 60px;
-    border-bottom: 1px solid #228317;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #000;
+
 }
 
 h3, .h3 {

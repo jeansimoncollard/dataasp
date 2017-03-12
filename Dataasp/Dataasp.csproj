@@ -207,7 +207,15 @@
     <Content Include="images\rsz_mitch.jpg" />
     <Content Include="images\rsz_nat.jpg" />
     <Content Include="images\rsz_question_mark.jpg" />
+    <Content Include="images\satisfied1.jpg" />
+    <Content Include="images\satisfied2.jpg" />
+    <Content Include="images\satisfied3.jpg" />
+    <Content Include="images\satisfied4.jpg" />
+    <Content Include="images\satisfied5.jpg" />
+    <Content Include="images\satisfied6.jpg" />
+    <Content Include="images\treebark.jpg" />
     <Content Include="images\white.jpg" />
+    <Content Include="images\whitee.jpg" />
     <Content Include="Profile.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -310,13 +318,11 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="UpdateDatabase.aspx" />
-    <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Site.Mobile.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -503,13 +509,6 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="UpdateDatabase.aspx.cs">
       <DependentUpon>UpdateDatabase.aspx</DependentUpon>
@@ -517,13 +516,6 @@
     </Compile>
     <Compile Include="UpdateDatabase.aspx.designer.cs">
       <DependentUpon>UpdateDatabase.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ViewSwitcher.ascx.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewSwitcher.ascx.designer.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
