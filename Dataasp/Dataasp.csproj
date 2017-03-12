@@ -449,6 +449,7 @@
     <Compile Include="Backend\DatasetParsing\ConstructionSitesParser.cs" />
     <Compile Include="Backend\DatasetParsing\DatasetParser.cs" />
     <Compile Include="Backend\DatasetParsing\ParsingTools\ProgramLineDivider.cs" />
+    <Compile Include="Backend\DatasetParsing\SpeedTrapParser.cs" />
     <Compile Include="Backend\Entities\MarkerEntity.cs" />
     <Compile Include="Backend\Entities\SliderValues.cs" />
     <Compile Include="Backend\Entities\UserHistoryEntityArraylist.cs" />

@@ -26,7 +26,7 @@ namespace Dataasp.Backend.DataAccess
                         connection.Open();
                         int recordsAffected = command.ExecuteNonQuery();
                     }
-                    catch (SqlException e)
+                    catch (SqlException)
                     {
                         // error here
                     }
