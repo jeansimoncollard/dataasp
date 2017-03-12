@@ -310,13 +310,13 @@ a {
 }
 
 h3, .h3 {
-    font-size: 24px;
-    margin-top: 0px;
-    margin-top: 90px;
+    font-size: 22px;
+    margin-top: 0;
+
 }
 
-h1, .h1, h2, .h2, h3, .h3 {
-    margin: 10px;
+h1, .h1, h2, .h2 {
+    margin-top: 65px;
 }
 
 h1, .h1 {
@@ -592,6 +592,7 @@ input[type=range]::-ms-thumb {
     background: #ffffff;
     cursor: pointer;
 }
+/*CONTACT PAGE CSS*/
 
 .element-top-10 {
     padding-top: 10px;
