@@ -11,11 +11,11 @@ using System.Web;
 
 namespace Dataasp.Backend.DatasetParsing
 {
-    public class CarAccidentParser
+    public class LandscapeParser
     {
         private ProgramLineDivider _programLineDivider;
 
-        public CarAccidentParser()
+        public LandscapeParser()
         {
             _programLineDivider = new ProgramLineDivider();
         }
@@ -43,7 +43,7 @@ namespace Dataasp.Backend.DatasetParsing
             using (SqlConnection connection = new SqlConnection(Settings.Default.ConnectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("DELETE FROM caraccidents", connection))
+                using (SqlCommand command = new SqlCommand("DELETE FROM landscape", connection))
                 {
                     command.ExecuteNonQuery();
                 }
@@ -53,7 +53,7 @@ namespace Dataasp.Backend.DatasetParsing
             var fileLines = _programLineDivider.DivideProgramLines(fileContent);
 
             var isFirst = true;
-            for (int i = 0; i < fileLines.Count; i += 200) //This dataset is too large, we don'T need all of it. Just take 500 of them spreaded equally
+            foreach (Match line in fileLines)
             {
                 if (isFirst)
                 {
@@ -61,7 +61,7 @@ namespace Dataasp.Backend.DatasetParsing
                     continue;
                 }
 
-                var record = fileLines[i].Value.Split(',');
+                var record = line.Value.Split(',');
 
                 if (record.Count() <= 2)
                 {
@@ -76,15 +76,13 @@ namespace Dataasp.Backend.DatasetParsing
                 latitude = latitude.Substring(0, latitude.Length - 1);//remove endline 
 
                 insertInDb(latitude, longitude);
-
-
             }
         }
 
         private void insertInDb(string lat, string longitude)
         {
             //insert new values
-            var query = $"insert into caraccidents values ('{lat.ToString().Replace(",", ".")}','{longitude.ToString().Replace(",", ".")}')";
+            var query = $"insert into landscape values ('{lat.ToString().Replace(",", ".")}','{longitude.ToString().Replace(",", ".")}')";
 
             using (SqlConnection connection = new SqlConnection(Settings.Default.ConnectionString))
             {
