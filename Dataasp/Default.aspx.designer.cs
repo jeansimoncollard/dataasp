@@ -13,22 +13,22 @@ namespace Dataasp {
     public partial class _Default {
         
         /// <summary>
-        /// fromTextBox control.
+        /// autocomplete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fromTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText autocomplete;
         
         /// <summary>
-        /// toTextBox control.
+        /// autocomplete2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox toTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText autocomplete2;
         
         /// <summary>
         /// travelModeComboBox control.

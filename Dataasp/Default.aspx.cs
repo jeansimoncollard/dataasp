@@ -43,9 +43,9 @@ namespace Dataasp
         protected void addTripButton_Click(object sender, EventArgs e)
         {
             var div = quickStatsDiv;
-            var startAddress = fromTextBox.Text;
-            var endAddress = toTextBox.Text;
-            if (toTextBox.Text.Length == 0 || fromTextBox.Text.Length == 0)
+            var startAddress = autocomplete.Value;
+            var endAddress = autocomplete2.Value;
+            if (autocomplete.Value.Length == 0 || autocomplete2.Value.Length == 0)
             {
                 div.Attributes.Add("class", "btn-danger");
                 div.InnerHtml = "<h1 class='danger'>Please fill out the form properly</h1>";
