@@ -207,6 +207,7 @@
     <Content Include="images\rsz_mitch.jpg" />
     <Content Include="images\rsz_nat.jpg" />
     <Content Include="images\rsz_question_mark.jpg" />
+    <Content Include="images\white.jpg" />
     <Content Include="Profile.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
