@@ -64,5 +64,6 @@ namespace Dataasp.Backend.DataAccess
             }
             return userHistory;
         }
+
     }
 }

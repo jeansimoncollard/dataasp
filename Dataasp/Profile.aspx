@@ -82,10 +82,20 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="Community">
-                        <h4>Service Two</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
-                    </div>
+                        <div class="row">
+                           <div class="col-md-6"></div>
+                            <ul>
+                                <li>
+                                    Your Friend Sebastian saved $30 this month with Bixi
+                                </li>
+                                <li>
+                                    On Average you produce 1.25 times as much CO2 as your friends
+                                </li>
+                            </ul>
+                           <div class="col-md-6">
+                            <canvas id="myRadarChart" width="100" height="100"></canvas>
+                               </div>
+                       </div></div>
                     <div class="tab-pane fade" id="Resources">
                         <h4>Service Three</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
@@ -94,29 +104,152 @@
                 </div>
             </div>
         </div>
-         <script>
-             var ctx = document.getElementById("myChart").getContext('2d');
-             var myChart = new Chart(ctx, {
-                 type: 'doughnut',
-                 options: {
-                     title: {
-                         display: true,
-                         text: 'Travel type percentage'
-                     },
-                     animation: {
-                         animateScale: true
-                     }
-                 },
-                 data: {
-                     labels: ["Walking", "Biking", "Public Transit", "Driving"],
-                     datasets: [{
-                         backgroundColor: [
-                             "#2ecc71",
-                             "#3498db",
-                             "#95a5a6",
-                             "#9b59b6",
-                         ],
-                         data: <%= Chart1Data %>,
+        <!-- Service List -->
+        <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Service List</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-tree fa-stack-1x fa-inverse"></i>
+                    </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Service One</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-car fa-stack-1x fa-inverse"></i>
+                    </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Service Two</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-support fa-stack-1x fa-inverse"></i>
+                    </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Service Three</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+                    </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Service Four</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-bomb fa-stack-1x fa-inverse"></i>
+                    </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Service Five</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-bank fa-stack-1x fa-inverse"></i>
+                    </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Service Six</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i>
+                    </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Service Seven</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-space-shuttle fa-stack-1x fa-inverse"></i>
+                    </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Service Eight</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-recycle fa-stack-1x fa-inverse"></i>
+                    </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Service Nine</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+    <script>
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            options: {
+                title: {
+                    display: true,
+                    text: 'Travel type percentage'
+                },
+                animation: {
+                    animateScale: true
+                }
+            },
+            data: {
+                labels: ["Walking", "Biking", "Public Transit", "Driving"],
+                datasets: [{
+                    backgroundColor: [
+                        "#2ecc71",
+                        "#3498db",
+                        "#95a5a6",
+                        "#9b59b6",
+                    ],
+                    data:  <%= Chart1Data %>,
                 }]
              }
              });
@@ -158,41 +291,41 @@
                 data: {
                     labels: ["Walking", "Biking", "Public Transit", "Car"],
                     datasets: [{
-                        label: "Total travel expenditure " + "$" + <%= totalCostData %>,
-                    data: <%= costData %>,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Travel costs'
-                },
-                scales: {
-                    yAxes: [{
-                        scaleTitle: "$",
-                        ticks: {
-                            beginAtZero: true,
-                        }
+                        label: "Total travel expenditure " + "$" +<%= totalCostData %>,
+                        data: <%= costData %>,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
                     }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Travel costs'
+                    },
+                    scales: {
+                        yAxes: [{
+                            scaleTitle: "$",
+                            ticks: {
+                                beginAtZero: true,
+                            }
+                        }]
+                    }
                 }
-            }
             });
         </script>
         <script>
@@ -204,38 +337,38 @@
                     datasets: [{
                         label: 'Kilometers',
                         data: <%= DistanceChartData %>,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Distance by Type'
-                },
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                        }
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
                     }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Distance by Type'
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                            }
+                        }]
+                    }
                 }
-            }
             });
         </script>
         <script>
@@ -244,8 +377,8 @@
                 type: 'line',
                 data: {
                     labels: <%= Chart2Dates %>,
-                datasets: [{
-                    label: 'total CO2 generated : ' + <%=totalCO2Str%>,
+                    datasets: [{
+                        label: 'total CO2 generated : ' + <%=totalCO2Str%>,
                     data: <%= ChartOnCO2Data %>,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -264,21 +397,53 @@
                         'rgba(255, 159, 64, 1)'
                     ],
                     borderWidth: 1
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'CO2 Emissions'
-                },
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                        }
                     }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'CO2 Emissions'
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                            }
+                        }]
+                    }
                 }
-            }
             });
+        </script>
+        <script>
+            var ctx5 = document.getElementById("myRadarChart");
+            var myRadarChart = new Chart(ctx5, {
+                type: 'radar',
+                data: {
+                    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+                    datasets: [
+                        {
+                            label: "My First dataset",
+                            backgroundColor: "rgba(179,181,198,0.2)",
+                            borderColor: "rgba(179,181,198,1)",
+                            pointBackgroundColor: "rgba(179,181,198,1)",
+                            pointBorderColor: "#fff",
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderColor: "rgba(179,181,198,1)",
+                            data: [65, 59, 90, 81, 56, 55, 40]
+                        },
+                        {
+                            label: "My Second dataset",
+                            backgroundColor: "rgba(255,99,132,0.2)",
+                            borderColor: "rgba(255,99,132,1)",
+                            pointBackgroundColor: "rgba(255,99,132,1)",
+                            pointBorderColor: "#fff",
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderColor: "rgba(255,99,132,1)",
+                            data: [28, 48, 40, 19, 96, 27, 100]
+                        }
+                    ]
+                }
+            });
+            
         </script>
     </asp:Content>
