@@ -82,25 +82,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="Community">
-                        <div class="row">
-                           <div class="col-md-6"></div>
+                   <div class="tab-pane fade" id="Community">
+                    <div class="row">
+                        <div class="col-md-6">
                             <ul>
-                                <li>
+                                <li class="element-top-10 element-bottom-10">
                                     Your Friend Sebastian saved $30 this month with Bixi
                                 </li>
-                                <li>
+                                <li class="element-top-10 element-bottom-10">
                                     On Average you produce 1.25 times as much CO2 as your friends
                                 </li>
+                                <li class="element-top-10 element-bottom-10">
+                                    You just passed John for CO2 emission for this month! watch out!
+                                </li>
+                                <li class="element-top-10 element-bottom-10"> 
+                                    Susan suggest a bike ride to work tomorrow!(Y/N)
+                                </li>
                             </ul>
+                            </div>
                            <div class="col-md-6">
                             <canvas id="myRadarChart" width="100" height="100"></canvas>
                                </div>
                        </div></div>
                     <div class="tab-pane fade" id="Resources">
-                        <h4>Service Three</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
+                        <h4>Coming Soon!</h4>
+                        <p><Strong>Ecobecois</Strong> is excited to announce the upcoming release of rideshare capabilities, Ridesharing creates a meaningful way to give back to your community and the environment and meet some like minded people along the way!</p>
+                        <p>We're not quite ready to let loose yet though, so in the mean time take advantage of our local <a href ="https://montreal.bixi.com/en">Bixi</a>, <a href ="https://www.rtcquebec.ca/">Bus Routes</a>, or just enjoy a day in one of our lovely <a href ="https://www.sepaq.com/pq/index.dot?language_id=1">parks</a></p>
                     </div>
                 </div>
             </div>
@@ -361,31 +368,51 @@
             var myRadarChart = new Chart(ctx5, {
                 type: 'radar',
                 data: {
-                    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+                    labels: ["C02 emission", "Travel Cost", "walks", "Bikes", "Public Transit", "Total Distance", "Calories"],
                     datasets: [
                         {
-                            label: "My First dataset",
+                            label: "Me",
                             backgroundColor: "rgba(179,181,198,0.2)",
                             borderColor: "rgba(179,181,198,1)",
                             pointBackgroundColor: "rgba(179,181,198,1)",
                             pointBorderColor: "#fff",
                             pointHoverBackgroundColor: "#fff",
                             pointHoverBorderColor: "rgba(179,181,198,1)",
-                            data: [65, 59, 90, 81, 56, 55, 40]
+                            data: [80, 65, 45, 25, 46, 65, 45]
                         },
                         {
-                            label: "My Second dataset",
+                            label: "Steve",
                             backgroundColor: "rgba(255,99,132,0.2)",
                             borderColor: "rgba(255,99,132,1)",
                             pointBackgroundColor: "rgba(255,99,132,1)",
                             pointBorderColor: "#fff",
                             pointHoverBackgroundColor: "#fff",
                             pointHoverBorderColor: "rgba(255,99,132,1)",
-                            data: [28, 48, 40, 19, 96, 27, 100]
+                            data: [60, 65, 65, 70, 56, 60, 35]
+                        },
+                        {
+                            label: "Laura",
+                            backgroundColor: "rgba(99,255,132,0.2)",
+                            borderColor: "rgba(99,255,132,1)",
+                            pointBackgroundColor: "rgba(99,255,132,1)",
+                            pointBorderColor: "#fff",
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderColor: "rgba(99,255,132,1)",
+                            data: [45, 65, 80, 35, 56, 55, 70]
                         }
                     ]
+                },
+                options: {
+                    scale: {
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Monthly Improvement'
+                    },
                 }
             });
-            
-        </script>
+    </script>
     </asp:Content>
