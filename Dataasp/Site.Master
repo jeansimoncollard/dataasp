@@ -11,9 +11,9 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
     <link rel="stylesheet" href="~/Content/googlemap.css" runat="server">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">    
 </head>
 <body>
     <form runat="server">
@@ -123,11 +123,10 @@
                                 </p>
                                 <p>
                                     <i class="fa fa-phone"></i><b>Phone (Canada) :</b><br />
-                                    </ <a href="tel:18272222193">(827) 222-2193</a>
+                                    <a href="tel:18272222193"  style="color:white;">(827) 222-2193</a>
                                 </p>
                                 <p>
-                                    <i class="fa fa-envelope"></i><b>E-mail :</b><br />
-                                    <a href="mailto:info@hackqc.azurewebsites.net">info@hackqc.azurewebsites.net</a>
+                                    <i class="fa fa-envelope"></i><b>E-mail :</b><a href="mailto:info@hackqc.azurewebsites.net" style="color:white;"> info@hackqc.azurewebsites.net</a>
                                 </p>
                                 <a href="~/Contact" class="btn btn-primary element-bottom-10" role="button" runat="server">Contact us</a>
                             </div>
