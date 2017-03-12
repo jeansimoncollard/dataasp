@@ -98,9 +98,11 @@
                                </div>
                        </div></div>
                     <div class="tab-pane fade" id="Resources">
-                        <h4>Service Three</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
+                        <h4>Resources</h4>
+                        <p>Visit<a href="https://www.facebook.com/pg/recyclecyclemtl/about/?ref=page_internal">Recycle Cycle</a> on Facebook. They help you build and repair your bicycle and
+                            and sell used bicycles. Buying used items can further reduce your impact on the environment. Happy Bicycling!
+                        </p>
+                     
                     </div>
                 </div>
             </div>
