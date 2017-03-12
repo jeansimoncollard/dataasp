@@ -78,6 +78,7 @@
                 <div class="tab-pane fade" id="Community">
                     <div class="row">
                         <div class="col-md-6">
+                            <h2><strong> Your Community Stats</strong></h2>
                             <ul>
                                 <li class="element-top-10 element-bottom-10">
                                     Your Friend Sebastian saved $30 this month with Bixi

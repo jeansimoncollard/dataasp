@@ -538,7 +538,11 @@ input[type="select"] {
     font-size: 20px;
     width: 172px; 
 }
-
+.panel-body {
+    text-align: justify;
+    padding: 15px;
+    height: 320px;
+}
 input[type=range]::-webkit-slider-runnable-track {
    margin-top: 12px;
   width: 100%;
