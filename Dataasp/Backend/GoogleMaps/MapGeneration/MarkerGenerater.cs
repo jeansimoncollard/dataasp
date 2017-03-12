@@ -27,8 +27,7 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
                 position: {{lat: {latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}},
                 map: map,
                 title: '{markerTitle}',
-                icon: '{image}',
-                label: '{markerTitle}'
+                icon: '{image}'
               }});
 
         ";
