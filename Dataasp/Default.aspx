@@ -104,9 +104,6 @@
 
 
                 <p>Distance:</p><input class="slider" id="distanceSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
-
-                <input id="distanceSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
-
                 <p>Reduce Emissions:</p>
 
                 <input id="savingFuelSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
