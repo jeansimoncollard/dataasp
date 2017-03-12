@@ -2,7 +2,7 @@
     <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         <div class="row">
             <div class="col-lg-12 element-top-30 element-bottom-30">
-                <h1 class="page-header">Travel Now!</h1>
+                <h1 class="page-header">Itinerary</h1>
             </div>
         </div>
         <div class="row element-bottom-20">
