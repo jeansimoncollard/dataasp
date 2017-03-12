@@ -123,7 +123,6 @@
                 </div>
             </div>
         </div>
-        </center>
         <div class="col-md-6">
 
             <div id="mapResults" runat="server">
