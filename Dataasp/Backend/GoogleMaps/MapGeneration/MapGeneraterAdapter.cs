@@ -34,11 +34,12 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
             {
                 wayPoint = new MapPoint();
             }
-
+            List<MarkerEntity> markers = new List<MarkerEntity>();
             //.ToString("en-US") to have decimal point instead of comma as separator
-
-            var markers = GetMarkers(startAddress, endAddress);
-
+            if (startCoordinates != null && endCoordinates != null)
+            {
+                markers = GetMarkers(startAddress, endAddress);
+            }
             return _mapGenerater.GenerateMap($"{{ lat: {startCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {startCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}}}", $"{{ lat: {endCoordinates.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {endCoordinates.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", $"{{ lat: {wayPoint.Latitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))}, lng: {wayPoint.Longitude.ToString(CultureInfo.CreateSpecificCulture("en-US"))} }}", travelMode.ToString(), isWaypoint, markers); ;
         }
 
