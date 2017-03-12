@@ -17,13 +17,13 @@
                             <small class="pull-right text-muted">
                             <span class="glyphicon glyphicon-time"></span>7 mins ago</small>
                             </br>
-                            <li class="ui-state-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </li>
+                            <li class="ui-state-default">Thanks to Ecobecois, I finally feel like I can make an impact!. </li>
                             </br>
                             <strong class="pull-left primary-font">Taylor</strong>
                             <small class="pull-right text-muted">
                             <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
                             </br>
-                            <li class="ui-state-default">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                            <li class="ui-state-default">Ecobecois is really easy to use! Its interface is really intuitive. I like it!</li>
                         </ul>
                     </div>
             </div>
