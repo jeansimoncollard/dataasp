@@ -123,8 +123,6 @@ namespace Dataasp.Backend.Quickstats
                     <ul>
                         <li>Distance: {GetDistanceInKm()} km</li>
                         <li> Using:  { _meansOfTransportation} </li>
-                        <li> Distance: { GetDistanceInKm() }km</li>
-                        <li>Using: { _meansOfTransportation }</li>
                         <li>Approximate cost: { _cost }  </ li >
                         <li>Your Ecological Footprint: { Math.Round(_footPrint, 2) } Kilograms of CO2</li>                        
                         </ul>
