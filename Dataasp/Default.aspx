@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Welcome to Ecobecois!" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Dataasp._Default" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">   
     <div class="row">
         <div class="col-lg-12 element-top-30 element-bottom-30">
             <h1 class="page-header">Travel Now!</h1>
@@ -9,7 +9,7 @@
     <div class="row element-bottom-20">
         <div class="col-md-6">
             <div class="container">
-                <input id="autocomplete" placeholder="Enter your address" onfocus="geolocate()" type="text" runat="server" clientidmode="Static"></input>
+                <input id="autocomplete" placeholder="Enter your location" onfocus="geolocate()" type="text" runat="server" clientidmode="Static"></input>
                 <script>
                     var placeSearch, autocomplete;
 
@@ -90,7 +90,7 @@
 
 
                 <p>Destination:</p>
-                <input id="autocomplete2" placeholder="Enter your address" onfocus="geolocate2()" type="text" runat="server" clientidmode="Static"></input>
+                <input id="autocomplete2" placeholder="Enter Destination" onfocus="geolocate2()" type="text" runat="server" clientidmode="Static"></input>
                 <div class="clearfix">
                     <ajaxToolkit:ComboBox ID="travelModeComboBox" runat="server">
                         <asp:ListItem Value="DRIVING">Car</asp:ListItem>
