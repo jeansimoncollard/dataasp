@@ -48,7 +48,7 @@
                                     <div class="panel-heading">
                                         <canvas id="myChart" width="100" height="100"></canvas>
                                     </div>
-                                    <div id="drivingAlternatives"class="panel-body">
+                                    <div id="drivingAlternatives" class="panel-body">
                                         <h4>Driving Alternatives</h4>
                                         <p></p>
                                         <a href="#" class="btn btn-primary">Learn More</a>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="tab-pane fade" id="Community">
                         <div class="row">
-                           <div class="col-md-6"></div>
+                            <div class="col-md-6">
                             <ul>
                                 <li>
                                     Your Friend Sebastian saved $30 this month with Bixi
@@ -92,10 +92,12 @@
                                     On Average you produce 1.25 times as much CO2 as your friends
                                 </li>
                             </ul>
-                           <div class="col-md-6">
-                            <canvas id="myRadarChart" width="100" height="100"></canvas>
-                               </div>
-                       </div></div>
+                            </div>
+                            <div class="col-md-6">
+                                <canvas id="myRadarChart" width="100" height="100"></canvas>
+                            </div>
+                        </div>
+                    </div>
                     <div class="tab-pane fade" id="Resources">
                         <h4>Service Three</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
@@ -227,62 +229,62 @@
         </div>
         <!-- /.row -->
         <hr>
-    <script>
-        var ctx = document.getElementById("myChart").getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'doughnut',
-            options: {
-                title: {
-                    display: true,
-                    text: 'Travel type percentage'
+        <script>
+            var ctx = document.getElementById("myChart").getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Travel type percentage'
+                    },
+                    animation: {
+                        animateScale: true
+                    }
                 },
-                animation: {
-                    animateScale: true
-                }
-            },
-            data: {
-                labels: ["Walking", "Biking", "Public Transit", "Driving"],
-                datasets: [{
-                    backgroundColor: [
-                        "#2ecc71",
-                        "#3498db",
-                        "#95a5a6",
-                        "#9b59b6",
-                    ],
-                    data:  <%= Chart1Data %>,
+                data: {
+                    labels: ["Walking", "Biking", "Public Transit", "Driving"],
+                    datasets: [{
+                        backgroundColor: [
+                            "#2ecc71",
+                            "#3498db",
+                            "#95a5a6",
+                            "#9b59b6",
+                        ],
+                        data: <%= Chart1Data %>,
                 }]
-             }
-             });
-             var tranType = <%= Chart1Data %>;
-             var preferedType;
+            }
+            });
+            var tranType = <%= Chart1Data %>;
+            var preferedType;
 
-             if (tranType[0] >= tranType[1] && tranType[0] >= tranType[2] && tranType[0] >= tranType[4]) {
-                 //If walking is greatest
-                 preferedType = 0;
-             } else if (tranType[1] >= tranType[2] && tranType[1] >= tranType[3] && tranType[1] >= tranType[0]) {
-                 //If Biking is greatest
-                 preferedType = 1;
-             } else if (tranType[2] >= tranType[3] && tranType[2] >= tranType[0] && tranType[2] >= tranType[1]) {
-                 //If Public Transit is greatest
-                 preferedType = 2;
-             } else {
-                 //Else Driving is greatest
-                 preferedType = 3;
-             }
-             switch (preferedType) {
-                 case 0:
+            if (tranType[0] >= tranType[1] && tranType[0] >= tranType[2] && tranType[0] >= tranType[4]) {
+                //If walking is greatest
+                preferedType = 0;
+            } else if (tranType[1] >= tranType[2] && tranType[1] >= tranType[3] && tranType[1] >= tranType[0]) {
+                //If Biking is greatest
+                preferedType = 1;
+            } else if (tranType[2] >= tranType[3] && tranType[2] >= tranType[0] && tranType[2] >= tranType[1]) {
+                //If Public Transit is greatest
+                preferedType = 2;
+            } else {
+                //Else Driving is greatest
+                preferedType = 3;
+            }
+            switch (preferedType) {
+                case 0:
 
-                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p><a href="#" class="btn btn-primary">Learn More</a>')
-                 case 1:
+                    $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is walking. You transportation habits have a positive impact on the enviroment. Keep up the good work!</p>')
+                case 1:
 
-                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p>')
-                 case 2:
+                    $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is cycling. Using a bicycle is a sustainable alternative and you should be proud of you\'re self.</p>')
+                case 2:
 
-                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p>')
-                 case 3:
+                    $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is public transportation. It is great to see that you take initiative to reduce your carbon foot print.</p>')
+                case 3:
 
-                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p>')
-             }
+                    $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is driving. You should consider carpooling when possible or seeking alternative methods of transportation. Use our route tracker to help you find sustainable options that suit your goals.</p>')
+            }
         </script>
         <script>
             var ctx4 = document.getElementById("CostChart");
@@ -291,41 +293,41 @@
                 data: {
                     labels: ["Walking", "Biking", "Public Transit", "Car"],
                     datasets: [{
-                        label: "Total travel expenditure " + "$" +<%= totalCostData %>,
-                        data: <%= costData %>,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
+                        label: "Total travel expenditure " + "$" + <%= totalCostData %>,
+                    data: <%= costData %>,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Travel costs'
                 },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'Travel costs'
-                    },
-                    scales: {
-                        yAxes: [{
-                            scaleTitle: "$",
-                            ticks: {
-                                beginAtZero: true,
-                            }
-                        }]
-                    }
+                scales: {
+                    yAxes: [{
+                        scaleTitle: "$",
+                        ticks: {
+                            beginAtZero: true,
+                        }
+                    }]
                 }
+            }
             });
         </script>
         <script>
@@ -337,38 +339,38 @@
                     datasets: [{
                         label: 'Kilometers',
                         data: <%= DistanceChartData %>,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Distance by Type'
                 },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'Distance by Type'
-                    },
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true,
-                            }
-                        }]
-                    }
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                        }
+                    }]
                 }
+            }
             });
         </script>
         <script>
@@ -377,8 +379,8 @@
                 type: 'line',
                 data: {
                     labels: <%= Chart2Dates %>,
-                    datasets: [{
-                        label: 'total CO2 generated : ' + <%=totalCO2Str%>,
+                datasets: [{
+                    label: 'total CO2 generated : ' + <%=totalCO2Str%>,
                     data: <%= ChartOnCO2Data %>,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -397,21 +399,21 @@
                         'rgba(255, 159, 64, 1)'
                     ],
                     borderWidth: 1
-                    }]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'CO2 Emissions'
                 },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'CO2 Emissions'
-                    },
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true,
-                            }
-                        }]
-                    }
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                        }
+                    }]
                 }
+            }
             });
         </script>
         <script>
@@ -420,30 +422,26 @@
                 type: 'radar',
                 data: {
                     labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
-                    datasets: [
-                        {
-                            label: "My First dataset",
-                            backgroundColor: "rgba(179,181,198,0.2)",
-                            borderColor: "rgba(179,181,198,1)",
-                            pointBackgroundColor: "rgba(179,181,198,1)",
-                            pointBorderColor: "#fff",
-                            pointHoverBackgroundColor: "#fff",
-                            pointHoverBorderColor: "rgba(179,181,198,1)",
-                            data: [65, 59, 90, 81, 56, 55, 40]
-                        },
-                        {
-                            label: "My Second dataset",
-                            backgroundColor: "rgba(255,99,132,0.2)",
-                            borderColor: "rgba(255,99,132,1)",
-                            pointBackgroundColor: "rgba(255,99,132,1)",
-                            pointBorderColor: "#fff",
-                            pointHoverBackgroundColor: "#fff",
-                            pointHoverBorderColor: "rgba(255,99,132,1)",
-                            data: [28, 48, 40, 19, 96, 27, 100]
-                        }
-                    ]
+                    datasets: [{
+                        label: "My First dataset",
+                        backgroundColor: "rgba(179,181,198,0.2)",
+                        borderColor: "rgba(179,181,198,1)",
+                        pointBackgroundColor: "rgba(179,181,198,1)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(179,181,198,1)",
+                        data: [65, 59, 90, 81, 56, 55, 40]
+                    }, {
+                        label: "My Second dataset",
+                        backgroundColor: "rgba(255,99,132,0.2)",
+                        borderColor: "rgba(255,99,132,1)",
+                        pointBackgroundColor: "rgba(255,99,132,1)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(255,99,132,1)",
+                        data: [28, 48, 40, 19, 96, 27, 100]
+                    }]
                 }
             });
-            
         </script>
     </asp:Content>
