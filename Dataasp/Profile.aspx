@@ -99,7 +99,6 @@
                                </div>
                        </div></div>
                     <div class="tab-pane fade" id="Resources">
-                        <h4>Coming Soon!</h4>
                         <p><Strong>Ecobecois</Strong> is excited to announce the upcoming release of rideshare capabilities, Ridesharing creates a meaningful way to give back to your community and the environment and meet some like minded people along the way!</p>
                         <p>We're not quite ready to let loose yet though, so in the mean time take advantage of our local <a href ="https://montreal.bixi.com/en">Bixi</a>, <a href ="https://www.rtcquebec.ca/">Bus Routes</a>, or just enjoy a day in one of our lovely <a href ="https://www.sepaq.com/pq/index.dot?language_id=1">parks</a></p>
                     </div>
@@ -395,7 +394,7 @@
             var myLineChart = new Chart(ctx2, {
                 type: 'line',
                 data: {
-                    labels: <%= Chart2Dates %>,
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                     datasets: [{
                         label: 'total CO2 generated : ' + <%=totalCO2Str%>,
                         data: <%= ChartOnCO2Data %>,
