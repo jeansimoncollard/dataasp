@@ -106,7 +106,7 @@
                         <h3>Jean-Simon Collard<br>
                             <small>Database Management</small>
                         </h3>
-                        <p>3rd year student at Bishops's University in computer science. Would enjoy a carreer as a computer consultant.</p>
+                        <p>3rd year student at Bishops's in computer science. Would enjoy a carreer as a computer consultant.</p>
                         <ul class="list-inline">
                             <li><a href="https://www.facebook.com/jeansimon.collard" target="blank"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
