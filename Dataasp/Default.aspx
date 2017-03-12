@@ -9,9 +9,89 @@
     <div class="row element-bottom-20">
         <div class="col-md-6">
             <div class="container">
-                <p>Departing from:</p>
+                <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
                 <asp:TextBox ID="fromTextBox" runat="server"></asp:TextBox>
+                <script>
+                  var placeSearch, autocomplete;
+
+                  function initAutocomplete() {
+                    // Create the autocomplete object, restricting the search to geographical
+                    // location types.
+                    autocomplete = new google.maps.places.Autocomplete(
+                        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+                        {types: ['geocode']});
+                        
+                    // When the user selects an address from the dropdown, populate the address
+                    // fields in the form.
+                    autocomplete.addListener('place_changed', fillInAddress);
+
+                    // Create the autocomplete object, restricting the search to geographical
+                    // location types.
+                    autocomplete2 = new google.maps.places.Autocomplete(
+                        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete2')),
+                        { types: ['geocode'] });
+
+                    // When the user selects an address from the dropdown, populate the address
+                    // fields in the form.
+                    autocomplete2.addListener('place_changed', fillInAddress2);
+                  }
+
+                  function fillInAddress() {
+                    // Get the place details from the autocomplete object.
+                      var place = autocomplete.getPlace();
+                      document.getElementById(fromTextBox).value = place;
+                      
+                    }
+
+                    // Bias the autocomplete object to the user's geographical location,
+                    // as supplied by the browser's 'navigator.geolocation' object.
+                    function geolocate() {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(function (position) {
+                                var geolocation = {
+                                    lat: position.coords.latitude,
+                                    lng: position.coords.longitude
+                                };
+                                var circle = new google.maps.Circle({
+                                    center: geolocation,
+                                    radius: position.coords.accuracy
+                                });
+                                autocomplete.setBounds(circle.getBounds());
+                            });
+                        }
+                    }
+
+                    function fillInAddress2() {
+                        // Get the place details from the autocomplete object.
+                        var place2 = autocomplete2.getPlace();
+                        document.getElementById(toTextBox).value = place2;
+
+                    }
+
+                    // Bias the autocomplete object to the user's geographical location,
+                    // as supplied by the browser's 'navigator.geolocation' object.
+                    function geolocate2() {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(function (position) {
+                                var geolocation2 = {
+                                    lat: position.coords.latitude,
+                                    lng: position.coords.longitude
+                                };
+                                var circle2 = new google.maps.Circle({
+                                    center: geolocation2,
+                                    radius: position.coords.accuracy
+                                });
+                                autocomplete2.setBounds(circle.getBounds());
+                            });
+                        }
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyeTwU64siTHFVrI_h9bJX7VlMdReWvbc&libraries=places&callback=initAutocomplete"
+                 async defer></script>
+
+
                 <p>Destination:</p>
+                <input id="autocomplete2" placeholder="Enter your address" onFocus="geolocate2()" type="text"></input>
                 <asp:TextBox ID="toTextBox" runat="server"></asp:TextBox>
                 <div class="clearfix">
                 <ajaxToolkit:ComboBox ID="travelModeComboBox" runat="server">
