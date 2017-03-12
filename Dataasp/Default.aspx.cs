@@ -49,8 +49,8 @@ namespace Dataasp
             var endAddress = autocomplete2.Value;
             if (autocomplete.Value.Length == 0 || autocomplete2.Value.Length == 0)
             {
-                div.Attributes.Add("class", "btn-danger");
-                div.InnerHtml = "<h1 class='danger'>Please fill out the form properly</h1>";
+                failed.Attributes.Add("class", "btn-danger");
+                failed.InnerHtml = "<h4>Please fill out all fields properly.</h4>";
                 return;
             }
 

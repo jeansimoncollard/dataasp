@@ -31,7 +31,7 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
                 </div>
             </div>
             <script>
-
+            $('#MainContent_failed').addClass('hidden');
 
 
             var start = " + start + @";
@@ -224,7 +224,10 @@ map.mapTypes.set('map_style', styledMap);
                     else {        
                       //WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW IMPORTANT COMMENT WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
                       //code to say there was 0 results should be here (if status == 'ZERO_RESULTS')
-                      window.alert('There is no path that links your location to your destination.');
+                      $('#MainContent_failed').removeClass('hidden');
+                      $('#MainContent_failed').addClass('btn-alert');
+                      $('#MainContent_failed').append('<h4>Please fill out all fields properly.</h4>');
+
                     }
                 });
 " + _markerGenerater.GenerateMarkers(markers) + @"
