@@ -14,14 +14,14 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
 {
     public class WayPointSelecter
     {
-        private WaypointGenerater _constructionSiteWaypointGenerater;
+        private WaypointGenerater _waypointGenerater;
 
         public WayPointSelecter()
         {
-            _constructionSiteWaypointGenerater = new WayPointGeneration.WaypointGenerater();
+            _waypointGenerater = new WayPointGeneration.WaypointGenerater();
         }
 
-        public MapPoint GenerateWayPoint(string startAddress, string endAddress, List<SliderValues> sliderValues, HtmlInputGenericControl distanceSlider, HtmlInputGenericControl constructionSlider, HtmlInputGenericControl photoRadarSlider, HtmlInputGenericControl savingFuelSlider)
+        public MapPoint GenerateWayPoint(string startAddress, string endAddress, List<SliderValues> sliderValues, HtmlInputGenericControl distanceSlider, HtmlInputGenericControl constructionSlider, HtmlInputGenericControl photoRadarSlider, HtmlInputGenericControl savingFuelSlider, HtmlInputGenericControl landscapeSlider)
         {
             sliderValues = sliderValues.OrderBy(x => x.SliderValue).Reverse().ToList();
 
@@ -32,14 +32,18 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
 
             if (sliderValues.First().SliderId == constructionSlider.ID)
             {
-                return _constructionSiteWaypointGenerater.Generate(startAddress, endAddress,"construction_sites");
+                return _waypointGenerater.Generate(startAddress, endAddress, "construction_sites");
 
             }
 
             if (sliderValues.First().SliderId == photoRadarSlider.ID)
             {
-                return _constructionSiteWaypointGenerater.Generate(startAddress, endAddress, "speedtraps");
+                return _waypointGenerater.Generate(startAddress, endAddress, "speedtraps");
 
+            }
+            if (sliderValues.First().SliderId == landscapeSlider.ID)
+            {
+                return _waypointGenerater.Generate(startAddress, endAddress, "landscape");
             }
 
             return null; //Could should never reach here anyway

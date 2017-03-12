@@ -15,17 +15,17 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
     {
         private AddressLatLongConverter _addressLatLongConverter;
         private WaypointValidater _waypointValidater;
-        private Random _random;
 
         public WaypointGenerater()
         {
             _addressLatLongConverter = new AddressLatLongConverter();
             _waypointValidater = new WaypointValidater();
-            _random = new Random(1321432);//random constant seed
+            
         }
 
         public MapPoint Generate(string startAddress, string endAddress, string tableName)
         {
+            var random = new Random(tableName.GetHashCode());//same seed for same slider always so it doesn't generate different results everytime
             var start = _addressLatLongConverter.GetLatLong(startAddress);
             var end = _addressLatLongConverter.GetLatLong(endAddress);
 
@@ -39,7 +39,7 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
 
             for (var i = 0; i < 5 && wayPointList.Count < 3; i++) //very expensive operation to check viabilty of waypoints so I'm not generating much
             {
-                var percentage = _random.NextDouble();
+                var percentage = random.NextDouble();
                 var wayPoint = new MapPoint();
                 wayPoint.Latitude = middlePoint.Latitude + latMaxAddableValue * percentage;
                 wayPoint.Longitude = middlePoint.Longitude + longMaxAddableValue * percentage;

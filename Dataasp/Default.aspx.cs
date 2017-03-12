@@ -41,7 +41,7 @@ namespace Dataasp
         }
 
         protected void addTripButton_Click(object sender, EventArgs e)
-        {          
+        {
 
             var div = quickStatsDiv;
             var startAddress = autocomplete.Value;
@@ -56,15 +56,15 @@ namespace Dataasp
             var startCoordinates = _addressLatLongConverter.GetLatLong(startAddress);
             var endCoordinates = _addressLatLongConverter.GetLatLong(endAddress);
 
-            MapPoint waypoint = new MapPoint();
-            bool useWayPoint = false;
-
             if (startCoordinates == null || endCoordinates == null)
             {
                 mapResults.InnerHtml = "<script>window.alert('There is no path that links your location to your destination.');</script>";
                 return;
 
             }
+
+            var waypoint = generateWayPoint(startAddress, endAddress);
+            var useWayPoint = !(waypoint == null); //Don't use waypoint if it's equal to null
             mapResults.InnerHtml = _mapGeneraterAdapter.GenerateMap(startAddress, endAddress, _stringToTravelEnumConvert.Convert(travelModeComboBox.Value), waypoint, useWayPoint);
 
 
@@ -113,9 +113,9 @@ namespace Dataasp
             sliderValues.Add(new SliderValues() { SliderId = constructionSlider.ID, SliderValue = Convert.ToInt32(constructionSlider.Value) });
             sliderValues.Add(new SliderValues() { SliderId = photoRadarSlider.ID, SliderValue = Convert.ToInt32(photoRadarSlider.Value) });
             sliderValues.Add(new SliderValues() { SliderId = savingFuelSlider.ID, SliderValue = Convert.ToInt32(savingFuelSlider.Value) });
+            sliderValues.Add(new SliderValues() { SliderId = landscapeSlider.ID, SliderValue = Convert.ToInt32(landscapeSlider.Value) });
 
-
-            return _wayPointGenerator.GenerateWayPoint(startAddress, endAddress, sliderValues, distanceSlider, constructionSlider, photoRadarSlider, savingFuelSlider);
+            return _wayPointGenerator.GenerateWayPoint(startAddress, endAddress, sliderValues, distanceSlider, constructionSlider, photoRadarSlider, savingFuelSlider, landscapeSlider);
         }
 
     }
