@@ -9,15 +9,16 @@
         <div class="row">
             <div class="col-md-6 full-height">
                 <div class="row">
+                    <h3 style="margin-top: 60px;"><strong>Environmental Impact</strong></h3>
                     <p>Your way of life has measurable costs on the environment. On this chart is displayed how much CO2 was released on the latest registered trips.</p>
                     <ul>
                         <li><strong>Here are the most well known consequences:</strong>
                         </li>
-                        <li>Sea level rising</li>
+                        <em><li>Sea level rising</li>
                         <li>More frequent extrem weather</li>
                         <li>Ecosystem changes</li>
                         <li>Spread of diseases</li>
-                        <li>Increased global warmth</li>
+                        <li>Increased global warmth</li></em>
                     </ul>
                     <p>A tree can absorb as much as 0.45kg of CO2 per year!</p>
                 </div>
