@@ -19,7 +19,8 @@ body {
 
 /*Equalize thumbnails for aboout page*/
 .thumbnail {
-    height: 420px;
+    height: 480px;
+    text-align:justify;
     display: block;
     padding: 4px;
     margin-bottom: 20px;
