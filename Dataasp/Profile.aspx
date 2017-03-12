@@ -50,9 +50,7 @@
                                     <canvas id="myChart" width="100" height="100"></canvas>
                                 </div>
                                 <div id="drivingAlternatives" class="panel-body">
-                                    <h4>Driving Alternatives</h4>
-                                    <p></p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -61,10 +59,8 @@
                                 <div class="panel-heading">
                                     <canvas id="DistanceChart" width="100" height="100"></canvas>
                                 </div>
-                                <div class="panel-body">
-                                    <h4>Driving Alternatives</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                <div id="distanceTracker" class="panel-body">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -420,6 +416,38 @@
                     }
                 }
             });
+            var tranType = <%= DistanceChartData %>;
+            var preferedType;
+
+            if (tranType[0] >= tranType[1] && tranType[0] >= tranType[2] && tranType[0] >= tranType[4]) {
+                //If walking is greatest
+                preferedType = 0;
+            } else if (tranType[1] >= tranType[2] && tranType[1] >= tranType[3] && tranType[1] >= tranType[0]) {
+                //If Biking is greatest
+                preferedType = 1;
+            } else if (tranType[2] >= tranType[3] && tranType[2] >= tranType[0] && tranType[2] >= tranType[1]) {
+                //If Public Transit is greatest
+                preferedType = 2;
+            } else {
+                //Else Driving is greatest
+                preferedType = 3;
+            }
+            switch (preferedType) {
+                case 0:
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have walked ' + tranType[0] +'km. This is equivalent to walking [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be walkable.</p > ');
+                    break;
+                case 1:
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have biked ' + tranType[1] +'km. This is equivalent to biking [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be bikable.</p>');
+                    break;
+                case 2:
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have rode ' + tranType[2] +'km. This is equivalent to riding [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be ridable.</p>');
+                    break;
+                case 3:
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have drove ' + tranType[3] +'km. This is equivalent to driving [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be drivable.</p>');
+                    break;
+            }
+
+
     </script>
     <script>
             var ctx2 = document.getElementById("myLineChart");
