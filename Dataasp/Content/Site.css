@@ -444,7 +444,7 @@ input[type="select"] {
     padding: 0;
 }
 
-    .icon-ul li {
+.icon-ul li {
         line-height: 75px;
         width: 100%;
         float: left;
@@ -460,7 +460,7 @@ input[type="select"] {
     background-color: #000000;
 }
 
-    .copyright p {
+.copyright p {
         text-align: left;
         color: #FFF;
         padding: 10px 0;
@@ -473,7 +473,7 @@ input[type="select"] {
     line-height: 20px;
 }
 
-    .post p span {
+.post p span {
         display: block;
         color: #8f8f8f;
     }
@@ -484,7 +484,7 @@ input[type="select"] {
     margin-bottom: 0;
 }
 
-    .bottom_ul li {
+.bottom_ul li {
         float: left;
         line-height: 40px;
     }
@@ -500,6 +500,91 @@ input[type="select"] {
             color: #FFF;
             font-size: 12px;
         }
+/*Organizes the form on the travel page.*/
+.container p {
+    margin-top: 5px;
+    margin-bottom:0;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #4d4d4f;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #4d4d4f;
+}
+input[type=range]::-ms-fill-upper {
+  background: #4d4d4f;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
 
 .element-top-10 {
     padding-top: 10px;
