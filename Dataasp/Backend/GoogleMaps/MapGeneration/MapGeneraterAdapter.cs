@@ -48,7 +48,6 @@ namespace Dataasp.Backend.GoogleMaps.MapGeneration
             var markersList = new List<MarkerEntity>();
             markersList.AddRange(_markerGenerater.Generate(startAddress, endAddress, "construction_sites", "Construction", "http://img4.hostingpics.net/pics/990085construction.png"));
             markersList.AddRange(_markerGenerater.Generate(startAddress, endAddress, "speedtraps", "Speed Trap", "http://img4.hostingpics.net/pics/146471police.png"));
-            markersList.AddRange(_markerGenerater.Generate(startAddress, endAddress, "landscape", "People", "http://www.hostingpics.net/viewer.php?id=942695people.png"));
             return markersList;
         }
     }
