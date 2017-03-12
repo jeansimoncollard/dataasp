@@ -516,7 +516,7 @@ input[type="select"] {
 }
 
 .container p a{
-    font-size: 10px;
+    font-size: 20px;
     color: #337ab7;
     text-decoration: none;
 }
@@ -524,6 +524,14 @@ input[type="select"] {
 .container p a:hover{
     color: #67c4e7;
   
+}
+
+#intfacts p{
+    font-size: 12px;
+}
+
+#intfacts p a{
+    font-size: 12px;
 }
 
 .input, select, textarea {

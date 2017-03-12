@@ -9,17 +9,18 @@
     <div class="row">
         <div class="col-md-6 full-height">
             <div class="row">
-                <p>Your way of life has measurable costs on the environment. On this chart is displayed how much CO2 was released on the latest registered trips.</p>
-                <ul>
-                    <li><strong>Here are the most well known consequences:</strong>
-                    </li>
-                    <li>Sea level rising</li>
-                    <li>More frequent extrem weather</li>
-                    <li>Ecosystem changes</li>
-                    <li>Spread of diseases</li>
-                    <li>Increased global warmth</li>
-                </ul>
-                <p>A tree can absorb as much as 0.45kg of CO2 per year!</p>
+                <h3 style="margin-top: 60px;"><strong>Environmental Impact</strong></h3>
+                    <p>Your way of life has measurable costs on the environment. On this chart is displayed how much CO2 was released on the latest registered trips.</p>
+                    <ul>
+                        <li><strong>Here are the most well known consequences:</strong>
+                        </li>
+                        <em><li>Sea level rising</li>
+                        <li>More frequent extrem weather</li>
+                        <li>Ecosystem changes</li>
+                        <li>Spread of diseases</li>
+                        <li>Increased global warmth</li></em>
+                    </ul>
+                    <p>A tree can absorb as much as 0.45kg of CO2 per year. That means it would take 1000 trees to make up for the CO2 produced by the average vehicle!</p>
             </div>
         </div>
         <div class="col-md-6 full-height">
@@ -106,126 +107,66 @@
         </div>
         <!-- Service List -->
         <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-        <div class="row">
+       <div class="row" id="intfacts">
             <div class="col-lg-12">
-                <h2 class="page-header">Service List</h2>
+                <h2 class="page-header">Interesting Facts</h2>
             </div>
             <div class="col-md-4">
                 <div class="media">
                     <div class="pull-left">
                         <span class="fa-stack fa-2x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-tree fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Service One</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                </div>
-            </div>
-            <div class="media">
-                <div class="pull-left">
-                    <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-car fa-stack-1x fa-inverse"></i>
                     </span>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Service Two</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Your car and Green House Gases</h4>
+                        <p>"While GHGs are emitted in the extraction phase of the crude oil production process, most of the life cycle emissions of fuel come from a vehicle’s tailpipe. Final combustion of gasoline emerging from your tailpipe accounts for approximately 70%-80% of well-to-wheel life-cycle emissions."
+                            <br />
+                            <a href="http://www.nrcan.gc.ca/energy/oil-sands/18091">Gov. Canada</a>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="media">
-                <div class="pull-left">
-                    <span class="fa-stack fa-2x">
+            <div class="col-md-4">
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-support fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-leaf fa-stack-1x fa-inverse"></i>
                     </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Green Alternatives to Diesel</h4>
+                        <p>"Biodiesel is a diesel fuel substitute used in diesel engines made from renewable materials such as:
+                            <strong>Plant oils:</strong> canola, camelina, soy, flax, jatropha, mahua, pongamia pinnata, mustard, coconut, palm, hemp and sunflower;
+                            <strong>Waste cooking oil:</strong>yellow or tap grease;
+                            <strong>Other oils:</strong> tall, fish, and algae;
+                            <strong>Animal fats:</strong>beef or sheep tallow, pork lard, or poultry fat; and Potentially from cellulosic feedstock consisting of agriculture and forest biomass."
+                            <br />
+                            <a href="http://www.nrcan.gc.ca/energy/alternative-fuels/fuel-facts/biodiesel/3509">Learn more here</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Service Three</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+                    </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">How Much CO2 is too Much?</h4>
+                        <p>"Burning 1 L of gasoline produces approximately 2.3 kg of CO2. This means that the average Canadian vehicle, which burns 2,000 L of gasoline every year, releases about 4,600 kg of CO2 into the atmosphere."
+                            <br /><a href="https://www.nrcan.gc.ca/energy/efficiency/transportation/cars-light-trucks/buying/16770">Learn more here</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="media">
-                <div class="pull-left">
-                    <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-database fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Service Four</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                </div>
-            </div>
-            <div class="media">
-                <div class="pull-left">
-                    <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-bomb fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Service Five</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                </div>
-            </div>
-            <div class="media">
-                <div class="pull-left">
-                    <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-bank fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Service Six</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="media">
-                <div class="pull-left">
-                    <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Service Seven</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                </div>
-            </div>
-            <div class="media">
-                <div class="pull-left">
-                    <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-space-shuttle fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Service Eight</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                </div>
-            </div>
-            <div class="media">
-                <div class="pull-left">
-                    <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-recycle fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Service Nine</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.row -->
+      <!-- /.row -->
     <hr>
     <script>
         var ctx = document.getElementById("myChart").getContext('2d');
