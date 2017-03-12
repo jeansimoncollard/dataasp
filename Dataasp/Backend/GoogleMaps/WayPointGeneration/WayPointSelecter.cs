@@ -12,13 +12,13 @@ using System.Web.UI.HtmlControls;
 
 namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
 {
-    public class WayPointGenerator
+    public class WayPointSelecter
     {
-        private ConstructionSiteWaypointGenerater _constructionSiteWaypointGenerater;
+        private WaypointGenerater _constructionSiteWaypointGenerater;
 
-        public WayPointGenerator()
+        public WayPointSelecter()
         {
-            _constructionSiteWaypointGenerater = new WayPointGeneration.ConstructionSiteWaypointGenerater();
+            _constructionSiteWaypointGenerater = new WayPointGeneration.WaypointGenerater();
         }
 
         public MapPoint GenerateWayPoint(string startAddress, string endAddress, List<SliderValues> sliderValues, HtmlInputGenericControl distanceSlider, HtmlInputGenericControl constructionSlider, HtmlInputGenericControl photoRadarSlider, HtmlInputGenericControl savingFuelSlider)
@@ -32,7 +32,13 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
 
             if (sliderValues.First().SliderId == constructionSlider.ID)
             {
-                return _constructionSiteWaypointGenerater.Generate(startAddress, endAddress);
+                return _constructionSiteWaypointGenerater.Generate(startAddress, endAddress,"construction_sites");
+
+            }
+
+            if (sliderValues.First().SliderId == photoRadarSlider.ID)
+            {
+                return _constructionSiteWaypointGenerater.Generate(startAddress, endAddress, "speedtraps");
 
             }
 

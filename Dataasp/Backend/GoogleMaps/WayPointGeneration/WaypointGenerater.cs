@@ -11,20 +11,20 @@ using System.Web;
 
 namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
 {
-    public class ConstructionSiteWaypointGenerater
+    public class WaypointGenerater
     {
         private AddressLatLongConverter _addressLatLongConverter;
         private WaypointValidater _waypointValidater;
         private Random _random;
 
-        public ConstructionSiteWaypointGenerater()
+        public WaypointGenerater()
         {
             _addressLatLongConverter = new AddressLatLongConverter();
             _waypointValidater = new WaypointValidater();
             _random = new Random(1321432);//random constant seed
         }
 
-        public MapPoint Generate(string startAddress, string endAddress)
+        public MapPoint Generate(string startAddress, string endAddress, string tableName)
         {
             var start = _addressLatLongConverter.GetLatLong(startAddress);
             var end = _addressLatLongConverter.GetLatLong(endAddress);
@@ -49,7 +49,7 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
                     wayPointList.Add(wayPoint);
                 }
             }
-            var candidates = getScoredWayPointList(wayPointList, latMaxAddableValue, longMaxAddableValue).OrderBy(x => x.Score);
+            var candidates = getScoredWayPointList(wayPointList, latMaxAddableValue, longMaxAddableValue, tableName).OrderBy(x => x.Score);
 
             if (candidates.All(x => x.Score == 0))
             { //Don't use any if there are no construction on the way
@@ -60,21 +60,21 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
         }
 
 
-        private List<WaypointScore> getScoredWayPointList(List<MapPoint> listWayPoints, double latMaxAddableValue, double longMaxAddableValue)
+        private List<WaypointScore> getScoredWayPointList(List<MapPoint> listWayPoints, double latMaxAddableValue, double longMaxAddableValue, string tableName)
         {
             var listScoreWaypoints = new List<WaypointScore>();
             if (listWayPoints.Count != 0)
             {
                 foreach (var waypoint in listWayPoints)
                 {
-                    var score = scoreWaypoint(waypoint, latMaxAddableValue, longMaxAddableValue);
+                    var score = scoreWaypoint(waypoint, latMaxAddableValue, longMaxAddableValue, tableName);
                     listScoreWaypoints.Add(new WaypointScore() { WayPoint = waypoint, Score = score });
                 }
             }
             return listScoreWaypoints;
         }
 
-        private int scoreWaypoint(MapPoint waypoint, double latMaxAddableValue, double longMaxAddableValue)
+        private int scoreWaypoint(MapPoint waypoint, double latMaxAddableValue, double longMaxAddableValue, string tableName)
         {
             var score = 0;
 
@@ -94,7 +94,7 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
             {
                 conn.Open();
 
-                using (var command = new SqlCommand($"Select * from construction_sites where latitude < {maxlatstring} and latitude > {minlatstring} and longitude < {maxlongstring} and longitude > {minlongstring}", conn))
+                using (var command = new SqlCommand($"Select * from {tableName} where latitude < {maxlatstring} and latitude > {minlatstring} and longitude < {maxlongstring} and longitude > {minlongstring}", conn))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {

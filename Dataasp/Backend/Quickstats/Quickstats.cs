@@ -16,8 +16,6 @@ namespace Dataasp.Backend.Quickstats
 
         private double _footPrint;              //the user's ecological footprint
 
-        private double _ETA;                    //estimated time before arrival for the user
-
         private double _cost;                  //estimated cost in dollars
         private string _costSTR;
 
@@ -85,12 +83,6 @@ namespace Dataasp.Backend.Quickstats
                 case "WALKING": _meansOfTransportation = "your feet!";
                     break;
             }
-        }
-
-
-        public double GetETA()                  //returns the user's ETA for his travel
-        {
-            return _ETA;
         }
 
 

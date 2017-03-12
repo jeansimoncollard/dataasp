@@ -224,7 +224,7 @@ map.mapTypes.set('map_style', styledMap);
                     else {        
                       //WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW IMPORTANT COMMENT WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
                       //code to say there was 0 results should be here (if status == 'ZERO_RESULTS')
-                      window.alert('Directions request failed due to ' + status);
+                      window.alert('There is no path that links your location to your destination.');
                     }
                 });
 " + _markerGenerater.GenerateMarkers(markers) + @"
