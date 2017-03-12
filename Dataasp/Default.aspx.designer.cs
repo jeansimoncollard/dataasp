@@ -103,15 +103,6 @@ namespace Dataasp {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl quickStatsDiv;
         
         /// <summary>
-        /// initial_map control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage initial_map;
-        
-        /// <summary>
         /// mapResults control.
         /// </summary>
         /// <remarks>
@@ -119,5 +110,14 @@ namespace Dataasp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mapResults;
+        
+        /// <summary>
+        /// initial_map control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage initial_map;
     }
 }

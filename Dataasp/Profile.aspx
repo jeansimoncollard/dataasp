@@ -251,8 +251,38 @@
                     ],
                     data:  <%= Chart1Data %>,
                 }]
-            }
-        });
+             }
+             });
+             var tranType = <%= Chart1Data %>;
+             var preferedType;
+
+             if (tranType[0] >= tranType[1] && tranType[0] >= tranType[2] && tranType[0] >= tranType[4]) {
+                 //If walking is greatest
+                 preferedType = 0;
+             } else if (tranType[1] >= tranType[2] && tranType[1] >= tranType[3] && tranType[1] >= tranType[0]) {
+                 //If Biking is greatest
+                 preferedType = 1;
+             } else if (tranType[2] >= tranType[3] && tranType[2] >= tranType[0] && tranType[2] >= tranType[1]) {
+                 //If Public Transit is greatest
+                 preferedType = 2;
+             } else {
+                 //Else Driving is greatest
+                 preferedType = 3;
+             }
+             switch (preferedType) {
+                 case 0:
+
+                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p><a href="#" class="btn btn-primary">Learn More</a>')
+                 case 1:
+
+                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p>')
+                 case 2:
+
+                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p>')
+                 case 3:
+
+                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p>')
+             }
         </script>
         <script>
             var ctx4 = document.getElementById("CostChart");
