@@ -58,6 +58,24 @@ namespace Dataasp {
         protected global::AjaxControlToolkit.SliderExtender distanceSlider_SliderExtender;
         
         /// <summary>
+        /// savingFuelSlider control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox savingFuelSlider;
+        
+        /// <summary>
+        /// savingFuelSlider_SliderExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.SliderExtender savingFuelSlider_SliderExtender;
+        
+        /// <summary>
         /// constructionSlider control.
         /// </summary>
         /// <remarks>

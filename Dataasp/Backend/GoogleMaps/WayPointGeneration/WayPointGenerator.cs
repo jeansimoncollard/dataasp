@@ -20,11 +20,11 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
             _constructionSiteWaypointGenerater = new WayPointGeneration.ConstructionSiteWaypointGenerater();
         }
 
-        public MapPoint GenerateWayPoint(string startAddress, string endAddress, List<SliderValues> sliderValues, TextBox distanceSlider, TextBox constructionSlider, TextBox photoRadarSlider)
+        public MapPoint GenerateWayPoint(string startAddress, string endAddress, List<SliderValues> sliderValues, TextBox distanceSlider, TextBox constructionSlider, TextBox photoRadarSlider, TextBox savingFuelSlider)
         {
             sliderValues = sliderValues.OrderBy(x => x.SliderValue).Reverse().ToList();
 
-            if (sliderValues.First().SliderId == distanceSlider.ID) //If the slider with most importance given is distance, return no waypoint to have shortest path.
+            if (sliderValues.First().SliderId == distanceSlider.ID || sliderValues.First().SliderId == savingFuelSlider.ID) //If the slider with most importance given is distance, return no waypoint to have shortest path.
             {
                 return null;
             }

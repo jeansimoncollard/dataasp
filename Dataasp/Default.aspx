@@ -100,10 +100,17 @@
                     </ajaxToolkit:ComboBox>
                 </div>
                 <p class="clearfix"><b>Help us provide you with a sustainable alternative</b></p>
-                <p>Saving Fuel:</p>
+
+
+                <p>Distance:</p>
 
                 <asp:TextBox ID="distanceSlider" runat="server" Text="50"></asp:TextBox>
                 <ajaxToolkit:SliderExtender ID="distanceSlider_SliderExtender" runat="server" BehaviorID="distanceSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="distanceSlider" />
+
+                <p>Saving Fuel:</p>
+
+                <asp:TextBox ID="savingFuelSlider" runat="server" Text="50" ></asp:TextBox>
+                <ajaxToolkit:SliderExtender ID="savingFuelSlider_SliderExtender" runat="server" BehaviorID="savingFuelSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="savingFuelSlider" />
 
                 <p>Avoid Construction:</p>
                 <asp:TextBox ID="constructionSlider" runat="server" Text="50"></asp:TextBox>
@@ -112,7 +119,7 @@
                 <p>Avoid Speed Traps:</p>
                 <asp:TextBox ID="photoRadarSlider" runat="server" Text="50"></asp:TextBox>
                 <ajaxToolkit:SliderExtender ID="photoRadarSlider_SliderExtender" runat="server" BehaviorID="photoRadarSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="photoRadarSlider" />
-                <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click"/>
+                <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click" />
                 <div id="quickStatsDiv" runat="server">
                     <!-- Alex's spot to add qucikstat stuff -->
                 </div>

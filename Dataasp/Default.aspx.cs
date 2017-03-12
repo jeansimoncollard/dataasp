@@ -102,8 +102,11 @@ namespace Dataasp
             sliderValues.Add(new SliderValues() { SliderId = distanceSlider.ID, SliderValue = Convert.ToInt32(distanceSlider.Text) });
             sliderValues.Add(new SliderValues() { SliderId = constructionSlider.ID, SliderValue = Convert.ToInt32(constructionSlider.Text) });
             sliderValues.Add(new SliderValues() { SliderId = photoRadarSlider.ID, SliderValue = Convert.ToInt32(photoRadarSlider.Text) });
+            sliderValues.Add(new SliderValues() { SliderId = savingFuelSlider.ID, SliderValue = Convert.ToInt32(savingFuelSlider.Text) });
+           
 
-            return _wayPointGenerator.GenerateWayPoint(startAddress, endAddress, sliderValues, distanceSlider, constructionSlider, photoRadarSlider);
+            return _wayPointGenerator.GenerateWayPoint(startAddress, endAddress, sliderValues, distanceSlider, constructionSlider, photoRadarSlider, savingFuelSlider);
         }
+
     }
 }
