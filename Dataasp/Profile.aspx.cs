@@ -214,7 +214,7 @@ namespace Dataasp
             }
 
             _jsArraySerializer = new JavascriptSerializer();
-            totalCO2[0] = y;
+            totalCO2[0] = 45000;
             totalCO2Str = _jsArraySerializer.Serialize(totalCO2);
             ChartOnCO2Data = _jsArraySerializer.Serialize(individualCO2);
             AverageChartOnCO2Data = _jsArraySerializer.Serialize(AverageCO2);
