@@ -22,7 +22,7 @@
                     </ajaxToolkit:ComboBox>
                 </div>
                 <p class="clearfix"><b>Help us provide you with a sustainable alternative</b></p>
-                <p>Shortest Distance:</p>
+                <p>Saving Fuel:</p>
 
                 <asp:TextBox ID="distanceSlider" runat="server" Text="50"></asp:TextBox>
                 <ajaxToolkit:SliderExtender ID="distanceSlider_SliderExtender" runat="server" BehaviorID="distanceSlider_SliderExtender" Maximum="100" Minimum="0" TargetControlID="distanceSlider" />
