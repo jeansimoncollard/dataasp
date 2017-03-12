@@ -11,12 +11,11 @@ using System.Web;
 
 namespace Dataasp.Backend.DatasetParsing
 {
-    public class SpeedTrapParser
+    public class CarAccidentParser
     {
-
         private ProgramLineDivider _programLineDivider;
 
-        public SpeedTrapParser()
+        public CarAccidentParser()
         {
             _programLineDivider = new ProgramLineDivider();
         }
@@ -44,7 +43,7 @@ namespace Dataasp.Backend.DatasetParsing
             using (SqlConnection connection = new SqlConnection(Settings.Default.ConnectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("DELETE FROM speedtraps", connection))
+                using (SqlCommand command = new SqlCommand("DELETE FROM caraccidents", connection))
                 {
                     command.ExecuteNonQuery();
                 }
@@ -54,27 +53,27 @@ namespace Dataasp.Backend.DatasetParsing
             var fileLines = _programLineDivider.DivideProgramLines(fileContent);
 
             var isFirst = true;
-            foreach (Match line in fileLines)
+            for (int i = 0; i < fileLines.Count; i += 200) //This dataset is too large, we don'T need all of it. Just take 500 of them spreaded equally
             {
                 if (isFirst)
                 {
                     isFirst = false;
                     continue;
                 }
-                
-                var record = line.Value.Split(',');
+
+                var record = fileLines[i].Value.Split(',');
 
                 if (record.Count() <= 2)
                 {
                     continue;
                 }
 
-                    var latitude = record.Last();
+                var latitude = record.Last();
                 var longitude = record.ElementAt(record.Count() - 2); //second last
 
                 //remove minus
                 longitude = longitude.Substring(1, longitude.Length - 1);
-                latitude = latitude.Substring(0, latitude.Length-1);//remove endline 
+                latitude = latitude.Substring(0, latitude.Length - 1);//remove endline 
 
                 insertInDb(latitude, longitude);
 
@@ -85,7 +84,7 @@ namespace Dataasp.Backend.DatasetParsing
         private void insertInDb(string lat, string longitude)
         {
             //insert new values
-            var query = $"insert into speedtraps values ('{lat.ToString().Replace(",", ".")}','{longitude.ToString().Replace(",", ".")}')";
+            var query = $"insert into caraccidents values ('{lat.ToString().Replace(",", ".")}','{longitude.ToString().Replace(",", ".")}')";
 
             using (SqlConnection connection = new SqlConnection(Settings.Default.ConnectionString))
             {
