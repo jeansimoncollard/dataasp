@@ -2,7 +2,7 @@
     <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         <div class="row">
             <div class="col-lg-12 element-top-30 element-bottom-30">
-                <h1 class="page-header">Travel Now!</h1>
+                <h1 class="page-header">Itinerary</h1>
             </div>
         </div>
         <div class="row element-bottom-20">
@@ -74,56 +74,57 @@
 
                         }
 
-                        // Bias the autocomplete object to the user's geographical location,
-                        // as supplied by the browser's 'navigator.geolocation' object.
-                        function geolocate2() {
-                            if (navigator.geolocation) {
-                                navigator.geolocation.getCurrentPosition(function (position) {
-                                    var geolocation2 = {
-                                        lat: position.coords.latitude,
-                                        lng: position.coords.longitude
-                                    };
-                                    var circle2 = new google.maps.Circle({
-                                        center: geolocation2,
-                                        radius: position.coords.accuracy
-                                    });
-                                    autocomplete2.setBounds(circle.getBounds());
+                    // Bias the autocomplete object to the user's geographical location,
+                    // as supplied by the browser's 'navigator.geolocation' object.
+                    function geolocate2() {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(function (position) {
+                                var geolocation2 = {
+                                    lat: position.coords.latitude,
+                                    lng: position.coords.longitude
+                                };
+                                var circle2 = new google.maps.Circle({
+                                    center: geolocation2,
+                                    radius: position.coords.accuracy
                                 });
-                            }
+                                autocomplete2.setBounds(circle.getBounds());
+                            });
                         }
-                    </script>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyeTwU64siTHFVrI_h9bJX7VlMdReWvbc&libraries=places&callback=initAutocomplete" async defer></script>
-                    <p>Destination:</p>
-                    <input id="autocomplete2" placeholder="Enter Destination" onfocus="geolocate2()" type="text" runat="server" clientidmode="Static"></input>
-                    <br>
-                    <br>
-                    <div class="clearfix">
-                        <select id="travelModeComboBox" runat="server">
-                            <option value="DRIVING">Car</option>
-                            <option value="TRANSIT">Public Transport</option>
-                            <option value="BICYCLING">Bicycle</option>
-                            <option value="WALKING">Walking</option>
-                        </select>
-                    </div>
-                    <p class="clearfix"><b>Help us provide you with a sustainable alternative</b></p>
-                    <p>Distance:</p>
-                    <input class="slider" id="distanceSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
-                    <p>Reduce Emissions:</p>
-                    <input id="savingFuelSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
-                    <p>Avoid Construction:</p>
-                    <input class="slider" id="constructionSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
-                    <p>Avoid Speed Traps:</p>
-                    <input class="slider" id="photoRadarSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
-                    <br>
-                    <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click" />
-                    <div id="quickStatsDiv" runat="server">
-                        <!-- Alex's spot to add qucikstat stuff -->
-                    </div>
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyeTwU64siTHFVrI_h9bJX7VlMdReWvbc&libraries=places&callback=initAutocomplete"
+                    async defer></script>
+                <p>Destination:</p><input id="autocomplete2" placeholder="Enter Destination" onfocus="geolocate2()" type="text" runat="server" clientidmode="Static"></input>
+                <div class="clearfix">
+                    <p>Method:</p><select id="travelModeComboBox" runat="server">
+                        <option value="DRIVING">Car</option>
+                        <option value="TRANSIT">Public Transport</option>
+                        <option value="BICYCLING">Bicycle</option>
+                        <option value="WALKING">Walking</option>
+                    </select>
+                </div>
+                <p class="clearfix"><b>Help us provide you with a sustainable alternative</b></p>
+
+
+                <p>Distance:</p><input class="slider" id="distanceSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
+                <p>Reduce Emissions:</p>
+
+                <input id="savingFuelSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
+                <p>Avoid Construction:</p>
+
+                <input class="slider" id="constructionSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
+
+                <p>Avoid Speed Traps:</p><input class="slider" id="photoRadarSlider" runat="server" type="range" min="0" max="100" value="50" style="width: 20%;" />
+                <br>
+                <asp:Button ID="addTripButton" runat="server" Text="Trip Calculator" OnClick="addTripButton_Click" />
+                <div id="quickStatsDiv" runat="server">
+                    <!-- Alex's spot to add qucikstat stuff -->
                 </div>
             </div>
-            <div class="col-md-6">
-                <img id="initial_map" src="~/images/initial_map.png" class="img-responsive" alt="Google Map" runat="server" />
-                <div id="mapResults" runat="server"></div>
-            </div>
         </div>
-    </asp:Content>
+        <div class="col-md-6">
+            <img id="initial_map" src="~/images/initial_map.png" class="img-responsive" alt="Google Map" runat="server"/>
+            <div id="mapResults" runat="server"></div>
+        </div>
+    </div>
+</asp:Content>
