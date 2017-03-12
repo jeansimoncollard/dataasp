@@ -326,15 +326,17 @@
                 }
             });
             var totalCost = <%= totalCostData %>;
+            alert(totalCost);
             var distanceData = <%= DistanceChartData %>;
-            var totalDistance;
+            var totalDistance = 0.0;
             for (var i = 0; i < distanceData.length; i++) {
                 totalDistance += distanceData[i];
             }
+            alert(totalDistance);
             var carTotalCost = (((totalDistance / 100) * 6.63) * 1.11); //Cost calculated based on distance divided by minimum fuel efficiency required by cars produce in 2017 multiplied by average cost per litre in Quebec in 2017.
             var costPercent = (totalCost / carTotalCost) * 100;
-
-
+            alert("last asdfas "+costPercent);
+            var savings;
             if (costPercent < 65) {
                 //saved over 35%
                 savings = 0;
@@ -348,18 +350,15 @@
                 //saved under 15%
                 savings = 3;
             }
+            alert(savings);
             switch (savings) {
                 case 0:
-
                     $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of ' + (carTotalCost - totalCost) + ' which is a' + costPercent + '% compared to if you only drove. This is a good indication that you often use cost efficient alternatives and make economical choices.</p>');
                 case 1:
-
                     $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of ' + (carTotalCost - totalCost) + ' which is a' + costPercent + '% compared to if you only drove. Using a bicycle is a sustainable alternative and you should be proud of you\'re self.</p>');
                 case 2:
-
                     $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of ' + (carTotalCost - totalCost) + ' which is a' + costPercent + '% compared to if you only drove. It is great to see that you take initiative to reduce your carbon foot print.</p>');
                 case 3:
-
                     $('#costSaving').append('<h4>Cost Savings</h4><p>You saved a total of ' + (carTotalCost - totalCost) + ' which is a' + costPercent + '% compared to if you only drove. You should consider carpooling when possible or seeking alternative methods of transportation. Use our route tracker to help you find sustainable options that suit your goals.</p>');
             }
     </script>
