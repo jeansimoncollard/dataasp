@@ -9,18 +9,14 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    background-image: url("/images/white.jpg");
+    background-image: url("/images/texture.jpg");
     background-repeat: no-repeat;
     background-position: initial;
     background-attachment: fixed;
     background-size: cover;
 
 }
-
-my-container img {
-    opacity: 0.6;
-}
-
+/*Equalize thumbnails for aboout page*/
 .thumbnail {
     height: 420px;
     display: block;
