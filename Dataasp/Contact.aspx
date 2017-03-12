@@ -30,18 +30,7 @@
                 </div>
             <div class="row">
                 <div class="col-md-8">
-                    <address>
-                        One Microsft Way
-                        <br /> Redmond, WA 98052-6399
-                        <br />
-                        <abbr title="Phone">P:</abbr>
-                        425.555.0100
-                    </address>
-                    <address>
-                        <strong>Support: Jean-Simon Collard</strong> <a href="mailto:Support@example.com">jcollard15@ubishops.ca</a>
-                        <br />
-                        <strong>Marketing: Michell Burr Bedard</strong> <a href="mailto:Marketing@example.com">mburr11@ubishops.ca</a>
-                    </address>
+                    <img alt="Logo" src="~/images/rsz_panda-eating.jpg" runat="server">
                 </div>
             </div>
         </div>
