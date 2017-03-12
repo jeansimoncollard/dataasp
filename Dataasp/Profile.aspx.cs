@@ -45,6 +45,11 @@ namespace Dataasp
         }
         public void costOfTravelDisplay()
         {
+            if (string.IsNullOrEmpty(HttpContext.Current.User.Identity.Name))
+            {
+                Response.Redirect("~/Account/Register");
+            }
+
             var currentUser = _userHistoryLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
             ArrayList totalCost = new ArrayList() { 0 };
             double y = 0;
@@ -203,9 +208,9 @@ namespace Dataasp
             {
                 UserTravelRecord Temp = new UserTravelRecord(currentUser.UserHistory[i]);
 
-                var x = (double)individualCO2[Temp.DateOfTrip.Month-1];
+                var x = (double)individualCO2[Temp.DateOfTrip.Month - 1];
                 x += Temp.VolumeCO2;
-                individualCO2[Temp.DateOfTrip.Month-1] = x;
+                individualCO2[Temp.DateOfTrip.Month - 1] = x;
             }
 
             _jsArraySerializer = new JavascriptSerializer();
