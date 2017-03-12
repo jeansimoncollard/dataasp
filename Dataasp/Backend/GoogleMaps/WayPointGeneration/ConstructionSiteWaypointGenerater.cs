@@ -51,6 +51,11 @@ namespace Dataasp.Backend.GoogleMaps.WayPointGeneration
             }
             var candidates = getScoredWayPointList(wayPointList, latMaxAddableValue, longMaxAddableValue).OrderBy(x => x.Score);
 
+            if (candidates.All(x => x.Score == 0))
+            { //Don't use any if there are no construction on the way
+                return null;
+            }
+
             return candidates.Last().WayPoint;//The one with least construciton points nearby
         }
 

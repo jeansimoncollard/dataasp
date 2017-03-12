@@ -16,9 +16,6 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="my-container">
-    <img src="~/images/white.jpg">
-    </div>
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
