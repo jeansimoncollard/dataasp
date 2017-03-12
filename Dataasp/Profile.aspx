@@ -417,7 +417,7 @@
             var myLineChart = new Chart(ctx2, {
                 type: 'line',
                 data: {
-                    labels: <%= Chart2Dates %>,
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                     datasets: [{
                         label: 'total CO2 generated : ' + <%=totalCO2Str%>,
                     data: <%= ChartOnCO2Data %>,
