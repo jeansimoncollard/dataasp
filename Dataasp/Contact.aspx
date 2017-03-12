@@ -4,12 +4,12 @@
         <h3>We appreciate your feedback.</h3>
         <div class="row">
             <div class="Box">
-                <div class="col-md-4 text-center">
+                <div class="col-md-4">
                     <div class="well">
                         <div class="input-group">
                             <input type="text" id="userComment" class="form-control input-sm chat-input" placeholder="Write your message here..." />
                             <span class="input-group-btn" onclick="addComment()">     
-                        <a href="#" class="btn1 btn-primary1 btn-sm"><span class="glyphicon glyphicon-comment"></span> Add Comment</a>
+                        <a href="#" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-comment"></span> Add Comment</a>
                         </div>
                         <hr data-brackets-id="12673">
                         <ul data-brackets-id="12674" id="sortable" class="list-unstyled ui-sortable">
@@ -28,10 +28,8 @@
                     </div>
             </div>
                 </div>
-            <div class="row">
-                <div class="col-md-8">
-                    <img alt="Logo" src="~/images/rsz_panda-eating.jpg" runat="server">
-                </div>
+                <div class="col-lg-8">
+                    <img alt="Logo" src="~/images/rsz_1rsz_1panda-eating.jpg" runat="server">
             </div>
         </div>
     </asp:Content>

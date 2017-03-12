@@ -593,6 +593,9 @@ input[type=range]::-ms-thumb {
     cursor: pointer;
 }
 /*CONTACT PAGE CSS*/
+.col-lg-8 img {
+    height: 379px;
+}
 
 .element-top-10 {
     padding-top: 10px;
