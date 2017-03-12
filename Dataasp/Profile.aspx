@@ -94,155 +94,62 @@
                 </div>
             </div>
         </div>
-        <!-- Service List -->
-        <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Service List</h2>
-            </div>
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-tree fa-stack-1x fa-inverse"></i>
-                    </span>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Service One</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-car fa-stack-1x fa-inverse"></i>
-                    </span>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Service Two</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-support fa-stack-1x fa-inverse"></i>
-                    </span>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Service Three</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-database fa-stack-1x fa-inverse"></i>
-                    </span>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Service Four</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-bomb fa-stack-1x fa-inverse"></i>
-                    </span>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Service Five</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-bank fa-stack-1x fa-inverse"></i>
-                    </span>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Service Six</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i>
-                    </span>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Service Seven</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-space-shuttle fa-stack-1x fa-inverse"></i>
-                    </span>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Service Eight</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <span class="fa-stack fa-2x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-recycle fa-stack-1x fa-inverse"></i>
-                    </span>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Service Nine</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-        <hr>
-    <script>
-        var ctx = document.getElementById("myChart").getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'doughnut',
-            options: {
-                title: {
-                    display: true,
-                    text: 'Travel type percentage'
-                },
-                animation: {
-                    animateScale: true
-                }
-            },
-            data: {
-                labels: ["Walking", "Biking", "Public Transit", "Driving"],
-                datasets: [{
-                    backgroundColor: [
-                        "#2ecc71",
-                        "#3498db",
-                        "#95a5a6",
-                        "#9b59b6",
-                    ],
-                    data:  <%= Chart1Data %>,
+         <script>
+             var ctx = document.getElementById("myChart").getContext('2d');
+             var myChart = new Chart(ctx, {
+                 type: 'doughnut',
+                 options: {
+                     title: {
+                         display: true,
+                         text: 'Travel type percentage'
+                     },
+                     animation: {
+                         animateScale: true
+                     }
+                 },
+                 data: {
+                     labels: ["Walking", "Biking", "Public Transit", "Driving"],
+                     datasets: [{
+                         backgroundColor: [
+                             "#2ecc71",
+                             "#3498db",
+                             "#95a5a6",
+                             "#9b59b6",
+                         ],
+                         data: <%= Chart1Data %>,
                 }]
-            }
-            });
+             }
+             });
+             var tranType = <%= Chart1Data %>;
+             var preferedType;
+
+             if (tranType[0] >= tranType[1] && tranType[0] >= tranType[2] && tranType[0] >= tranType[4]) {
+                 //If walking is greatest
+                 preferedType = 0;
+             } else if (tranType[1] >= tranType[2] && tranType[1] >= tranType[3] && tranType[1] >= tranType[0]) {
+                 //If Biking is greatest
+                 preferedType = 1;
+             } else if (tranType[2] >= tranType[3] && tranType[2] >= tranType[0] && tranType[2] >= tranType[1]) {
+                 //If Public Transit is greatest
+                 preferedType = 2;
+             } else {
+                 //Else Driving is greatest
+                 preferedType = 3;
+             }
+             switch (preferedType) {
+                 case 0:
+
+                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p><a href="#" class="btn btn-primary">Learn More</a>')
+                 case 1:
+
+                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p>')
+                 case 2:
+
+                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p>')
+                 case 3:
+
+                     $('#drivingAlternatives').append('<h4>Driving Alternatives</h4><p>You\'re preferred mode of transport is AAAAA.</p>')
+             }
         </script>
         <script>
             var ctx4 = document.getElementById("CostChart");
@@ -251,7 +158,7 @@
                 data: {
                     labels: ["Walking", "Biking", "Public Transit", "Car"],
                     datasets: [{
-                        label: "Total travel expenditure " + "$" +<%= totalCostData %>,
+                        label: "Total travel expenditure " + "$" + <%= totalCostData %>,
                     data: <%= costData %>,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -272,11 +179,11 @@
                     borderWidth: 1
                 }]
             },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'Travel costs'
-                    },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Travel costs'
+                },
                 scales: {
                     yAxes: [{
                         scaleTitle: "$",
@@ -316,11 +223,11 @@
                     borderWidth: 1
                 }]
             },
-              options: {
-                  title: {
-                      display: true,
-                      text: 'Distance by Type'
-                  },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Distance by Type'
+                },
                 scales: {
                     yAxes: [{
                         ticks: {
@@ -359,11 +266,11 @@
                     borderWidth: 1
                 }]
             },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'CO2 Emissions'
-                    },
+            options: {
+                title: {
+                    display: true,
+                    text: 'CO2 Emissions'
+                },
                 scales: {
                     yAxes: [{
                         ticks: {
