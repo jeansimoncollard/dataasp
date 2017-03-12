@@ -202,10 +202,12 @@
     <Content Include="images\logo.png" />
     <Content Include="images\panda-eating.jpg" />
     <Content Include="images\rsz_1alex.jpg" />
+    <Content Include="images\rsz_1rsz_1panda-eating.jpg" />
     <Content Include="images\rsz_duncan.jpg" />
     <Content Include="images\rsz_js.jpg" />
     <Content Include="images\rsz_mitch.jpg" />
     <Content Include="images\rsz_nat.jpg" />
+    <Content Include="images\rsz_panda-eating.jpg" />
     <Content Include="images\rsz_question_mark.jpg" />
     <Content Include="images\satisfied1.jpg" />
     <Content Include="images\satisfied2.jpg" />

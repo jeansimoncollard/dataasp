@@ -8,7 +8,6 @@
     </div>
     <div class="row element-bottom-20">
         <div class="col-md-6">
-            <center>
                 <div class="row">
                 <div id="failed" runat="server" style="max-width:50%;">
                         
