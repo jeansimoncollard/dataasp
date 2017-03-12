@@ -6,8 +6,8 @@
             <h1 class="page-header">Itinerary</h1>
         </div>
     </div>
-    <div class="row element-bottom-20">
-        <div class="col-md-6">
+    <div class="row element-bottom-20 ">
+        <div class="col-md-6 element-left-20">
                 <div class="row">
                 <div id="failed" runat="server" style="max-width:50%;">
                         

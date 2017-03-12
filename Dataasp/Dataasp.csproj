@@ -196,11 +196,7 @@
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="GoogleMaps.LocationServices.readme.txt" />
-    <Content Include="images\bikepathfall.jpg" />
-    <Content Include="images\bikers.jpg" />
     <Content Include="images\ecobecois_logo_couleur.png" />
-    <Content Include="images\logo.png" />
-    <Content Include="images\panda-eating.jpg" />
     <Content Include="images\rsz_1alex.jpg" />
     <Content Include="images\rsz_1rsz_1panda-eating.jpg" />
     <Content Include="images\rsz_duncan.jpg" />
@@ -216,8 +212,6 @@
     <Content Include="images\satisfied5.jpg" />
     <Content Include="images\satisfied6.jpg" />
     <Content Include="images\treebark.jpg" />
-    <Content Include="images\white.jpg" />
-    <Content Include="images\whitee.jpg" />
     <Content Include="Profile.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
