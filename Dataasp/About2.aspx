@@ -31,11 +31,11 @@
                         </h3>
                         <p>First year student at Bishop's University in computer science. Wants to code video games for a living.</p>
                         <ul class="list-inline">
-                            <li><a href="https://www.facebook.com/roger.bosch.520"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            <li><a href="https://www.facebook.com/roger.bosch.520"target="blank"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
                             <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
                             </li>
-                            <li><a href="https://github.com/alexcharbonneau"><i class="fa fa-2x fa-github-square"></i></a>
+                            <li><a href="https://github.com/alexcharbonneau"target="blank"><i class="fa fa-2x fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -50,11 +50,11 @@
                         </h3>
                         <p>4th year student at Bishop's University in computer science. Highly skilled programmer and best of friends. Wants a carreer with CSIS.</p>
                         <ul class="list-inline">
-                            <li><a href="https://www.facebook.com/duncan.mackay.75"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            <li><a href="https://www.facebook.com/duncan.mackay.75"target="blank"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
                             <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
                             </li>
-                            <li><a href="https://github.com/DRFMacKay"><i class="fa fa-2x fa-github-square"></i></a>
+                            <li><a href="https://github.com/DRFMacKay"target="blank"><i class="fa fa-2x fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -70,11 +70,11 @@
                         </h3>
                         <p>5th year student at Bishop's University in double major computer science and business. Aspires to continue as a freelance web developer.</p>
                         <ul class="list-inline">
-                            <li><a href="https://www.facebook.com/mitchell.bedard"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            <li><a href="https://www.facebook.com/mitchell.bedard"target="blank"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
                             <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
                             </li>
-                            <li><a href="https://github.com/mbb3-mitch"><i class="fa fa-2x fa-github-square"></i></a>
+                            <li><a href="https://github.com/mbb3-mitch"target="blank"><i class="fa fa-2x fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -89,11 +89,11 @@
                         </h3>
                         <p>1st year student at Bishop's University in computer science. Wishes to do web design for a living.</p>
                         <ul class="list-inline">
-                            <li><a href="https://www.facebook.com/profile.php?id=100009091485382"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            <li><a href="https://www.facebook.com/profile.php?id=100009091485382" target="blank"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
                             <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
                             </li>
-                            <li><a href="https://github.com/natachalevesque"><i class="fa fa-2x fa-github-square"></i></a>
+                            <li><a href="https://github.com/natachalevesque"target="blank"><i class="fa fa-2x fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -108,11 +108,11 @@
                         </h3>
                         <p>3rd year student at Bishops's University in computer science. Would enjoy a carreer as a computer consultant.</p>
                         <ul class="list-inline">
-                            <li><a href="https://www.facebook.com/jeansimon.collard"><i class="fa fa-2x fa-facebook-square"></i></a>
+                            <li><a href="https://www.facebook.com/jeansimon.collard" target="blank"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
                             <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
                             </li>
-                            <li><a href="https://github.com/noblefr"><i class="fa fa-2x fa-github-square"></i></a>
+                            <li><a href="https://github.com/noblefr" target="blank"><i class="fa fa-2x fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
