@@ -37,7 +37,7 @@ namespace Dataasp {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox travelModeComboBox;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect travelModeComboBox;
         
         /// <summary>
         /// distanceSlider control.
@@ -46,16 +46,7 @@ namespace Dataasp {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox distanceSlider;
-        
-        /// <summary>
-        /// distanceSlider_SliderExtender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.SliderExtender distanceSlider_SliderExtender;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl distanceSlider;
         
         /// <summary>
         /// savingFuelSlider control.
@@ -64,16 +55,7 @@ namespace Dataasp {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox savingFuelSlider;
-        
-        /// <summary>
-        /// savingFuelSlider_SliderExtender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.SliderExtender savingFuelSlider_SliderExtender;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl savingFuelSlider;
         
         /// <summary>
         /// constructionSlider control.
@@ -82,16 +64,7 @@ namespace Dataasp {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox constructionSlider;
-        
-        /// <summary>
-        /// constructionSlider_SliderExtender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.SliderExtender constructionSlider_SliderExtender;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl constructionSlider;
         
         /// <summary>
         /// photoRadarSlider control.
@@ -100,16 +73,7 @@ namespace Dataasp {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox photoRadarSlider;
-        
-        /// <summary>
-        /// photoRadarSlider_SliderExtender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.SliderExtender photoRadarSlider_SliderExtender;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl photoRadarSlider;
         
         /// <summary>
         /// addTripButton control.
