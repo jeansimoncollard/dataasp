@@ -99,7 +99,6 @@
                                </div>
                        </div></div>
                     <div class="tab-pane fade" id="Resources">
-                        <h4>Coming Soon!</h4>
                         <p><Strong>Ecobecois</Strong> is excited to announce the upcoming release of rideshare capabilities, Ridesharing creates a meaningful way to give back to your community and the environment and meet some like minded people along the way!</p>
                         <p>We're not quite ready to let loose yet though, so in the mean time take advantage of our local <a href ="https://montreal.bixi.com/en">Bixi</a>, <a href ="https://www.rtcquebec.ca/">Bus Routes</a>, or just enjoy a day in one of our lovely <a href ="https://www.sepaq.com/pq/index.dot?language_id=1">parks</a></p>
                     </div>
@@ -375,16 +374,16 @@
             }
             switch (preferedType) {
                 case 0:
-                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have walked ' + tranType[0] +'km. This is equivalent to walking [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be walkable.</p > ');
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have walked ' + tranType[0] +'km. This is equivalent to walking  '+ (tranType[0]/384400*100).toFixed(3) +'% of  the way to the moon!</p>');
                     break;
                 case 1:
-                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have biked ' + tranType[1] +'km. This is equivalent to biking [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be bikable.</p>');
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have biked ' + tranType[1] +'km. This is equivalent to biking  '+ (tranType[1]/384400*100).toFixed(3) +'% of  the way to the moon!</p>');
                     break;
                 case 2:
-                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have rode ' + tranType[2] +'km. This is equivalent to riding [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be ridable.</p>');
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have rode ' + tranType[2] +'km. This is equivalent to riding  '+ (tranType[2]/384400*100).toFixed(3) +'% of  the way to the moon!</p>');
                     break;
                 case 3:
-                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have drove ' + tranType[3] +'km. This is equivalent to driving [PERCENTAGE] of  the way to [COOL DISTANCE] from [DESTINATION] that would be drivable.</p>');
+                    $('#distanceTracker').append('<h4>Driving Alternatives</h4><p>You have drove ' + tranType[3] +'km. This is equivalent to driving '+ (tranType[3]/384400*100).toFixed(3) +'% of  the way to the moon!</p>');
                     break;
             }
 
@@ -395,7 +394,7 @@
             var myLineChart = new Chart(ctx2, {
                 type: 'line',
                 data: {
-                    labels: <%= Chart2Dates %>,
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                     datasets: [{
                         label: 'total CO2 generated : ' + <%=totalCO2Str%>,
                         data: <%= ChartOnCO2Data %>,

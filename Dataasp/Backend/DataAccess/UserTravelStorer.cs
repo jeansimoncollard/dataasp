@@ -13,6 +13,10 @@ namespace Dataasp.Backend.DataAccess
     {
         public void StoreTravel(UserTravelRecord userTravelRecord)
         {
+            if (string.IsNullOrEmpty(userTravelRecord.Username))
+            {
+                return;
+            }
             //co2 volume to add when function ready.
             var query = $"insert into user_history values ('{userTravelRecord.DateOfTrip.ToString("yyyy-MM-dd HH:mm:ss")}','{userTravelRecord.MetersTravelled}','{(int)userTravelRecord.TravelMode}','{userTravelRecord.Username}',{userTravelRecord.VolumeCO2.ToString(CultureInfo.CreateSpecificCulture("en-US"))},{userTravelRecord.Cost.ToString(CultureInfo.CreateSpecificCulture("en-US"))})";
 

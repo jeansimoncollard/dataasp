@@ -45,49 +45,54 @@ namespace Dataasp
         }
         public void costOfTravelDisplay()
         {
-                var currentUser = _userHistoryLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
-                ArrayList totalCost = new ArrayList() { 0 };
-                double y = 0;
-                double x = 0;
-                ArrayList individualCost = new ArrayList() { 0.0, 0.0, 0.0, 0.0 };
-                for (int i = 0; i < currentUser.UserHistory.Count; i++)
+            if (string.IsNullOrEmpty(HttpContext.Current.User.Identity.Name))
+            {
+                Response.Redirect("~/Account/Register");
+            }
+
+            var currentUser = _userHistoryLoader.LoadHistory(HttpContext.Current.User.Identity.Name);
+            ArrayList totalCost = new ArrayList() { 0 };
+            double y = 0;
+            double x = 0;
+            ArrayList individualCost = new ArrayList() { 0.0, 0.0, 0.0, 0.0 };
+            for (int i = 0; i < currentUser.UserHistory.Count; i++)
+            {
+                UserTravelRecord Temp = new UserTravelRecord(currentUser.UserHistory[i]);
+                y = y + Temp.Cost;
+                switch (Temp.TravelMode)
                 {
-                    UserTravelRecord Temp = new UserTravelRecord(currentUser.UserHistory[i]);
-                    y = y + Temp.Cost;
-                    switch (Temp.TravelMode)
-                    {
-                        case TravelModeEnum.WALKING:
-                            x = (double)individualCost[0];
-                            x = x + Math.Round(Temp.Cost, 2);
-                            individualCost[0] = x;
-                            break;
-                        case TravelModeEnum.BICYCLING:
-                            x = (double)individualCost[1];
-                            x = x + Math.Round(Temp.Cost, 2);
+                    case TravelModeEnum.WALKING:
+                        x = (double)individualCost[0];
+                        x = x + Math.Round(Temp.Cost, 2);
+                        individualCost[0] = x;
+                        break;
+                    case TravelModeEnum.BICYCLING:
+                        x = (double)individualCost[1];
+                        x = x + Math.Round(Temp.Cost, 2);
                         individualCost[1] = x;
-                            break;
+                        break;
                     case TravelModeEnum.TRANSIT:
-                            x = (double)individualCost[2];
-                            x = x + Math.Round(Temp.Cost, 2);
+                        x = (double)individualCost[2];
+                        x = x + Math.Round(Temp.Cost, 2);
                         individualCost[2] = x;
-                            break;
+                        break;
                     case TravelModeEnum.DRIVING:
-                            x = (double)individualCost[3];
-                            x = x + Math.Round(Temp.Cost, 2);
+                        x = (double)individualCost[3];
+                        x = x + Math.Round(Temp.Cost, 2);
                         individualCost[3] = x;
-                            break;
+                        break;
 
 
                 }
 
-                }
+            }
 
-                _jsArraySerializer = new JavascriptSerializer();
-                totalCost[0] = Math.Round(y, 2);
+            _jsArraySerializer = new JavascriptSerializer();
+            totalCost[0] = Math.Round(y, 2);
             totalCostData = _jsArraySerializer.Serialize(totalCost);
             costData = _jsArraySerializer.Serialize(individualCost);
 
-            }
+        }
 
         public void distanceChartDisplay()
         {
@@ -124,7 +129,7 @@ namespace Dataasp
                 }
 
             }
-            for(int i = 0; i < distanceByType.Count; i++)
+            for (int i = 0; i < distanceByType.Count; i++)
             {
                 x = (double)distanceByType[i];
                 distanceByType[i] = Math.Round(x, 2);
@@ -192,25 +197,22 @@ namespace Dataasp
             double w = 0;
             ArrayList dates = new ArrayList();
             ArrayList individualCO2 = new ArrayList();
+
+            for (var i = 0; i < 12; i++)
+            {
+                individualCO2.Add(0.0);
+            }
+
             ArrayList AverageCO2 = new ArrayList();
             for (int i = 0; i < currentUser.UserHistory.Count; i++)
             {
                 UserTravelRecord Temp = new UserTravelRecord(currentUser.UserHistory[i]);
-                dates.Add(Temp.DateOfTrip.ToString());
-                individualCO2.Add(Temp.VolumeCO2);
-                if (i < 3 && i > 4)
-                {
-                    AverageCO2.Add((Temp.VolumeCO2 - Math.Round(Temp.VolumeCO2, 0)) * 100);
-                    w = w + ((Temp.VolumeCO2 - Math.Round(Temp.VolumeCO2, 0)) * 100);
-                }
-                else
-                {
-                    AverageCO2.Add(0);
-                }
-                y = y + Temp.VolumeCO2;
 
+                var x = (double)individualCO2[Temp.DateOfTrip.Month - 1];
+                x += Temp.VolumeCO2;
+                individualCO2[Temp.DateOfTrip.Month - 1] = x;
             }
-            
+
             _jsArraySerializer = new JavascriptSerializer();
             totalCO2[0] = y;
             totalCO2Str = _jsArraySerializer.Serialize(totalCO2);
